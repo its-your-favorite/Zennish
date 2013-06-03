@@ -1,0 +1,151 @@
+body {
+    background: #333;
+    color: #FFF;
+    margin-right: 0px;
+}
+
+#ideContainer {
+    height: 550px;
+}
+
+#descriptionBox {
+    width: 100%;
+    height: 66px;
+}
+
+#logBox {
+    width: 99.5%;
+    height: 200px; /* todo : can't get this quite right */
+    border-sizing:border-box;
+}
+
+#rightHalf {
+    margin-left: 300px;
+    border: 3px inset;
+    box-sizing: border-box;
+    padding: 0px;
+    overflow: hidden;
+    height: 600px;
+}
+
+#leftHalf {
+    float: left;
+    border: 1px inset;
+    width: 300px;
+    height: 600px;
+    overflow-y: scroll;
+}
+
+#centerPanel {
+    float: none;
+    height: 600px;
+    width: auto;
+    overflow: hidden;
+}
+
+#rightPanel {
+    width: 400px;
+    float: right;
+    height: 100%;
+    min-height:100%;
+    transition: width .05s ease-in 0s;
+}
+
+.collapsedRight#rightPanel {
+    width: 40px;
+}
+
+.testParams {
+    width: 120px;
+    margin: 4px;
+}
+
+.testExpected {
+    width: 40px;
+    margin-left: 4px;
+    margin-right: 0px;
+}
+
+.collapsible {
+    min-height:100%;
+    height: 100%;
+    width:1px;
+    background: #000;
+    border-left: 3px solid #666;
+    border-right: 3px solid #BBB;
+    border-top: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    display:inline-block;
+    float: left;
+    cursor: e-resize;
+}
+
+.collapsible.collapsedRight {
+    cursor: w-resize;
+}
+
+.stepControls {
+    border-top: 2px solid #333333;
+    width: 100%;
+}
+
+.fl {
+    float:left;
+}
+
+.testFailed .testExpected {
+    background-color: #F99;
+}
+
+.testPassed .testExpected {
+    background-color: #9F9;
+}
+
+.aTest {
+    -webkit-transition: all 1s ease-in;
+}
+
+.testFuncName {
+    width: 80px;
+    margin: 4px;
+}
+
+.button {
+    border: 3px #000 outset;
+    border-color: #AAA #888 #666 #333;
+    padding: 0px 3px;
+    cursor: pointer;
+    margin: 5px;
+    line-height: 25px;
+
+    background: #777;
+    box-sizing: border-box;
+}
+
+.challengeStep {
+    background: #444;
+    border: 4px solid #000;
+    border-color: #888 #333 #222 #555;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.stepDescription {
+    padding: 15px;
+}
+
+.challengeStep.active {
+    background: #666;
+}
+
+.challengeStep.future {
+    opacity: .5;
+}
+
+.challengeStep.active:first-letter {
+    font-size: 40px;
+    color: #EFE;
+    font-family: lucida;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Are you any good? - Code quality test in javascript</title>
+    <link rel="stylesheet" href="include/codemirror/lib/codemirror.css">
+    <link href="style.css" rel="stylesheet"/>
+</head>
+
+<body ng-controller="TestController">
+<script type="text/javascript" src="include/functional.js"></script>
+<script type="text/javascript" src="include/underscore.js"></script>
+<script type="text/javascript" src="include/jquery-2.0.0.js"></script>
+<script type="text/javascript" src="include/fancy.js"></script>
+
+<script type="text/javascript" src="challenges_data.js"></script>
+<script type="text/javascript" src="models/AutomatedTest.js"></script>
+<script type="text/javascript" src="models/TheGame.js"></script>
+<script src="include/codemirror/lib/codemirror.js"></script>
+<script src="include/codemirror/mode/javascript/javascript.js"></script>
+<script src="include/angular.min.js"></script>
+<script src="angApp/controller.js"></script>
+<script src="models/StepModel.js"></script>
+
+
+Title and shit goes here.
+Also overall multi-challenge stuff.
+
+<div id="leftHalf">
+    <div>{{theGame.currentChallenge.description}}</div>
+    <span ng-repeat="eachStep in theGame.currentChallenge.steps"  ng-class="{active: (theGame.currentStepNum == eachStep.id),
+                                                         future: (theGame.currentStepNum < eachStep.id),
+                                                  challengeStep: true}">
+        <div class="stepDescription">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>
+        <div ng-show="(theGame.currentStepNum >= eachStep.id)">
+            <div class='stepControls'><span>Attempts...</span><span>Deltas</span><span class="button">View</span> </div>
+        </div>
+    </span>
+</div>
+
+<div id="rightHalf" ng-model="rightHalf">
+    <div id="rightPanel">
+        <div class="collapsible">&nbsp;</div>
+        <div>
+            <input type="button" value="+New" ng-click="theGame.addTest({})">Your tests
+
+            <span ng-repeat="test in theGame.userTests">
+                <div ng-class="{aTest: true,
+                                testPassed: (test.lastResult == true),
+                                                                                          testFailed: (test.lastResult == false)}">
+                    <span class="button green runButton" ng-click="test.doRun()">-&gt;</span>
+
+                    <input ng-model="test.funcName" value="{{theGame.currentStepTesteeFunctionName()}}" class="testFuncName">
+                    (<input ng-model="test.paramsJson" class="testParams">) =
+                    <input ng-model="test.expectedJson" class="testExpected">
+                    <span class="button red deleteButton" ng-click="theGame.removeTestById($index)">X</span>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <div id="centerPanel">
+        <span id="saveButton" class="button saveButton" ng-click="theGame.saveCurrentEditor()">Save</span>
+        <div id="ideContainer"> </div>
+        <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
+    </div>
+</div>
+
+<textarea id="logBox">{{theGame.log}}</textarea>
+
+<script src="general.js"></script>
+</body>
+</html>

@@ -55,5 +55,11 @@ function TestController($scope) {
     $scope.theGame = new TheGame($scope.challengeSet);
     $scope.test = $scope.challengeSet[$scope.activeTestId];
 
+    setTimeout(function updateTimers(){
+        $scope.$apply($scope.theGame.updateTimeSpentForSteps.bind($scope.theGame));
+        setTimeout(updateTimers,1000);
+    });
     globalCopy = $scope;
+    window.debugTests = $scope.theGame.debugTests.bind($scope.theGame); //make accessible easily via console
 }
+

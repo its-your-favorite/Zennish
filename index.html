@@ -11,15 +11,21 @@
 <script type="text/javascript" src="include/underscore.js"></script>
 <script type="text/javascript" src="include/jquery-2.0.0.js"></script>
 <script type="text/javascript" src="include/fancy.js"></script>
+<script src="include/angular.min.js"></script>
 
 <script type="text/javascript" src="challenges_data.js"></script>
 <script type="text/javascript" src="models/AutomatedTest.js"></script>
 <script type="text/javascript" src="models/TheGame.js"></script>
+
 <script src="include/codemirror/lib/codemirror.js"></script>
 <script src="include/codemirror/mode/javascript/javascript.js"></script>
-<script src="include/angular.min.js"></script>
+
 <script src="angApp/controller.js"></script>
 <script src="models/StepModel.js"></script>
+<script src="include/Promise.js"></script>
+<script src="include/SlideDown.js"></script>
+<script src="include/database.js"></script>
+<script src="models/PersistantStorage.js"></script>
 
 
 Title and shit goes here.
@@ -30,10 +36,22 @@ Also overall multi-challenge stuff.
     <span ng-repeat="eachStep in theGame.currentChallenge.steps"  ng-class="{active: (theGame.currentStepNum == eachStep.id),
                                                          future: (theGame.currentStepNum < eachStep.id),
                                                   challengeStep: true}">
-        <div class="stepDescription">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>
+        <span>
+        <div class="stepDescription" ng-class="{past: (theGame.currentStepNum > eachStep.id)}">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>
         <div ng-show="(theGame.currentStepNum >= eachStep.id)">
-            <div class='stepControls'><span>Attempts...</span><span>Deltas</span><span class="button">View</span> </div>
+                <div class='stepControls'>
+                <table><tr>
+                    <td><span>Attempts...
+
+                    </span></td>
+
+                    <td><span  alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step">{{ eachStep.keystrokes }} <img class="key_icon" src="assets/img/key.png""></span></td>
+                    <td><span> {{ eachStep.timeSpentPretty }} </span></td>
+                    <td><span class="button">View</span></td>
+                </tr></table>
+                </div>
         </div>
+        </span>
     </span>
 </div>
 
@@ -41,13 +59,16 @@ Also overall multi-challenge stuff.
     <div id="rightPanel">
         <div class="collapsible">&nbsp;</div>
         <div>
-            <input type="button" value="+New" ng-click="theGame.addTest({})">Your tests
+            <diV>Your tests</diV>
+            <input type="button" value="+New" ng-click="theGame.addTest({})">
+            <input type="button" value="Run All" ng-click="theGame.runAllTests()">
+            <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
 
             <span ng-repeat="test in theGame.userTests">
                 <div ng-class="{aTest: true,
                                 testPassed: (test.lastResult == true),
                                                                                           testFailed: (test.lastResult == false)}">
-                    <span class="button green runButton" ng-click="test.doRun()">-&gt;</span>
+                    <span class="button green runButton" ng-click="test.doGuiRun()">&gt;</span>
 
                     <input ng-model="test.funcName" value="{{theGame.currentStepTesteeFunctionName()}}" class="testFuncName">
                     (<input ng-model="test.paramsJson" class="testParams">) =
@@ -59,14 +80,18 @@ Also overall multi-challenge stuff.
     </div>
 
     <div id="centerPanel">
-        <span id="saveButton" class="button saveButton" ng-click="theGame.saveCurrentEditor()">Save</span>
-        <div id="ideContainer"> </div>
         <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
+        {{theGame.currentChallenge.keystrokes}} keystrokes
+        <span id="saveButton" class="button saveButton" ng-click="theGame.saveCurrentEditor()">Save</span>
+        <div id="ideContainer"   ng-keyup="theGame.acknowledgeKeystroke()"> </div>
+
     </div>
 </div>
 
 <textarea id="logBox">{{theGame.log}}</textarea>
 
 <script src="general.js"></script>
+
+<div id="noteBox"></div>
 </body>
 </html>

@@ -32,8 +32,7 @@ body {
     float: left;
     border: 1px inset;
     width: 300px;
-    height: 600px;
-    overflow-y: scroll;
+    min-height: 600px;
 }
 
 #centerPanel {
@@ -51,12 +50,22 @@ body {
     transition: width .05s ease-in 0s;
 }
 
+.aTest input[type="text"] {
+    background: rgba(255,255,255,.05);
+}
+
+.aTest {
+    background-color: #EEE;
+    color:#000;
+    -webkit-transition: all 1s ease-in;
+}
+
 .collapsedRight#rightPanel {
     width: 40px;
 }
 
 .testParams {
-    width: 120px;
+    width: 130px;
     margin: 4px;
 }
 
@@ -85,9 +94,17 @@ body {
     cursor: w-resize;
 }
 
-.stepControls {
-    border-top: 2px solid #333333;
+.stepControls table{
+    border-spacing: 0px;
+    border-collapse: separate;
     width: 100%;
+}
+.stepControls td {
+    border: 2px solid #333;
+    border-bottom: 0px;
+    border-left: #666 1px solid;
+    border-right: #222 1px solid;
+    text-align: center;
 }
 
 .fl {
@@ -95,20 +112,16 @@ body {
 }
 
 .testFailed .testExpected {
-    background-color: #F99;
+    border-color: #F99;
 }
 
 .testPassed .testExpected {
-    background-color: #9F9;
-}
-
-.aTest {
-    -webkit-transition: all 1s ease-in;
+    border-color: #9F9;
 }
 
 .testFuncName {
-    width: 80px;
-    margin: 4px;
+    width: 85px;
+    margin: 1px;
 }
 
 .button {
@@ -127,13 +140,13 @@ body {
     background: #444;
     border: 4px solid #000;
     border-color: #888 #333 #222 #555;
-    display: inline-block;
+    display: block;
     width: 100%;
     box-sizing: border-box;
 }
 
 .stepDescription {
-    padding: 15px;
+    padding: 3px 15px;
 }
 
 .challengeStep.active {
@@ -148,4 +161,67 @@ body {
     font-size: 40px;
     color: #EFE;
     font-family: lucida;
+}
+
+/**
+Credit to http://css-tricks.com/examples/PopFromTopMessage/
+*/
+
+#noteBox {
+    position: absolute; /**/
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 102;
+    text-align: center;
+    height: 0px; /* allow overflow, but prevent this box from blocking clicks off to the side */
+}
+
+.slideDownNote {
+    margin: 0 auto;
+    background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    min-height: 30px;
+    min-width: 600px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+    display: inline-block;
+}
+
+.slideDownNoteContainer {
+    position: relative;
+    pointer-events: none;
+}
+
+@-webkit-keyframes slideDown {
+    0%, 100% { -webkit-transform: translateY(-50px); }
+    10%, 90% { -webkit-transform: translateY(0px); }
+}
+@-moz-keyframes slideDown {
+    0%, 100% { -moz-transform: translateY(-50px); }
+    10%, 90% { -moz-transform: translateY(0px); }
+}
+
+
+.key_icon {
+    height: 20px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
+.past{
+    overflow-y: hidden;
+    max-height: 40px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.past:hover {
+    max-height: inherit;
+    -webkit-line-clamp: 20;
 }

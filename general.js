@@ -41,13 +41,70 @@ var myCodeMirror = CodeMirror(fe("#ideContainer")[0], {
     mode: "javascript"
 });
 
+var session_id = _.memoize(function() {return new Date()|0;} ); //timestamp at load time
 
 var saveData = function(key, value) {
-    localStorage[key] = value;
+    if(localStorage)
+        localStorage[key] = value;
 };
 
 var retrieveData = function(key) {
-    return localStorage[key];
+    if (localStorage)
+        return localStorage[key];
 };
+
+
+var executeOneTest = function(functionNameToBeTested, userNamespace, /* array */parameters, comparer, expected, useDebugger){
+    var functionToBeTested = ideExtractFunctionAndDebugger(functionNameToBeTested, useDebugger);
+    var givenVal;
+
+    givenVal = functionToBeTested.apply(userNamespace, parameters);
+    if (comparer(givenVal, expected))
+        return false; //not a failure
+    return functionNameToBeTested + "(" + parameters.map(JSON.stringify).join(", ") + ") returned " + JSON.stringify(givenVal) + ", expected " + JSON.stringify(expected);
+}
+
+
+var ideContents = function() {
+    return myCodeMirror.getValue();
+};
+
+var ideContains = function(str) {
+    return ( ideContents().indexOf(str) >= 0);
+};
+
+var setIdeText = function(str){
+    myCodeMirror.setValue( str || "" );
+}
+
+var appendToIde = function(str) {
+    myCodeMirror.setValue( myCodeMirror.getValue() + str);
+};
+
+var ideExtractFunction = function(name) {
+    window.extractFunction = {};
+    var code =  myCodeMirror.getValue() + ";\n\n window.extractFunction = " + name + ";";
+    eval(code);
+    return window.extractFunction;
+};
+
+var ideExtractFunctionAndDebugger = function(name, useDebugger) {
+
+    var code =  myCodeMirror.getValue() + ";\n\n window.extractFunction = function(){" ;
+    if (useDebugger === false) {
+        code = code.replace(/debugger;/gi,'');
+    }
+
+    if (useDebugger == true) {
+        if (ideExtractFunction(name).toString().match(/debugger;/gi) === null ) {
+            code += "debugger;\n";
+        }
+    }
+    code += "return " + name + ".apply(null, arguments);};";
+    window.extractFunction = {};
+    eval( code);
+    return window.extractFunction;
+};
+
 
 myCodeMirror.setSize(null, 550);

@@ -106,5 +106,84 @@ var ideExtractFunctionAndDebugger = function(name, useDebugger) {
     return window.extractFunction;
 };
 
+var GeneralCrap = {};
+// soo ugly.
+GeneralCrap.setupLoadTable = function(){
+    var $tableSelector = $("#loadDialogTable");
+    $tableSelector.jqGrid({
+        datatype: "local",
+        colNames:['Name','Created', 'Lines of Code','is autosave','Step #','id'],
+        colModel:[
+            {name:'name',index:'name', width:'300', sorttype:"string"},
+            {name:'prettyDate',index:'id', width:180, sorttype:"float"},
+            {name:'linesOfCode', index:'linesOfCode', width: 145, sorttype:"float"},
+            {name:'isAutosave',index:'isAutosave', width:100,sorttype:"float"},
+            {name:'stepNum',index:'step_id', width:130, sortable:false},
+            {name:'id', index:"id", key: true, width: 10} /**/
+        ],
+
+        rowNum:90,
+        rowList:[10],
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "desc",
+        loadonce: true,
+        height: $("#loadDialog").height()
+    });
+
+};
+
+GeneralCrap.populateLoadTable = function(mydata){
+    var $tableSelector = $("#loadDialogTable");
+
+    $tableSelector.jqGrid('clearGridData');
+    for(var i=0;i<=mydata.length;i++)
+        $tableSelector.jqGrid('addRowData',i+1,mydata[i]);
+};
+
+GeneralCrap.attemptSubmitGrid = function() {
+    var res = jQuery('#loadDialogTable').jqGrid('getGridParam', 'selrow');
+    if (res === null)
+        return;
+    $("#modalLoadDialog").trigger("clickClose");
+    return res;
+}
+
+GeneralCrap.useLoadDialog = function(recentLoadsArrays) {
+    var $modalLoadDialog = $("#modalLoadDialog");
+    var $table = $("#loadDialogTable");
+
+    GeneralCrap.setupLoadTable();
+    GeneralCrap.populateLoadTable(recentLoadsArrays);
+
+    $modalLoadDialog.unbind();
+    $modalLoadDialog.modal("show");
+    $table.bind("jqGridDblClickRow", GeneralCrap.attemptSubmitGrid);
+
+    return new Promise(function(succ, fail) {
+        $modalLoadDialog.bind("hide", function() {
+            fail();
+        });
+        $modalLoadDialog.bind("clickClose", function() {
+            var theSaveRowNum = jQuery('#loadDialogTable').jqGrid('getGridParam', 'selrow');
+            var theSaveId = $table.jqGrid ('getCell', theSaveRowNum, 'id');
+
+            succ(theSaveId);
+            $modalLoadDialog.modal("hide");
+        })
+    });
+};
+
+GeneralCrap.hideLoadDialog = function(){
+    var $modalLoadDialog = $("#modalLoadDialog");
+    $modalLoadDialog.modal("hide");
+}
+
+GeneralCrap.selectedTabId = 1;
+
+GeneralCrap.setSelectedTab = function(x){
+    this.selectedTabId=x;
+}
+
 
 myCodeMirror.setSize(null, 550);

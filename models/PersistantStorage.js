@@ -10,7 +10,7 @@ var PersistentStorage = {};
  */
 (function(DB) {
     var execute = function() {
-        return DB.execute.apply(DB, arguments);
+        return PersistentStorage.resultSetToArray(DB.execute.apply(DB, arguments));
     };
 
     var objToInsert = function(obj2){
@@ -60,8 +60,33 @@ var PersistentStorage = {};
         return PersistentStorage.loadCode({step_id: step_id, challenge_id: challenge_id}, {session_id: "DESC", id: "DESC"}, 1);
     };
 
+    PersistentStorage.loadAllSaves = function(step_id, challenge_id){
+        return PersistentStorage.loadCode({challenge_id: challenge_id}, {id: "DESC"}).then(function(success,fail){
+            return success.map(function(load){
+               load.linesOfCode = load.snippet.split("\n").length;
+               load.prettyDate = (new Date(load.when)).format("mmm d h:MM:ss");
+               load.stepNum = load.step_id + 1;
+
+                return load;
+            });
+        });
+    }
+
     PersistentStorage.loadCode = function(obj, orderBy, limit) {
         return genericLoad("savedCode", obj, orderBy, limit);
     };
 
+    /**
+     * Makes an array promise
+     * @param sqlResultsetPromise
+     * @return array of object Promise
+     */
+    PersistentStorage.resultSetToArray = function(sqlResultsetPromise){
+        return sqlResultsetPromise.then(function(okay,fail){
+            var newResult = FA([]);
+            for (var x = 0; x < okay.length; x++)
+                newResult.push( okay.item(x));
+            return newResult;
+        });
+    };
 }(DATABASE));

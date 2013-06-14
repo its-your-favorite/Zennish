@@ -5,12 +5,18 @@
  */
 
 // CHECK - Add Keystrokes count
-// - Add timer
+// - Grading should be done based on keystrokes. This will allow the copy-paste
 // - The notice at the top should be a slide-down slide-under. If there's none, it slides down. Otherwise a new notice slides out from the one immediately above it.
 // - the test parameters shouldn't need to be wrapped in [ ]
-// - Grading should be done based on keystrokes. This will allow the copy-paste
+// - Add timer
+// - Replace save system with much more powerful web Sql one.
+// - Use promises to power web sql queries.
+// - Implement load system
+// - Implement modal load dialog here. http://twitter.github.io/bootstrap/javascript.html
 
 // @todo
+// Have multiple text windows open at once? Closable separately?
+
 // all this needs to be namespaced & wrapped so user javascript can't mess with it.
 // need to put mapToReduce and mapToMap in fancy for now
 // need error log message when unit tests fail
@@ -84,7 +90,7 @@ TheGame.prototype.gotoStep = function(num) {
     var preload = PersistentStorage.loadCodeInitial(this.getCurrentStep().id, this.getCurrentChallenge().id).then(
           function(preload){
               if (preload.length){
-                self.loadTextIntoIde( preload.item(0).snippet );
+                self.loadSavedText(preload[0]);
               }
           }, function(a) {
             alert("failed to load db");
@@ -239,4 +245,29 @@ TheGame.prototype.getCurrentStep = function() {
 
 TheGame.prototype.getCurrentChallenge = function() {
     return this.currentChallenge;
+}
+
+TheGame.prototype.getRecentLoads = function() {
+    return PersistentStorage.loadAllSaves(this.getCurrentStep().id, this.getCurrentChallenge().id);
+};
+
+/**
+ * load(verb) save(noun)
+ * @param obj save
+ */
+TheGame.prototype.loadSavedText = function(save) {
+    this.loadTextIntoIde( save.snippet );
+};
+
+/**
+ * pick(verb) and Load(verb) [a] Save(noun)
+ */
+TheGame.prototype.pickAndLoadSave = function(){
+    var self=this;
+    this.getRecentLoads().then(function(loads){
+        GeneralCrap.useLoadDialog(loads).then(function(x){
+             self.loadSavedText( loads.filter("x.id == " + x)[0] );
+        });
+    });
+
 }

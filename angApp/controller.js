@@ -5,6 +5,10 @@
 var globalCopy;
 function TestController($scope) {
 
+    $scope.view = GeneralCrap;
+
+    $scope.openTabs = ["one","two","three"];
+
     $scope.challengeSet =  [
         {
             name: "Mixology",

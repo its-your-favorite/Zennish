@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html ng-app>
 <head>
+    <meta charset="utf-8">
     <title>Are you any good? - Code quality test in javascript</title>
     <link rel="stylesheet" href="include/codemirror/lib/codemirror.css">
+    <link href="assets/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    <link href="assets/searchFilter.css" rel="stylesheet">
+    <link href="assets/ui.multiselect.css" rel="stylesheet">
+    <link href="assets/ui.jqgrid.css" rel="stylesheet">
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet"/>
 </head>
 
@@ -26,7 +32,10 @@
 <script src="include/SlideDown.js"></script>
 <script src="include/database.js"></script>
 <script src="models/PersistantStorage.js"></script>
+<script src="include/bootstrap.min.js"></script>
+<script src="include/date.format.js">   </script>
 
+<script src="include/jquery.jqGrid.src.js"></script>
 
 Title and shit goes here.
 Also overall multi-challenge stuff.
@@ -36,7 +45,6 @@ Also overall multi-challenge stuff.
     <span ng-repeat="eachStep in theGame.currentChallenge.steps"  ng-class="{active: (theGame.currentStepNum == eachStep.id),
                                                          future: (theGame.currentStepNum < eachStep.id),
                                                   challengeStep: true}">
-        <span>
         <div class="stepDescription" ng-class="{past: (theGame.currentStepNum > eachStep.id)}">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>
         <div ng-show="(theGame.currentStepNum >= eachStep.id)">
                 <div class='stepControls'>
@@ -45,13 +53,15 @@ Also overall multi-challenge stuff.
 
                     </span></td>
 
-                    <td><span  alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step">{{ eachStep.keystrokes }} <img class="key_icon" src="assets/img/key.png""></span></td>
+                    <td><span  alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step">{{ eachStep.keystrokes }}
+                        <img class="key_icon" src="assets/img/key.png">
+                    </span></td>
                     <td><span> {{ eachStep.timeSpentPretty }} </span></td>
                     <td><span class="button">View</span></td>
                 </tr></table>
                 </div>
         </div>
-        </span>
+
     </span>
 </div>
 
@@ -80,9 +90,17 @@ Also overall multi-challenge stuff.
     </div>
 
     <div id="centerPanel">
-        <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
-        {{theGame.currentChallenge.keystrokes}} keystrokes
-        <span id="saveButton" class="button saveButton" ng-click="theGame.saveCurrentEditor()">Save</span>
+        <div>
+            <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
+            {{theGame.currentChallenge.keystrokes}} keystrokes
+            <span id="saveButton" class="button saveButton" ng-click="theGame.saveCurrentEditor()">Save</span>
+            <a  role="button" class="btn" ng-click="theGame.pickAndLoadSave()">Load</a>
+        </div>
+        <div class="tabsContainer">
+            <span ng-repeat="file in openTabs" class="tab" ng-class="{selected: view.selectedTabId == $index}" ng-click="view.setSelectedTab($index)">
+                {{ file }} {{ $index == selectedTabId }}
+            </span>
+        </div>
         <div id="ideContainer"   ng-keyup="theGame.acknowledgeKeystroke()"> </div>
 
     </div>
@@ -93,5 +111,22 @@ Also overall multi-challenge stuff.
 <script src="general.js"></script>
 
 <div id="noteBox"></div>
+
+<!-- Modal -->
+<div id="modalLoadDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="loadDialogTitle">Pick a save</h3>
+    </div>
+    <div id="loadDialogBody">
+        <table id="loadDialogTable">
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true" ng-click="view.hideLoadDialog()">Cancel</button>
+        <button class="btn btn-primary" ng-click="view.attemptSubmitGrid()">Load</button>
+    </div>
+</div>
+
 </body>
 </html>

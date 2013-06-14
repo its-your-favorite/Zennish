@@ -60,6 +60,7 @@ var TheGame = function(challenges)  {
     this.startChallenge(0);
     this.log = "-- App Started --\n";
     this.userTests = FA([]);
+    this.tabSystem = new TabSystem(".tabsContainer", setIdeText);
 };
 
 TheGame.prototype.advanceStep = function(){
@@ -105,8 +106,8 @@ TheGame.prototype.getCurrentKey = function(){
       return this.getKey({"challenge" : this.currentChallenge.id, "step" : this.getCurrentStep().id});
 };
 
-TheGame.prototype.loadTextIntoIde = function(x){
-    setIdeText(x);
+TheGame.prototype.loadTextInNewTab = function(code, name){
+    this.tabSystem.addTab(new Tab(code,name));
 };
 
 TheGame.prototype.startStep = function(step) {
@@ -256,7 +257,7 @@ TheGame.prototype.getRecentLoads = function() {
  * @param obj save
  */
 TheGame.prototype.loadSavedText = function(save) {
-    this.loadTextIntoIde( save.snippet );
+    this.loadTextInNewTab( save.snippet, save.name );
 };
 
 /**

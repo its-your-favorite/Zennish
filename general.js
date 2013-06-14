@@ -90,7 +90,7 @@ var ideExtractFunction = function(name) {
 
 var ideExtractFunctionAndDebugger = function(name, useDebugger) {
 
-    var code =  myCodeMirror.getValue() + ";\n\n window.extractFunction = function(){" ;
+    var code = myCodeMirror.getValue() + ";\n\n window.extractFunction = function(){" ;
     if (useDebugger === false) {
         code = code.replace(/debugger;/gi,'');
     }
@@ -177,13 +177,13 @@ GeneralCrap.useLoadDialog = function(recentLoadsArrays) {
 GeneralCrap.hideLoadDialog = function(){
     var $modalLoadDialog = $("#modalLoadDialog");
     $modalLoadDialog.modal("hide");
-}
+};
 
 GeneralCrap.selectedTabId = 1;
 
 GeneralCrap.setSelectedTab = function(x){
     this.selectedTabId=x;
-}
+};
 
 
 myCodeMirror.setSize(null, 550);

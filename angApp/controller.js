@@ -7,8 +7,6 @@ function TestController($scope) {
 
     $scope.view = GeneralCrap;
 
-    $scope.openTabs = ["one","two","three"];
-
     $scope.challengeSet =  [
         {
             name: "Mixology",
@@ -57,6 +55,7 @@ function TestController($scope) {
     ];
 
     $scope.theGame = new TheGame($scope.challengeSet);
+    $scope.openTabs = $scope.theGame.tabSystem;
     $scope.test = $scope.challengeSet[$scope.activeTestId];
 
     setTimeout(function updateTimers(){

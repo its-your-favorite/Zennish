@@ -34,6 +34,7 @@
 <script src="models/PersistantStorage.js"></script>
 <script src="include/bootstrap.min.js"></script>
 <script src="include/date.format.js">   </script>
+<script src="include/TabSystem.js"></script>
 
 <script src="include/jquery.jqGrid.src.js"></script>
 
@@ -97,8 +98,8 @@ Also overall multi-challenge stuff.
             <a  role="button" class="btn" ng-click="theGame.pickAndLoadSave()">Load</a>
         </div>
         <div class="tabsContainer">
-            <span ng-repeat="file in openTabs" class="tab" ng-class="{selected: view.selectedTabId == $index}" ng-click="view.setSelectedTab($index)">
-                {{ file }} {{ $index == selectedTabId }}
+            <span ng-repeat="tab in theGame.tabSystem.tabs" class="tab" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
+                {{ tab.caption }} <span ng-click="theGame.tabSystem.closeTab($index)">×</span>
             </span>
         </div>
         <div id="ideContainer"   ng-keyup="theGame.acknowledgeKeystroke()"> </div>
@@ -115,7 +116,7 @@ Also overall multi-challenge stuff.
 <!-- Modal -->
 <div id="modalLoadDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="view.hideLoadDialog()">×</button>
         <h3 id="loadDialogTitle">Pick a save</h3>
     </div>
     <div id="loadDialogBody">

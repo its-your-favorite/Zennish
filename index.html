@@ -18,8 +18,11 @@
 <script type="text/javascript" src="include/jquery-2.0.0.js"></script>
 <script type="text/javascript" src="include/fancy.js"></script>
 <script src="include/angular.min.js"></script>
+<script src="include/HashMap.js"></script>
 
-<script type="text/javascript" src="challenges_data.js"></script>
+<script type="text/javascript" src="challenge_data.js"></script>
+<script type="text/javascript" src="challenge_data_2.js"></script>
+<script type="text/javascript" src="challenge2.js"></script>
 <script type="text/javascript" src="models/AutomatedTest.js"></script>
 <script type="text/javascript" src="models/TheGame.js"></script>
 
@@ -41,8 +44,10 @@
 Title and shit goes here.
 Also overall multi-challenge stuff.
 
-<div id="leftHalf">
-    <div>{{theGame.currentChallenge.description}}</div>
+<div id="leftHalf" class="unselectable">
+    <div class="collapsible floatRight">&nbsp;</div>
+    <span id="innerLeftHalf">
+    <span id="challengeDescription">{{theGame.currentChallenge.description}}</span>
     <span ng-repeat="eachStep in theGame.currentChallenge.steps"  ng-class="{active: (theGame.currentStepNum == eachStep.id),
                                                          future: (theGame.currentStepNum < eachStep.id),
                                                   challengeStep: true}">
@@ -50,9 +55,7 @@ Also overall multi-challenge stuff.
         <div ng-show="(theGame.currentStepNum >= eachStep.id)">
                 <div class='stepControls'>
                 <table><tr>
-                    <td><span>Attempts...
-
-                    </span></td>
+                    <td><span>Attempts...</span></td>
 
                     <td><span  alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step">{{ eachStep.keystrokes }}
                         <img class="key_icon" src="assets/img/key.png">
@@ -64,13 +67,15 @@ Also overall multi-challenge stuff.
         </div>
 
     </span>
+        </span>
+
 </div>
 
 <div id="rightHalf" ng-model="rightHalf">
-    <div id="rightPanel">
-        <div class="collapsible">&nbsp;</div>
+    <div id="rightPanel" class="unselectable">
+        <div class="collapsible floatLeft">&nbsp;</div>
         <div>
-            <diV>Your tests</diV>
+            <div>Your tests</div>
             <input type="button" value="+New" ng-click="theGame.addTest({})">
             <input type="button" value="Run All" ng-click="theGame.runAllTests()">
             <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
@@ -91,19 +96,19 @@ Also overall multi-challenge stuff.
     </div>
 
     <div id="centerPanel">
-        <div>
+        <div class="unselectable">
             <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
             {{theGame.currentChallenge.keystrokes}} keystrokes
             <span id="saveButton" class="button saveButton" ng-click="theGame.saveCurrentEditor()">Save</span>
             <a  role="button" class="btn" ng-click="theGame.pickAndLoadSave()">Load</a>
         </div>
         <div class="tabsContainer">
-            <span ng-repeat="tab in theGame.tabSystem.tabs" class="tab" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
-                {{ tab.caption }} <span ng-click="theGame.tabSystem.closeTab($index)">×</span>
+            <span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
+                {{ tab.caption }}
+                <span ng-click="theGame.tabSystem.closeTab($index)" ng-class="{hidden: !tab.canClose}">×</span>
             </span>
         </div>
         <div id="ideContainer"   ng-keyup="theGame.acknowledgeKeystroke()"> </div>
-
     </div>
 </div>
 

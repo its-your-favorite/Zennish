@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)file:///C:/Users/anfur_000/Google%20Drive/Source%20Code/WorkWork/index.html -->
+<html ng-app="" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Are you any good? - Code quality test in javascript</title>
+    <link rel="stylesheet" href="file:///C:/Users/anfur_000/Google%20Drive/Source%20Code/WorkWork/include/codemirror/lib/codemirror.css">
+    <link href="file:///C:/Users/anfur_000/Google%20Drive/Source%20Code/WorkWork/assets/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    <link href="file:///C:/Users/anfur_000/Google%20Drive/Source%20Code/WorkWork/assets/searchFilter.css" rel="stylesheet">
+    <link href="file:///C:/Users/anfur_000/Google%20Drive/Source%20Code/WorkWork/assets/ui.multiselect.css" rel="stylesheet">
+    <link href="file:///C:/Users/anfur_000/Google%20Drive/Source%20Code/WorkWork/assets/ui.jqgrid.css" rel="stylesheet">
+    <link href="file:///C:/Users/anfur_000/Google%20Drive/Source%20Code/WorkWork/assets/bootstrap.min.css" rel="stylesheet">
+    <link href="file:///C:/Users/anfur_000/Google%20Drive/Source%20Code/WorkWork/style.css" rel="stylesheet">
+<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style></head>
+
+<body ng-controller="TestController" style="" class="ng-scope">
+<script type="text/javascript" src="./Are you any good  - Code quality test in javascript_files/functional.js"></script>
+<script type="text/javascript" src="./Are you any good  - Code quality test in javascript_files/underscore.js"></script>
+<script type="text/javascript" src="./Are you any good  - Code quality test in javascript_files/jquery-2.0.0.js"></script>
+<script type="text/javascript" src="./Are you any good  - Code quality test in javascript_files/fancy.js"></script>
+<script src="./Are you any good  - Code quality test in javascript_files/angular.min.js"></script>
+
+<script type="text/javascript" src="./Are you any good  - Code quality test in javascript_files/challenges_data.js"></script>
+<script type="text/javascript" src="./Are you any good  - Code quality test in javascript_files/challenge2.js"></script>
+<script type="text/javascript" src="./Are you any good  - Code quality test in javascript_files/AutomatedTest.js"></script>
+<script type="text/javascript" src="./Are you any good  - Code quality test in javascript_files/TheGame.js"></script>
+
+<script src="./Are you any good  - Code quality test in javascript_files/codemirror.js"></script>
+<script src="./Are you any good  - Code quality test in javascript_files/javascript.js"></script>
+
+<script src="./Are you any good  - Code quality test in javascript_files/controller.js"></script>
+<script src="./Are you any good  - Code quality test in javascript_files/StepModel.js"></script>
+<script src="./Are you any good  - Code quality test in javascript_files/Promise.js"></script>
+<script src="./Are you any good  - Code quality test in javascript_files/SlideDown.js"></script>
+<script src="./Are you any good  - Code quality test in javascript_files/database.js"></script>
+<script src="./Are you any good  - Code quality test in javascript_files/PersistantStorage.js"></script>
+<script src="./Are you any good  - Code quality test in javascript_files/bootstrap.min.js"></script>
+<script src="./Are you any good  - Code quality test in javascript_files/date.format.js">   </script>
+<script src="./Are you any good  - Code quality test in javascript_files/TabSystem.js"></script>
+
+<script src="./Are you any good  - Code quality test in javascript_files/jquery.jqGrid.src.js"></script>
+
+Title and shit goes here.
+Also overall multi-challenge stuff.
+
+<div id="leftHalf" class="unselectable">
+    <div class="collapsible floatRight">&nbsp;</div>
+    <span id="innerLeftHalf">
+    <span id="challengeDescription" class="ng-binding">Challenges around mixing colors</span>
+    <!-- ngRepeat: eachStep in theGame.currentChallenge.steps --><span ng-repeat="eachStep in theGame.currentChallenge.steps" ng-class="{active: (theGame.currentStepNum == eachStep.id),
+                                                         future: (theGame.currentStepNum &lt; eachStep.id),
+                                                  challengeStep: true}" class="ng-scope challengeStep">
+        <div class="stepDescription ng-binding past" ng-class="{past: (theGame.currentStepNum &gt; eachStep.id)}">Given two 6-digit strings that each represent a color in RGB hex notation, find a color that is the average of the two. This can be done by averaging the Red, Green, and Blue pieces of the color. Return this color in 6 digit string using hex RGB notation. Round down when rounding is necessary. </div>
+        <div ng-show="(theGame.currentStepNum &gt;= eachStep.id)">
+                <div class="stepControls">
+                <table><tbody><tr>
+                    <td><span>Attempts...</span></td>
+
+                    <td><span alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step" class="ng-binding">9
+                        <img class="key_icon" src="./Are you any good  - Code quality test in javascript_files/key.png">
+                    </span></td>
+                    <td><span class="ng-binding"> 0:15 </span></td>
+                    <td><span class="button">View</span></td>
+                </tr></tbody></table>
+                </div>
+        </div>
+
+    </span><span ng-repeat="eachStep in theGame.currentChallenge.steps" ng-class="{active: (theGame.currentStepNum == eachStep.id),
+                                                         future: (theGame.currentStepNum &lt; eachStep.id),
+                                                  challengeStep: true}" class="ng-scope challengeStep">
+        <div class="stepDescription ng-binding past" ng-class="{past: (theGame.currentStepNum &gt; eachStep.id)}">Instead of simply averaging, now allow for a balance anywhere on the scale of mixtures. A third parameter "balance" will be passed which ranges from 0 to 1 to indicate the % balance of color1 and color2 to mix. When balance is 0, this indicates only to use color1, when balance is 1 it indicates only to use color2, and .5 would indicate an equal balance</div>
+        <div ng-show="(theGame.currentStepNum &gt;= eachStep.id)" style="">
+                <div class="stepControls">
+                <table><tbody><tr>
+                    <td><span>Attempts...</span></td>
+
+                    <td><span alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step" class="ng-binding">0
+                        <img class="key_icon" src="./Are you any good  - Code quality test in javascript_files/key.png">
+                    </span></td>
+                    <td><span class="ng-binding">  </span></td>
+                    <td><span class="button">View</span></td>
+                </tr></tbody></table>
+                </div>
+        </div>
+
+    </span><span ng-repeat="eachStep in theGame.currentChallenge.steps" ng-class="{active: (theGame.currentStepNum == eachStep.id),
+                                                         future: (theGame.currentStepNum &lt; eachStep.id),
+                                                  challengeStep: true}" class="ng-scope challengeStep">
+        <div class="stepDescription ng-binding past" ng-class="{past: (theGame.currentStepNum &gt; eachStep.id)}">Most modern browsers now allow for a 3-digit hex notation for some colors. Support this notation as an input in your existing and future functions (but continue to always return 6 digit notation).</div>
+        <div ng-show="(theGame.currentStepNum &gt;= eachStep.id)" style="">
+                <div class="stepControls">
+                <table><tbody><tr>
+                    <td><span>Attempts...</span></td>
+
+                    <td><span alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step" class="ng-binding">0
+                        <img class="key_icon" src="./Are you any good  - Code quality test in javascript_files/key.png">
+                    </span></td>
+                    <td><span class="ng-binding">  </span></td>
+                    <td><span class="button">View</span></td>
+                </tr></tbody></table>
+                </div>
+        </div>
+
+    </span><span ng-repeat="eachStep in theGame.currentChallenge.steps" ng-class="{active: (theGame.currentStepNum == eachStep.id),
+                                                         future: (theGame.currentStepNum &lt; eachStep.id),
+                                                  challengeStep: true}" class="ng-scope challengeStep">
+        <div class="stepDescription ng-binding past" ng-class="{past: (theGame.currentStepNum &gt; eachStep.id)}">Now define a function to do an equal 3-way-mix</div>
+        <div ng-show="(theGame.currentStepNum &gt;= eachStep.id)" style="">
+                <div class="stepControls">
+                <table><tbody><tr>
+                    <td><span>Attempts...</span></td>
+
+                    <td><span alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step" class="ng-binding">0
+                        <img class="key_icon" src="./Are you any good  - Code quality test in javascript_files/key.png">
+                    </span></td>
+                    <td><span class="ng-binding"> 0:00 </span></td>
+                    <td><span class="button">View</span></td>
+                </tr></tbody></table>
+                </div>
+        </div>
+
+    </span><span ng-repeat="eachStep in theGame.currentChallenge.steps" ng-class="{active: (theGame.currentStepNum == eachStep.id),
+                                                         future: (theGame.currentStepNum &lt; eachStep.id),
+                                                  challengeStep: true}" class="ng-scope active challengeStep">
+        <div class="stepDescription ng-binding" ng-class="{past: (theGame.currentStepNum &gt; eachStep.id)}">Now make all three functions work with colors defined as arrays of numbers that represent percentages. For example red would be [100,0,0] instead of FF0000 </div>
+        <div ng-show="(theGame.currentStepNum &gt;= eachStep.id)" style="">
+                <div class="stepControls">
+                <table><tbody><tr>
+                    <td><span>Attempts...</span></td>
+
+                    <td><span alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step" class="ng-binding">15
+                        <img class="key_icon" src="./Are you any good  - Code quality test in javascript_files/key.png">
+                    </span></td>
+                    <td><span class="ng-binding"> 35:54 </span></td>
+                    <td><span class="button">View</span></td>
+                </tr></tbody></table>
+                </div>
+        </div>
+
+    </span>
+        </span>
+
+</div>
+
+<div id="rightHalf" ng-model="rightHalf" class="ng-pristine ng-valid">
+    <div id="rightPanel" class="unselectable">
+        <div class="collapsible floatLeft">&nbsp;</div>
+        <div>
+            <div>Your tests</div>
+            <input type="button" value="+New" ng-click="theGame.addTest({})">
+            <input type="button" value="Run All" ng-click="theGame.runAllTests()">
+            <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
+
+            <!-- ngRepeat: test in theGame.userTests --><span ng-repeat="test in theGame.userTests" class="ng-scope">
+                <div ng-class="{aTest: true,
+                                testPassed: (test.lastResult == true),
+                                                                                          testFailed: (test.lastResult == false)}" class="aTest testFailed">
+                    <span class="button green runButton" ng-click="test.doGuiRun()">&gt;</span>
+
+                    <input ng-model="test.funcName" value="menageaTrois" class="testFuncName ng-valid ng-dirty">
+                    (<input ng-model="test.paramsJson" class="testParams ng-valid ng-dirty">) =
+                    <input ng-model="test.expectedJson" class="testExpected ng-pristine ng-valid">
+                    <span class="button red deleteButton" ng-click="theGame.removeTestById($index)">X</span>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <div id="centerPanel">
+        <div class="unselectable ng-binding">
+            <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
+            24 keystrokes
+            <span id="saveButton" class="button saveButton" ng-click="theGame.saveCurrentEditor()">Save</span>
+            <a role="button" class="btn" ng-click="theGame.pickAndLoadSave()">Load</a>
+        </div>
+        <div class="tabsContainer">
+            <!-- ngRepeat: tab in theGame.tabSystem.tabs --><span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable ng-scope ng-binding" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
+                +
+                <span ng-click="theGame.tabSystem.closeTab($index)" ng-class="{hidden: !tab.canClose}" class="hidden">×</span>
+            </span><span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable ng-scope ng-binding" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
+                Your Correct Solution Step 1
+                <span ng-click="theGame.tabSystem.closeTab($index)" ng-class="{hidden: !tab.canClose}">×</span>
+            </span><span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable ng-scope ng-binding" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
+                Your Correct Solution Step 2
+                <span ng-click="theGame.tabSystem.closeTab($index)" ng-class="{hidden: !tab.canClose}">×</span>
+            </span><span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable ng-scope ng-binding" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
+                Your Correct Solution Step 3
+                <span ng-click="theGame.tabSystem.closeTab($index)" ng-class="{hidden: !tab.canClose}">×</span>
+            </span><span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable ng-scope ng-binding selected" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
+                Your Correct Solution Step 4
+                <span ng-click="theGame.tabSystem.closeTab($index)" ng-class="{hidden: !tab.canClose}">×</span>
+            </span>
+        </div>
+        <div id="ideContainer" ng-keyup="theGame.acknowledgeKeystroke()"> <div class="CodeMirror cm-s-default CodeMirror-focused" style="height: 550px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 74px; left: 228px;"><textarea autocorrect="off" autocapitalize="off" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none; font-size: 4px;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="false"><div style="position: relative; min-height: 100%;"><div class="CodeMirror-sizer" style="min-width: 957px; margin-left: 0px; min-height: 246px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span> </span><span> </span><span> </span><span> </span><span class="cm-keyword">v</span><span class="cm-keyword">a</span><span class="cm-keyword">r</span><span> </span><span class="cm-def">c</span><span class="cm-def">o</span><span class="cm-def">l</span><span class="cm-def">s</span><span> </span><span>=</span><span> </span><span>[</span><span class="cm-variable-2">c</span><span class="cm-variable-2">o</span><span class="cm-variable-2">l</span><span class="cm-variable-2">1</span><span>,</span><span> </span><span class="cm-variable-2">c</span><span class="cm-variable-2">o</span><span class="cm-variable-2">l</span><span class="cm-variable-2">2</span><span>]</span><span>;</span></pre></div><div style="position: relative; z-index: 1; display: none;"><div class="CodeMirror-selected" style="position: absolute; left: 292px; top: 98px; width: 903px; height: 14px;"></div><div class="CodeMirror-selected" style="position: absolute; left: 4px; top: 126px; width: 48px; height: 14px;"></div><div class="CodeMirror-selected" style="position: absolute; left: 4px; top: 112px; width: 1191px; height: 14px;"></div></div><div style=""><pre><span class="cm-keyword">var</span> <span class="cm-variable">add</span> = <span class="cm-keyword">function</span>(<span class="cm-def">a</span>,<span class="cm-def">b</span>) { <span class="cm-keyword">return</span> <span class="cm-variable-2">a</span> + <span class="cm-variable-2">b</span>; };</pre><pre><span class="cm-keyword">var</span> <span class="cm-variable">toDecimal</span> = <span class="cm-keyword">function</span>(<span class="cm-def">a</span>) { <span class="cm-keyword">return</span> <span class="cm-variable">parseInt</span>(<span class="cm-variable-2">a</span>, <span class="cm-number">16</span>);};</pre><pre><span class="cm-keyword">var</span> <span class="cm-variable">to2dhex</span> = <span class="cm-keyword">function</span>(<span class="cm-def">t</span>) { <span class="cm-keyword">return</span> (<span class="cm-string">"0"</span> + <span class="cm-variable">parseInt</span>(<span class="cm-variable-2">t</span>).<span class="cm-property">toString</span>(<span class="cm-number">16</span>)).<span class="cm-property">substr</span>(<span class="cm-number">-2</span>); };</pre><pre>&nbsp;</pre><pre><span class="cm-keyword">var</span> <span class="cm-variable">averageColors</span> = <span class="cm-keyword">function</span>(<span class="cm-def">col1</span>,<span class="cm-def">col2</span>) {</pre><pre>    <span class="cm-keyword">var</span> <span class="cm-def">cols</span> = [<span class="cm-variable-2">col1</span>, <span class="cm-variable-2">col2</span>];</pre><pre>&nbsp;</pre><pre>    <span class="cm-keyword">var</span> <span class="cm-def">mixed</span> = <span class="cm-variable">FA</span>(<span class="cm-variable">_</span>.<span class="cm-property">zip</span>.<span class="cm-property">apply</span>(<span class="cm-atom">null</span>,<span class="cm-variable">newCols</span>)).<span class="cm-property">map</span>(<span class="cm-keyword">function</span>(<span class="cm-def">x</span>) { <span class="cm-keyword">return</span> <span class="cm-variable">FA</span>(<span class="cm-variable-2">x</span>).<span class="cm-property">reduce</span>(<span class="cm-string">"+"</span>);}).<span class="cm-property">map</span>(<span class="cm-string">"/2"</span>).<span class="cm-property">map</span>(<span class="cm-variable">to2dhex</span>);</pre><pre>&nbsp;</pre><pre>    <span class="cm-keyword">return</span> <span class="cm-variable-2">mixed</span>.<span class="cm-property">join</span>(<span class="cm-string">""</span>);<span class="cm-comment">//test</span></pre><pre>}<span class="cm-comment">//aoeuaoueaoeuaouaoueaoeue auaoeuaouaou oeuoeuoeuoeuoeuaouaoeuaou</span></pre><pre><span class="cm-keyword">var</span> <span class="cm-variable">mixColors</span> = <span class="cm-keyword">function</span> (<span class="cm-def">color1</span>, <span class="cm-def">color2</span>, <span class="cm-def">balance</span>) { </pre><pre>&nbsp;</pre><pre> };<span class="cm-comment">// uuuuuuuuuuu</span></pre><pre>&nbsp;</pre><pre><span class="cm-variable">mixColors</span> = <span class="cm-variable">avgColor</span>;</pre><pre><span class="cm-variable">menageaTrois</span> = <span class="cm-variable">threeWay</span>;</pre></div><div class="CodeMirror-cursor" style="left: 228px; top: 70px; height: 14px;">&nbsp;</div><div class="CodeMirror-cursor CodeMirror-secondarycursor" style="display: none;">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 246px;"></div><div class="CodeMirror-gutters" style="display: none;"></div></div></div></div></div>
+    </div>
+</div>
+
+<textarea id="logBox" class="ng-binding">-- App Started --
+
+averageColors("ffffff", "000000") returned "Exception: ReferenceError: oeuoue is not defined", expected "7f7f7f"
+Passed step 1
+mixColors("ffffff", "000000", 0.5) returned undefined, expected "7f7f7f"
+Passed step 2
+Passed step 3
+Passed step 4
+averageColors([0,0,0], [100,0,50]) returned "Exception: TypeError: Object [object Array] has no method 'split'", expected "7f003f"
+averageColors([0,0,0], [100,0,50]) returned "Exception: TypeError: Object [object Array] has no method 'split'", expected "7f003f"</textarea>
+
+<script src="./Are you any good  - Code quality test in javascript_files/general.js"></script>
+
+<div id="noteBox"></div>
+
+<!-- Modal -->
+<div id="modalLoadDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="view.hideLoadDialog()">×</button>
+        <h3 id="loadDialogTitle">Pick a save</h3>
+    </div>
+    <div id="loadDialogBody">
+        <table id="loadDialogTable">
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true" ng-click="view.hideLoadDialog()">Cancel</button>
+        <button class="btn btn-primary" ng-click="view.attemptSubmitGrid()">Load</button>
+    </div>
+</div>
+
+
+</body></html>

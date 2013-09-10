@@ -136,12 +136,20 @@ html,body {
     float:left;
 }
 
-.testFailed .testExpected {
+.testFailed {
+    border: 2px solid #F99;
+}
+
+.testParamsFailed {
     border-color: #F99;
 }
 
-.testPassed .testExpected {
-    border-color: #9F9;
+.testParamsFailed[title] {
+    content: "YES"
+}
+
+.testPassed {
+    border: 2px solid #9F9;
 }
 
 .testFuncName {
@@ -319,4 +327,33 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.inlineEditIcon {
+    content:url('img/pencil.png');
+    width: 14px;
+    height: 14px;
+}
+
+.inlineEditSaveIcon {
+    content:url('img/check-mark-16.png');
+}
+
+.inlineEditCancelIcon {
+    content:url('img/x-mark-16.png');
+}
+
+.click-to-edit {
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.click-to-edit-textbox {
+    line-height: 10px;
+    overflow: visible;
+    background: #eee;
+    line-height: 15px;
+    border: 0;
+    border-bottom: 1px dotted #888;
+    color: #333;
+    margin-top: -3px;
 }

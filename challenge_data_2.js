@@ -4,7 +4,6 @@
  */
 var setTag, getAllTagsOnObject, getAllByTag, getAllByTagCombo, renameTag;
 
-//STill too complicated long
 // 1. Set & retrieve tags by id
 // 2. retrieve by tag
 // 3. rename tag

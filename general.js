@@ -55,10 +55,9 @@ var retrieveData = function(key) {
 };
 
 
-var executeOneTest = function(functionNameToBeTested, userNamespace, /* array */parameters, comparer, expected, useDebugger){
+var executeOneTest = function (functionToBeTested, userNamespace, /* array */parameters, comparer, expected, useDebugger){
     var givenVal;
     try {
-        var functionToBeTested = ideExtractFunctionAndDebugger(functionNameToBeTested, useDebugger);
         givenVal = functionToBeTested.apply(userNamespace, parameters);
     } catch (e) {
         givenVal = "Exception: " + e;
@@ -66,7 +65,7 @@ var executeOneTest = function(functionNameToBeTested, userNamespace, /* array */
 
     if (comparer(givenVal, expected))
         return false; //not a failure
-    return functionNameToBeTested + "(" + parameters.map(JSON.stringify).join(", ") + ") returned " + JSON.stringify(givenVal) + ", expected " + JSON.stringify(expected);
+    return functionToBeTested + "(" + parameters.map(JSON.stringify).join(", ") + ") returned " + JSON.stringify(givenVal) + ", expected " + JSON.stringify(expected);
 }
 
 
@@ -118,6 +117,11 @@ var ideExtractFunctionAndDebugger = function(name, useDebugger) {
     return window.extractFunction;
 };
 
+/**
+ * So my understanding is that general crap is a set of conceptual functions that are specific to this application
+ *  but only used once each.
+ * @type {{}}
+ */
 var GeneralCrap = {};
 // soo ugly.
 GeneralCrap.setupLoadTable = function(){
@@ -199,3 +203,8 @@ GeneralCrap.setSelectedTab = function(x){
 
 
 myCodeMirror.setSize(null, 550);
+
+angular.element(document).ready(function() {
+
+    angular.bootstrap(document, ['inlineEditing', 'automatedTest']);
+});

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
     <meta charset="utf-8">
     <title>Are you any good? - Code quality test in javascript</title>
@@ -34,12 +34,13 @@
 <script src="include/Promise.js"></script>
 <script src="include/SlideDown.js"></script>
 <script src="include/database.js"></script>
+<script src="include/clickToEdit.js"></script>
 <script src="models/PersistantStorage.js"></script>
 <script src="include/bootstrap.min.js"></script>
-<script src="include/date.format.js">   </script>
+<script src="include/date.format.js"></script>
 <script src="include/TabSystem.js"></script>
-
 <script src="include/jquery.jqGrid.src.js"></script>
+<script src="include/jquery.autosize.input.js"></script>
 
 Title and shit goes here.
 Also overall multi-challenge stuff.
@@ -48,26 +49,26 @@ Also overall multi-challenge stuff.
     <div class="collapsible floatRight">&nbsp;</div>
     <span id="innerLeftHalf">
     <span id="challengeDescription">{{theGame.currentChallenge.description}}</span>
-    <span ng-repeat="eachStep in theGame.currentChallenge.steps"  ng-class="{active: (theGame.currentStepNum == eachStep.id),
-                                                         future: (theGame.currentStepNum < eachStep.id),
-                                                  challengeStep: true}">
-        <div class="stepDescription" ng-class="{past: (theGame.currentStepNum > eachStep.id)}">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>
-        <div ng-show="(theGame.currentStepNum >= eachStep.id)">
-                <div class='stepControls'>
-                <table><tr>
-                    <td><span>Attempts...</span></td>
+        <span ng-repeat="eachStep in theGame.currentChallenge.steps"  ng-class="{active: (theGame.currentStepNum == eachStep.id),
+                                                             future: (theGame.currentStepNum < eachStep.id),
+                                                      challengeStep: true}">
+            <div class="stepDescription" ng-class="{past: (theGame.currentStepNum > eachStep.id)}">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>
+            <div ng-show="(theGame.currentStepNum >= eachStep.id)">
+                    <div class='stepControls'>
+                    <table><tr>
+                        <td><span>Attempts...</span></td>
 
-                    <td><span  alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step">{{ eachStep.keystrokes }}
-                        <img class="key_icon" src="assets/img/key.png">
-                    </span></td>
-                    <td><span> {{ eachStep.timeSpentPretty }} </span></td>
-                    <td><span class="button">View</span></td>
-                </tr></table>
-                </div>
-        </div>
+                        <td><span  alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step">{{ eachStep.keystrokes }}
+                            <img class="key_icon" src="assets/img/key.png">
+                        </span></td>
+                        <td><span> {{ eachStep.timeSpentPretty }} </span></td>
+                        <td><span class="button">View</span></td>
+                    </tr></table>
+                    </div>
+            </div>
 
-    </span>
         </span>
+    </span>
 
 </div>
 
@@ -81,16 +82,7 @@ Also overall multi-challenge stuff.
             <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
 
             <span ng-repeat="test in theGame.userTests">
-                <div ng-class="{aTest: true,
-                                testPassed: (test.lastResult == true),
-                                                                                          testFailed: (test.lastResult == false)}">
-                    <span class="button green runButton" ng-click="test.doGuiRun()">&gt;</span>
-
-                    <input ng-model="test.funcName" value="{{theGame.currentStepTesteeFunctionName()}}" class="testFuncName">
-                    (<input ng-model="test.paramsJson" class="testParams">) =
-                    <input ng-model="test.expectedJson" class="testExpected">
-                    <span class="button red deleteButton" ng-click="theGame.removeTestById($index)">X</span>
-                </div>
+                <automated-test bind-to="test"></automated-test>
             </span>
         </div>
     </div>
@@ -103,9 +95,10 @@ Also overall multi-challenge stuff.
             <a  role="button" class="btn" ng-click="theGame.pickAndLoadSave()">Load</a>
         </div>
         <div class="tabsContainer">
+            <span ng-click="theGame.tabSystem.addBlankTab()"  class="tab unselectable" title="New Tab">{{ theGame.tabSystem.newTabTab.caption }}</span>
             <span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
-                {{ tab.caption }}
-                <span ng-click="theGame.tabSystem.closeTab($index)" ng-class="{hidden: !tab.canClose}">×</span>
+                <click-to-edit bind-to="tab.caption"> </click-to-edit>
+                <span ng-click="theGame.tabSystem.closeTab($index)" title="Close Tab">×</span>
             </span>
         </div>
         <div id="ideContainer"   ng-keyup="theGame.acknowledgeKeystroke()"> </div>

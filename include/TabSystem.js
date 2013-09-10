@@ -3,12 +3,11 @@
  * Date: 6/14/13, 12:11 AM
  */
 
-// Jeez, backbone makes these so small
-var Tab = function(text, caption, specialCallback, cannotClose){
+// Jeez, backbone makes these files so small
+var Tab = function (text, caption, cannotClose){
     this.value = text;
     this.caption = caption;
     this.canClose = !cannotClose;
-    this.specialCallback = specialCallback;
 };
 
 
@@ -22,7 +21,7 @@ var TabSystem = function(destination, changeCallback){
     this.$destination = $(destination);
 
     this.tabs = [];
-    this.tabs.push(new Tab("", "+", this.addBlankTab.bind(this ), true));
+    this.newTabTab = new Tab("", "+", true);
     this.changeCallback = changeCallback;
 };
 
@@ -31,7 +30,7 @@ TabSystem.prototype.addTab = function(/*Tab*/ tab) {
     this.selectSomeTab();
 };
 
-TabSystem.prototype.addBlankTab = function(id) {
+TabSystem.prototype.addBlankTab = function() {
     this.tabs.push(new Tab("", "New Tab"));
 };
 
@@ -51,9 +50,6 @@ TabSystem.prototype.selectSomeTab = function() {
  * @returns {*}
  */
 TabSystem.prototype.selectTab = function(id, discardExisting){
-    if (this.tabs[id].specialCallback) {
-        return this.tabs[id].specialCallback();
-    }
     var oldId = this.activeTab;
     this.activeTab = id;
     var val = null;

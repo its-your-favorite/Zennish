@@ -15,14 +15,26 @@
 // - Implement modal load dialog here. http://twitter.github.io/bootstrap/javascript.html
 // - Have multiple text windows open at once? Closable separately?
 // - Need new frame button
+// - better gui on the unit tests. If params aren't parse-able then make the params box red.
+// - Same for the other 3. 
 
-// @todo
+// @todo -- below
+
+
+
 // Big Picture: Startup interface
+//      Name, author, what is this
+//      choose challenge (use known state to resume appropriately)
 
-// need to be able to rename frames
+
+
+// Goes into what I've currently made... which then needs a way to quit back out.
+// On completion it shows stats, (maybe allows leaderboard), maybe allows a share link,  and perhaps auto-quits.
+//
+
+// need to be able to rename frames and have it save back
 
 // need error log message when unit tests fail
-// better gui on the unit tests. If params aren't parse-able then make the params box red. Same for the other 3. Make a result icon.
 // Unit tests should auto convert semi-valid semi-json (e.g. ['aa']) to valid json ["aa"]
 // running a test that just failed, and seeing the fail icon still (no change) makes it difficult to know that anything has changed
 
@@ -43,6 +55,7 @@
 // Plus my own method. If I call debugger and there's no halt, then the console is closed.
 // http://lab.hakim.se/ladda/
 
+
 // Saving questions
 // -- Saving just editor
 //  -- Unit tests? (if so, is load a merge?)
@@ -61,6 +74,9 @@
 /**
  * Icons - key - Yusuke Kamiyamane -
  *       - Check, X - Everaldo Coelho - Crystal Project
+ *
+ *
+ *  Pencil Icon - Icon Pack:Crystal ProjectDesigner:YellowIcon
  */
 'use strict';
 
@@ -177,7 +193,9 @@ TheGame.prototype.doTests = function(step, challenge) {
         }
 
         comparer = assert(thisTest.comparer || challenge.defaultComparer);
-        return executeOneTest(functionNameToBeTested, userNamespace, parameters, comparer, expected);
+
+        var functionToBeTested = ideExtractFunctionAndDebugger(functionToBeTested);
+        return executeOneTest(functionToBeTested, userNamespace, parameters, comparer, expected);
     }).filter();
 
     //write this more;

@@ -7,6 +7,23 @@
  * This file is for the automatic tests the user may want to run to ensure their answers are right before submitting.
  */
 
+var app = angular.module('automatedTest', []);
+app.directive("automatedTest", function(){
+    return {
+        restrict: "E",
+        replace: true,
+        template: '<div ng-class="{aTest: true,' +
+        'testPassed: (test.lastResult == true),' +
+        'testFailed: (test.lastResult == false)}">' +
+        '<span class="button green runButton" ng-click="test.doGuiRun()">&gt;</span>' +
+        '<input ng-model="test.funcName" value="{{theGame.currentStepTesteeFunctionName()}}" class="testFuncName" ng-class="{testParamsFailed: !test.canExtractFunction()}" title="{{ {true: \'Got it\', false: \'Cannot find a function by that name in your global scope\'}[test.canExtractFunction()] }}">' +
+        '(<input ng-model="test.paramsJson" class="testParams" ng-class="{testParamsFailed: !test.canParseParams()}" title="{{ {true: \'Got it\', false: \'Not valid JSON array contents\'}[test.canParseParams()] }}">) =' +
+        '<input ng-model="test.expectedJson" class="testExpected" ng-class="{testParamsFailed: !test.canParseExpected()}" title="{{ {true: \'Got it\', false: \'Not valid JSON value\'}[test.canParseExpected()] }}">' +
+        '<span class="button red deleteButton" ng-click="theGame.removeTestById($index)">X</span>' +
+        '</div>'
+    };
+});
+
 var AutomatedTest;
 
 AutomatedTest = function (obj, funcName) {
@@ -16,6 +33,37 @@ AutomatedTest = function (obj, funcName) {
     this.funcName = funcName;
     this.doGuiRun(false);
     this.lastMessage = 'Not Run Yet';
+};
+
+/**
+ *
+ */
+AutomatedTest.prototype.parseParams = function() {
+    return JSON.parse("[" + this.paramsJson + "]");
+};
+
+AutomatedTest.prototype.canParseParams = function() {
+    try {
+        this.parseParams();
+    } catch (e) {
+        return false;
+    }
+    return true;
+};
+
+AutomatedTest.prototype.canParseExpected = function () {
+  try { JSON.parse(this.expectedJson); } catch (e) {
+      return false;
+  }
+    return true;
+};
+
+AutomatedTest.prototype.canExtractFunction = function() {
+    try {
+        return typeof(ideExtractFunction(this.funcName, false)) == "function";
+    } catch (e) {
+        return false;
+    }
 };
 
 /**
@@ -30,17 +78,19 @@ AutomatedTest.prototype.run = function(useDebugger) {
     var comparer = function(a,b) { return a == b;}, e, prob;
 
     try {
-        var params = JSON.parse("[" + this.paramsJson + "]");
+        var params = this.parseParams();
     } catch (e) {
         return "Parameters weren't parsable";
     }
+
     try {
         var expected = JSON.parse(this.expectedJson);
     } catch(e) {
         return "Expected wasn't parsable";
     }
     try {
-        if (prob = executeOneTest(fname, null, /* array */params, comparer, expected, useDebugger)) {
+        var functionToBeTested = ideExtractFunctionAndDebugger(fname, useDebugger);
+        if (prob = executeOneTest(functionToBeTested, null, params, comparer, expected, useDebugger)) {
             return prob;
         }
     } catch (e) {

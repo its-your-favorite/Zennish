@@ -6,7 +6,7 @@
 var DATABASE;
 var q;
 
-// workaround for weird issue on callbacks on sql calls
+// delayedLog is a workaround for weird issue on callbacks on sql calls
 var delayedLog = {};
 delayedLog.log = function(x){
     this.data.push(x);
@@ -17,7 +17,7 @@ delayedLog.data = [];
         console.log(delayedLog.data.splice(0,1)[0]);
     setTimeout(foreverLoop, 100);
 })();
-var Log = delayedLog.log.bind(delayedLog);
+var log = delayedLog.log.bind(delayedLog);
 
 
  // SELECT * FROM sqlite_master
@@ -29,16 +29,16 @@ var Log = delayedLog.log.bind(delayedLog);
 
     var defaultHandleError = function(args) {
         var sqlError = args[1];//promises here only pass 1 param
-        Log(sqlError.message);
+        log(sqlError.message);
     }
 
     var testDump = function(args) {
         var resultSet = args[1];
         var len = resultSet.rows.length;
         var str = "Query Returned " + len + " rows";
-        Log(str);
+        //Log(str);
         for (var x=0; x < len; x++)
-            Log(resultSet.rows.item(x));
+            log(resultSet.rows.item(x));
         return resultSet.rows;
     }
 

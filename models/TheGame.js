@@ -13,12 +13,13 @@
 // - Use promises to power web sql queries.
 // - Implement load system
 // - Implement modal load dialog here. http://twitter.github.io/bootstrap/javascript.html
-// - Have multiple text windows open at once? Closable separately?
+// - Have multiple text windows open at once? Closable separately?oken
 // - Need new frame button
 // - better gui on the unit tests. If params aren't parse-able then make the params box red.
 // - Same for the other 3. 
 // - Unit tests should remind semi-valid semi-json (e.g. ['aa']) to valid json ["aa"] with note
 // need to be able to rename frames and have it save back
+// need error log message when unit tests fail, plus a test # so tracking can be done
 // @todo -- below
 
 
@@ -31,7 +32,6 @@
 // needs to work better on laptop, code window too tall
 // On completion it shows stats, (maybe allows leaderboard), maybe allows a share link,  and perhaps auto-quits.
 
-// need error log message when unit tests fail, plus a test # so tracking can be done
 // running a test that just failed, and seeing the fail icon still (no change) makes it difficult to know that anything has changed
 // explain the ability to debug tests
 
@@ -40,8 +40,7 @@
 
 // Note for:
 // -- Not chrome
-// -- Console not open
-// -- tests couldn't run?
+// -- Console not open 
 
 // Perhaps instead of windows being tied to editors, windows are just "frames" which can be Unit Tests, editors, consoles.
 //      And unit-tests could be tied to any window, as could consoles be tied to any unit test.
@@ -62,7 +61,7 @@
 // animation on correct or wrong, and every attempted action
 
 
-// Give a default test for every challenge for clarity?
+// Give a default test for every challenge for clarity? Tests need to be more readable and resizing needs to allow more than two sizes
 // Consolidate button UI (that is, hover state, and mouse-down reaction).
 // Also they need post-click animations of some sort just to make it clear they've had an affect and the click didn't miss.
 
@@ -203,11 +202,14 @@ TheGame.prototype.doTests = function(step, challenge) {
 
 TheGame.prototype.recordToLog = function(str) {
     this.log += "\n" + str;
+    console.log(str);
     //use other console. use color @todo
 };
 
 TheGame.prototype.addTest = function(obj) {
-    this.userTests.push(new AutomatedTest(obj, this.currentStepTesteeFunctionName()));
+    this.testsSoFar = (this.testsSoFar || 0);
+    this.userTests.push(new AutomatedTest(obj, this.currentStepTesteeFunctionName(), this.testsSoFar));
+    this.testsSoFar++;
 };
 
 TheGame.prototype.removeTestById = function(id) {

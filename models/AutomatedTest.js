@@ -26,13 +26,13 @@ app.directive("automatedTest", function(){
 
 var AutomatedTest;
 
-AutomatedTest = function (obj, funcName) {
+AutomatedTest = function (obj, funcName, id) {
     this.obj = obj;
     this.paramsJson = "";
     this.expectedJson = '1';
     this.funcName = funcName;
-    this.doGuiRun(false);
-    this.lastMessage = 'Not Run Yet';
+    this.id = id;
+    //this.doGuiRun(false);
 };
 
 AutomatedTest.prototype.canParseParams = function() {
@@ -114,8 +114,15 @@ AutomatedTest.prototype.run = function(useDebugger) {
  * @param useDebugger
  */
 AutomatedTest.prototype.doGuiRun = function(useDebugger){
-    this.lastResult = (this.run(useDebugger) === true);
-    this.lastMessage = 'not implemented yet';
+    var returned = this.run(useDebugger);
+    this.lastResult = (returned === true);
+    if (returned === true) {
+        this.lastMessage = 'Success';
+    } else {
+        this.lastMessage = returned;
+    }
+    this.lastMessage = "Test #" + this.id + " (at " + (new Date()).format("h:m s") + ") returned: " + this.lastMessage;
+    globalRecordToLog(this.lastMessage);
 }
 
 /**

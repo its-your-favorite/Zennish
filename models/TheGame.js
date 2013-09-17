@@ -17,9 +17,9 @@
 // - Need new frame button
 // - better gui on the unit tests. If params aren't parse-able then make the params box red.
 // - Same for the other 3. 
-
+// - Unit tests should remind semi-valid semi-json (e.g. ['aa']) to valid json ["aa"] with note
+// need to be able to rename frames and have it save back
 // @todo -- below
-
 
 
 // Big Picture: Startup interface
@@ -27,16 +27,13 @@
 //      choose challenge (use known state to resume appropriately)
 
 
-
-// Goes into what I've currently made... which then needs a way to quit back out.
+// Goes into what I've currently made... which then needs a way to quit back out. (escape, etc) and a good way to retrieve it.
+// needs to work better on laptop, code window too tall
 // On completion it shows stats, (maybe allows leaderboard), maybe allows a share link,  and perhaps auto-quits.
-//
 
-// need to be able to rename frames and have it save back
-
-// need error log message when unit tests fail
-// Unit tests should auto convert semi-valid semi-json (e.g. ['aa']) to valid json ["aa"]
+// need error log message when unit tests fail, plus a test # so tracking can be done
 // running a test that just failed, and seeing the fail icon still (no change) makes it difficult to know that anything has changed
+// explain the ability to debug tests
 
 // all this needs to be namespaced & wrapped so user javascript can't mess with it.
 // need to put mapToReduce and mapToMap in fancy for now
@@ -55,15 +52,17 @@
 // Plus my own method. If I call debugger and there's no halt, then the console is closed.
 // http://lab.hakim.se/ladda/
 
+// write grading
 
 // Saving questions
 // -- Saving just editor
 //  -- Unit tests? (if so, is load a merge?)
 //  -- Records of keystrokes, etc?
 
-// animation on correct or wrong
+// animation on correct or wrong, and every attempted action
 
-// Give a default test for every challenge ?
+
+// Give a default test for every challenge for clarity?
 // Consolidate button UI (that is, hover state, and mouse-down reaction).
 // Also they need post-click animations of some sort just to make it clear they've had an affect and the click didn't miss.
 
@@ -134,8 +133,8 @@ TheGame.prototype.getCurrentKey = function(){
       return this.getKey({"challenge" : this.currentChallenge.id, "step" : this.getCurrentStep().id});
 };
 
-TheGame.prototype.loadTextInNewTab = function(code, name){
-    this.tabSystem.addTab(new Tab(code,name));
+TheGame.prototype.loadTextInNewTab = function(code, name, id){
+    this.tabSystem.addTab(new Tab(code,name, false, id));
 };
 
 TheGame.prototype.startStep = function(step) {
@@ -194,8 +193,8 @@ TheGame.prototype.doTests = function(step, challenge) {
 
         comparer = assert(thisTest.comparer || challenge.defaultComparer);
 
-        var functionToBeTested = ideExtractFunctionAndDebugger(functionToBeTested);
-        return executeOneTest(functionToBeTested, userNamespace, parameters, comparer, expected);
+        var functionToBeTested = ideExtractFunctionAndDebugger(functionNameToBeTested, true);
+        return executeOneTest(functionToBeTested, functionNameToBeTested, userNamespace, parameters, comparer, expected);
     }).filter();
 
     //write this more;
@@ -287,7 +286,7 @@ TheGame.prototype.getRecentLoads = function() {
  * @param obj save
  */
 TheGame.prototype.loadSavedText = function(save) {
-    this.loadTextInNewTab( save.snippet, save.name );
+    this.loadTextInNewTab( save.snippet, save.name, save.id );
 };
 
 /**
@@ -296,8 +295,9 @@ TheGame.prototype.loadSavedText = function(save) {
 TheGame.prototype.pickAndLoadSave = function(){
     var self=this;
     this.getRecentLoads().then(function(loads){
-        GeneralCrap.useLoadDialog(loads).then(function(x){
-             self.loadSavedText( loads.filter("x.id == " + x)[0] );
+        GeneralCrap.useLoadDialog(loads).then(function(row){
+            //post successful load
+             self.loadSavedText( loads.filter("x.id == " + row)[0] );
         });
     });
 

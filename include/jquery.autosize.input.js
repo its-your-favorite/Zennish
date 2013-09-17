@@ -49,8 +49,6 @@ var Plugins;
             }
 
             this._mirror.text(value);
-
-            alert(this._options.space);
             var newWidth = this._mirror.width() + this._options.space;
 
             this._input.width(newWidth);

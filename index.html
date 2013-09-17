@@ -17,8 +17,8 @@
 <script type="text/javascript" src="include/underscore.js"></script>
 <script type="text/javascript" src="include/jquery-2.0.0.js"></script>
 <script type="text/javascript" src="include/fancy.js"></script>
-<script src="include/angular.min.js"></script>
-<script src="include/HashMap.js"></script>
+<script type="text/javascript" src="include/angular.min.js"></script>
+<script type="text/javascript" src="include/HashMap.js"></script>
 
 <script type="text/javascript" src="challenge_data.js"></script>
 <script type="text/javascript" src="challenge_data_2.js"></script>
@@ -26,21 +26,21 @@
 <script type="text/javascript" src="models/AutomatedTest.js"></script>
 <script type="text/javascript" src="models/TheGame.js"></script>
 
-<script src="include/codemirror/lib/codemirror.js"></script>
-<script src="include/codemirror/mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="include/codemirror/lib/codemirror.js"></script>
+<script type="text/javascript" src="include/codemirror/mode/javascript/javascript.js"></script>
 
-<script src="angApp/controller.js"></script>
-<script src="models/StepModel.js"></script>
-<script src="include/Promise.js"></script>
-<script src="include/SlideDown.js"></script>
-<script src="include/database.js"></script>
-<script src="include/clickToEdit.js"></script>
-<script src="models/PersistantStorage.js"></script>
-<script src="include/bootstrap.min.js"></script>
-<script src="include/date.format.js"></script>
-<script src="include/TabSystem.js"></script>
-<script src="include/jquery.jqGrid.src.js"></script>
-<script src="include/jquery.autosize.input.js"></script>
+<script type="text/javascript" src="angApp/controller.js"></script>
+<script type="text/javascript" src="models/StepModel.js"></script>
+<script type="text/javascript" src="include/Promise.js"></script>
+<script type="text/javascript" src="include/SlideDown.js"></script>
+<script type="text/javascript" src="include/database.js"></script>
+<script type="text/javascript" src="include/clickToEdit.js"></script>
+<script type="text/javascript" src="models/PersistantStorage.js"></script>
+<script type="text/javascript" src="include/bootstrap.min.js"></script>
+<script type="text/javascript" src="include/date.format.js"></script>
+<script type="text/javascript" src="include/TabSystem.js"></script>
+<script type="text/javascript" src="include/jquery.jqGrid.src.js"></script>
+<script type="text/javascript" src="include/jquery.autosize.input.js"></script>
 
 Title and shit goes here.
 Also overall multi-challenge stuff.
@@ -97,7 +97,7 @@ Also overall multi-challenge stuff.
         <div class="tabsContainer">
             <span ng-click="theGame.tabSystem.addBlankTab()"  class="tab unselectable" title="New Tab">{{ theGame.tabSystem.newTabTab.caption }}</span>
             <span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
-                <click-to-edit bind-to="tab.caption"> </click-to-edit>
+                <click-to-edit bind-to="tab.caption" on-change="tab.rename.bind(tab)"> </click-to-edit>
                 <span ng-click="theGame.tabSystem.closeTab($index)" title="Close Tab">×</span>
             </span>
         </div>
@@ -107,7 +107,7 @@ Also overall multi-challenge stuff.
 
 <textarea id="logBox">{{theGame.log}}</textarea>
 
-<script src="general.js"></script>
+<script type="text/javascript" src="general.js"></script>
 
 <div id="noteBox"></div>
 

@@ -2,52 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace[Conflict 1].xml" />
       <change type="DELETED" beforePath="C:\Users\anfur_000\Google Drive\Source Code\WorkWork\challenges_data.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/AutomatedTest.js" afterPath="$PROJECT_DIR$/models/AutomatedTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/PersistantStorage.js" afterPath="$PROJECT_DIR$/models/PersistantStorage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/SlideDown.js" afterPath="$PROJECT_DIR$/include/SlideDown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/TabSystem.js" afterPath="$PROJECT_DIR$/include/TabSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/TheGame.js" afterPath="$PROJECT_DIR$/models/TheGame.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/clickToEdit.js" afterPath="$PROJECT_DIR$/include/clickToEdit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/general.js" afterPath="$PROJECT_DIR$/general.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/jquery.autosize.input.js" afterPath="$PROJECT_DIR$/include/jquery.autosize.input.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/motivation.html" afterPath="$PROJECT_DIR$/motivation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WorkWork.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379408035241" ignored="false" />
+    <file path="/index.html" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378792824911" ignored="false" />
     <file path="/code.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1367986269400" ignored="false" />
     <file path="/Test.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1370236864462" ignored="false" />
     <file path="/challenges_data.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1369688388916" ignored="false" />
-    <file path="/a.dummy" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379407154340" ignored="false" />
+    <file path="/a.dummy" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378797459898" ignored="false" />
     <file path="/controller.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1371195338566" ignored="false" />
     <file path="/stepModel.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1369725748717" ignored="false" />
     <file path="/StepModel.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1370669016930" ignored="false" />
-    <file path="/TheGame.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379406381556" ignored="false" />
+    <file path="/TheGame.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378797548520" ignored="false" />
     <file path="/style.css" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378798501117" ignored="false" />
-    <file path="/general.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379233374847" ignored="false" />
-    <file path="/AutomatedTest.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379233417814" ignored="false" />
+    <file path="/general.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378794477473" ignored="false" />
+    <file path="/AutomatedTest.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378798577583" ignored="false" />
     <file path="/angular.min.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1370404061771" ignored="false" />
     <file path="$PROJECT_DIR$/../improvingAngular/angular.js/src/Angular.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1370408111520" ignored="false" />
     <file path="/Angular.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1370407607725" ignored="false" />
     <file path="/SlideDown.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1370815604384" ignored="false" />
     <file path="/database.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1370840608357" ignored="false" />
-    <file path="/PersistantStorage.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379405049902" ignored="false" />
+    <file path="/PersistantStorage.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1371020205511" ignored="false" />
     <file path="/promise.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1370838420533" ignored="false" />
     <file path="/jquery-ui-1.10.3.custom.css" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1370940797140" ignored="false" />
-    <file path="/TabSystem.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379406450467" ignored="false" />
+    <file path="/TabSystem.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378713574445" ignored="false" />
     <file path="/challenge2.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1372322874909" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/core-scripting.rnc" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1373656959194" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/meta.rnc" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1373656959194" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5.rnc" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1373656959194" ignored="false" />
-    <file path="/motivation.html" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379403152426" ignored="false" />
+    <file path="/motivation.html" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378166711684" ignored="false" />
     <file path="/challenge_data_2.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378194842644" ignored="false" />
     <file path="/HashMap.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378183759189" ignored="false" />
-    <file path="/Dummy.txt" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379400592205" ignored="false" />
-    <file path="/clickToEdit.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1379406825634" ignored="false" />
+    <file path="/Dummy.txt" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378675460089" ignored="false" />
+    <file path="/clickToEdit.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378786617006" ignored="false" />
     <file path="/jquery.autosize.input.js" changelist="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" time="1378786236110" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +59,7 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="188" column="1" selection-start="2865" selection-end="2865" vertical-scroll-proportion="0.0">
+            <state line="151" column="25" selection-start="2303" selection-end="2303" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,27 +68,7 @@
       <file leaf-file-name="TheGame.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/TheGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="57" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.39719626">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="motivation.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/motivation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="92" selection-end="92" vertical-scroll-proportion="-1.9615384">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="challenge_data.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challenge_data.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="6" selection-start="9" selection-end="10" vertical-scroll-proportion="0.0">
+            <state line="18" column="26" selection-start="848" selection-end="848" vertical-scroll-proportion="0.38263667">
               <folding />
             </state>
           </provider>
@@ -109,7 +77,34 @@
       <file leaf-file-name="AutomatedTest.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/AutomatedTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="16" selection-start="3715" selection-end="3715" vertical-scroll-proportion="0.0">
+            <state line="15" column="50" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="general.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/general.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="11" selection-start="2331" selection-end="2331" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="challenge_data_2.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/challenge_data_2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HashMap.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/HashMap.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="2" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -118,7 +113,27 @@
       <file leaf-file-name="clickToEdit.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/clickToEdit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="63" selection-start="1911" selection-end="1911" vertical-scroll-proportion="0.0">
+            <state line="12" column="19" selection-start="545" selection-end="545" vertical-scroll-proportion="-8.16">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.autosize.input.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/jquery.autosize.input.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="0" selection-start="1628" selection-end="1628" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1378786238269" expanded="false" signature="270:325" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TabSystem.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/TabSystem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="2" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -127,7 +142,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="84" selection-start="5389" selection-end="5389" vertical-scroll-proportion="-14.384615">
+            <state line="105" column="6" selection-start="5238" selection-end="5238" vertical-scroll-proportion="-31.0">
               <folding />
             </state>
           </provider>
@@ -151,21 +166,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/angApp/controller.js" />
+        <option value="$PROJECT_DIR$/models/challenge2.js" />
         <option value="$PROJECT_DIR$/models/StepModel.js" />
+        <option value="$PROJECT_DIR$/motivation.html" />
         <option value="$PROJECT_DIR$/include/challenge_data_2.js" />
         <option value="$PROJECT_DIR$/challenge2.js" />
         <option value="$PROJECT_DIR$/include/HashMap.js" />
         <option value="$PROJECT_DIR$/challenge_data_2.js" />
-        <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/include/SlideDown.js" />
-        <option value="$PROJECT_DIR$/general.js" />
-        <option value="$PROJECT_DIR$/models/AutomatedTest.js" />
-        <option value="$PROJECT_DIR$/motivation.html" />
         <option value="$PROJECT_DIR$/include/TabSystem.js" />
-        <option value="$PROJECT_DIR$/models/PersistantStorage.js" />
         <option value="$PROJECT_DIR$/include/jquery.autosize.input.js" />
         <option value="$PROJECT_DIR$/include/clickToEdit.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/general.js" />
+        <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/models/AutomatedTest.js" />
         <option value="$PROJECT_DIR$/models/TheGame.js" />
       </list>
     </option>
@@ -202,7 +217,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -231,26 +245,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,14 +312,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1926" height="1040" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.9921936" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26530612" sideWeight="0.9921936" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23497854" sideWeight="0.9988662" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22907725" sideWeight="0.7346939" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31026787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -405,9 +406,28 @@
         <state line="185" column="4" selection-start="5893" selection-end="5893" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/challenge_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="11" selection-start="219" selection-end="219" vertical-scroll-proportion="0.3148148" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/challenge2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="-1.2419724" />
+        <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="-1.2419724">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/pencil.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/motivation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="67" selection-start="91" selection-end="91" vertical-scroll-proportion="-1.3076923">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/challenge_data_2.js">
@@ -417,91 +437,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challenge_data.js">
+    <entry file="file://$PROJECT_DIR$/include/HashMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="9" selection-end="10" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/SlideDown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="13" selection-start="1599" selection-end="1599" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="1" selection-start="2865" selection-end="2865" vertical-scroll-proportion="0.0">
+        <state line="24" column="2" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/TabSystem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="47" selection-start="434" selection-end="436" vertical-scroll-proportion="0.5826377">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="34" selection-start="2239" selection-end="2244" vertical-scroll-proportion="0.33222038">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/AutomatedTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="16" selection-start="3715" selection-end="3715" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/PersistantStorage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="35" selection-start="2433" selection-end="2433" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/jquery.autosize.input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="37" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.7006173">
-          <folding>
-            <marker date="1379407272080" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/motivation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="92" selection-end="92" vertical-scroll-proportion="-1.9615384">
+        <state line="14" column="2" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/clickToEdit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="63" selection-start="1911" selection-end="1911" vertical-scroll-proportion="0.0">
+        <state line="12" column="19" selection-start="545" selection-end="545" vertical-scroll-proportion="-8.16">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/jquery.autosize.input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1628" selection-end="1628" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1378786238269" expanded="false" signature="270:325" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="25" selection-start="2303" selection-end="2303" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/AutomatedTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="50" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="84" selection-start="5389" selection-end="5389" vertical-scroll-proportion="-14.384615">
+        <state line="105" column="6" selection-start="5238" selection-end="5238" vertical-scroll-proportion="-31.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="11" selection-start="2331" selection-end="2331" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/TheGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="57" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.39719626">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="18" column="26" selection-start="848" selection-end="848" vertical-scroll-proportion="0.38263667">
+          <folding />
         </state>
       </provider>
     </entry>

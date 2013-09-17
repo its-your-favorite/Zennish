@@ -35,13 +35,6 @@ AutomatedTest = function (obj, funcName) {
     this.lastMessage = 'Not Run Yet';
 };
 
-/**
- *
- */
-AutomatedTest.prototype.parseParams = function() {
-    return JSON.parse("[" + this.paramsJson + "]");
-};
-
 AutomatedTest.prototype.canParseParams = function() {
     try {
         this.parseParams();
@@ -49,6 +42,13 @@ AutomatedTest.prototype.canParseParams = function() {
         return false;
     }
     return true;
+};
+
+/**
+ *
+ */
+AutomatedTest.prototype.parseParams = function() {
+    return JSON.parse("[" + this.paramsJson + "]");
 };
 
 AutomatedTest.prototype.canParseExpected = function () {
@@ -80,17 +80,23 @@ AutomatedTest.prototype.run = function(useDebugger) {
     try {
         var params = this.parseParams();
     } catch (e) {
+        if (wouldBeValidJsonIfDoubleQuotes(this.paramsJson)){
+            notifyGently("It looks like the parameters for one of your tests would be valid JSON if you swapped ' with \" ");
+        };
         return "Parameters weren't parsable";
     }
 
     try {
         var expected = JSON.parse(this.expectedJson);
     } catch(e) {
+        if (wouldBeValidJsonIfDoubleQuotes(this.expectedJson)){
+            notifyGently("It looks like the expected value for one of your tests would be valid JSON if you swapped ' with \" ");
+        }
         return "Expected wasn't parsable";
     }
     try {
-        var functionToBeTested = ideExtractFunctionAndDebugger(fname, useDebugger);
-        if (prob = executeOneTest(functionToBeTested, null, params, comparer, expected, useDebugger)) {
+        var functionToBeTested = ideExtractFunctionAndDebugger(fname);
+        if (prob = executeOneTest(functionToBeTested, fname, null, params, comparer, expected, useDebugger)) {
             return prob;
         }
     } catch (e) {

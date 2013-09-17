@@ -3,13 +3,17 @@
  * Date: 6/14/13, 12:11 AM
  */
 
-// Jeez, backbone makes these files so small
-var Tab = function (text, caption, cannotClose){
+// TODO refactor this out
+var Tab = function (text, caption, cannotClose, id){
     this.value = text;
     this.caption = caption;
     this.canClose = !cannotClose;
+    this.id = id;
 };
 
+Tab.prototype.rename = function(newName) {
+    PersistentStorage.renameSave(this.id, newName);
+};
 
 /**
  *

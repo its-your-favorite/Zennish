@@ -55,7 +55,7 @@ var retrieveData = function(key) {
 };
 
 
-var executeOneTest = function (functionToBeTested, userNamespace, /* array */parameters, comparer, expected, useDebugger){
+var executeOneTest = function (functionToBeTested,name, userNamespace, /* array */parameters, comparer, expected, useDebugger){
     var givenVal;
     try {
         givenVal = functionToBeTested.apply(userNamespace, parameters);
@@ -65,9 +65,33 @@ var executeOneTest = function (functionToBeTested, userNamespace, /* array */par
 
     if (comparer(givenVal, expected))
         return false; //not a failure
-    return functionToBeTested + "(" + parameters.map(JSON.stringify).join(", ") + ") returned " + JSON.stringify(givenVal) + ", expected " + JSON.stringify(expected);
+    return name + "(" + parameters.map(JSON.stringify).join(", ") + ") returned " + JSON.stringify(givenVal) + ", expected " + JSON.stringify(expected);
 }
 
+var wouldBeValidJsonIfDoubleQuotes = function(json) {
+    try {
+        JSON.parse(json);
+        return false; //already valid
+    } catch (e){
+        try {
+            JSON.parse(json.replace(/'/g, "\""));
+            return true; //makes the difference
+        } catch (e2) {
+            return false; //makes no difference
+        }
+    }
+};
+
+// todo , use a real sandbox, but allow debugger somehow
+var saferEval = function(code) {
+    code = "(function() {" +
+        "var window, Window, alert = console.log.bind(console);" +
+        "(function() {" + code + " })();" +
+        "})();"
+    eval(code);
+};
+
+var notifyGently = NoteSystem.showNewNote.bind(NoteSystem);
 
 var ideContents = function() {
     return myCodeMirror.getValue();
@@ -88,33 +112,24 @@ var appendToIde = function(str) {
 };
 
 var ideExtractFunction = function(name) {
-    window.extractFunction = {};
-    var code =  myCodeMirror.getValue() + ";\n\n window.extractFunction = " + name + ";";
-    eval(code);
-
-    return window.extractFunction;
+    return ideExtractFunctionAndDebugger(name, false);
 };
 
-var ideExtractFunctionAndDebugger = function(name, useDebugger) {
-    var code = myCodeMirror.getValue() + ";\n\n window.extractFunction = function(){" ;
-    if (useDebugger === false) {
+var ideExtractFunctionAndDebugger = function (name, removeDebugger) {
+    console.log("ENSURE NAME IS valid js token");
+    var extracted;
+    window.extractFunction = function(x) { extracted = x};
+    var code = myCodeMirror.getValue() + "; extractFunction(" + name + ");" ; //this method still works with scopes
+    if (removeDebugger) {
         code = code.replace(/debugger;/gi,'');
     }
-
-    if (useDebugger == true) {
-        if (ideExtractFunction(name).toString().match(/debugger;/gi) === null ) {
-            code += "debugger;\n";
-        }
-    }
-    code += "return " + name + ".apply(null, arguments);};";
-    window.extractFunction = {};
     try {
-        eval( code);
+        saferEval( code);
     } catch (e) {
 
     }
 
-    return window.extractFunction;
+    return extracted;
 };
 
 /**

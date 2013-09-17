@@ -24,6 +24,7 @@ app.directive("clickToEdit", function() {
         template: editorTemplate,
         scope: {
             bindTo: "=",
+            onChange: "&"
         },
 
         controller: function($scope) {
@@ -45,6 +46,9 @@ app.directive("clickToEdit", function() {
             $scope.save = function() {
                 $scope.bindTo = $scope.view.editableValue;
                 $scope.disableEditor();
+                if ($scope.onChange) {
+                    $scope.onChange()($scope.view.editableValue);
+                }
             };
         }
     };

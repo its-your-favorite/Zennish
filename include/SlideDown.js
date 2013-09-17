@@ -42,5 +42,4 @@ var NoteSystem = {};
 
 $(function(){
     NoteSystem.showNewNote("Reminder you made this awesome note system",1000);
-    NoteSystem.showNewNote("And you are bomb-saurus");
 });

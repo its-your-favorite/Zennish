@@ -6,7 +6,7 @@
 var app = angular.module("inlineEditing", []);
 
 app.directive("clickToEdit", function() {
-    var editorTemplate = '<span class="click-to-edit">' +
+    var editorTemplate = '<span class="click-to-edit" ng-class="{locked: locked}">' +
         '<span ng-hide="view.editorEnabled">' +
         '{{bindTo}} ' +
         '<a ng-click="enableEditor()"><img class="inlineEditIcon" alt="Edit This Text" title="Edit This Text"></a>' +
@@ -24,19 +24,35 @@ app.directive("clickToEdit", function() {
         template: editorTemplate,
         scope: {
             bindTo: "=",
-            onChange: "&"
+            onChange: "&",
+            locked: "=",
         },
 
         controller: function($scope) {
+            var isLocked = false;
+
+
+
             $scope.view = {
                 editableValue: $scope.bindTo,
                 editorEnabled: false
             };
 
             $scope.enableEditor = function() {
+                if (!!$scope.locked) {
+                    return;
+                }
                 var editor = $('.click-to-edit-textbox').autosizeInput({"space":0}); //slightly hacky
                 $scope.view.editorEnabled = true;
                 $scope.view.editableValue = $scope.bindTo;
+                $scope.ref.bind("keydown", function(event){
+                   if (event.keyCode == 13) {
+                       $scope.save();
+                   }
+                   if (event.keyCode == 27) {
+                       $scope.disableEditor();
+                   }
+                });
             };
 
             $scope.disableEditor = function() {
@@ -50,6 +66,11 @@ app.directive("clickToEdit", function() {
                     $scope.onChange()($scope.view.editableValue);
                 }
             };
-        }
+        },
+
+        link: function($scope, object) {
+            $scope.ref = object;
+        },
+
     };
 });

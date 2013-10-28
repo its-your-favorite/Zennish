@@ -15,12 +15,21 @@ app.directive("automatedTest", function(){
         template: '<div ng-class="{aTest: true,' +
         'testPassed: (test.lastResult == true),' +
         'testFailed: (test.lastResult == false)}">' +
-        '<span class="button green runButton" ng-click="test.doGuiRun()">&gt;</span>' +
+        '<input type="button" ng-click="test.doGuiRun()" value="&gt;" />' +
         '<input ng-model="test.funcName" value="{{theGame.currentStepTesteeFunctionName()}}" class="testFuncName" ng-class="{testParamsFailed: !test.canExtractFunction()}" title="{{ {true: \'Got it\', false: \'Cannot find a function by that name in your global scope\'}[test.canExtractFunction()] }}">' +
         '(<input ng-model="test.paramsJson" class="testParams" ng-class="{testParamsFailed: !test.canParseParams()}" title="{{ {true: \'Got it\', false: \'Not valid JSON array contents\'}[test.canParseParams()] }}">) =' +
         '<input ng-model="test.expectedJson" class="testExpected" ng-class="{testParamsFailed: !test.canParseExpected()}" title="{{ {true: \'Got it\', false: \'Not valid JSON value\'}[test.canParseExpected()] }}">' +
-        '<span class="button red deleteButton" ng-click="theGame.removeTestById($index)">X</span>' +
-        '</div>'
+        '<span class="deleteButton" ng-click="theGame.removeTestById($index)" title="Delete Test">×</span>' +
+        '</div>',
+        link: function($scope, element) {
+            $scope.test.flashTo = function(color ) {
+                element.css("backgroundColor", color);
+                setTimeout(function() {
+                    element.css("backgroundColor", "");
+                    }, 300);
+            };
+
+        }
     };
 });
 
@@ -67,6 +76,7 @@ AutomatedTest.prototype.canExtractFunction = function() {
 };
 
 /**
+ * This runs a test and provides graphical feedback
  *
  * @param useDebugger can be undefined = neutral, true = force yes, false = force no
  * @returns {*}
@@ -118,10 +128,12 @@ AutomatedTest.prototype.doGuiRun = function(useDebugger){
     this.lastResult = (returned === true);
     if (returned === true) {
         this.lastMessage = 'Success';
+        this.flashTo("#50FF50");
     } else {
         this.lastMessage = returned;
+        this.flashTo("#FF5050");
     }
-    this.lastMessage = "Test #" + this.id + " (at " + (new Date()).format("h:m s") + ") returned: " + this.lastMessage;
+    this.lastMessage = "Test #" + this.id + " returned: " + this.lastMessage;
     globalRecordToLog(this.lastMessage);
 }
 

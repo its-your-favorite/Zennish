@@ -3,129 +3,80 @@
 <head>
     <meta charset="utf-8">
     <title>Are you any good? - Code quality test in javascript</title>
-    <link rel="stylesheet" href="include/codemirror/lib/codemirror.css">
-    <link href="assets/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-    <link href="assets/searchFilter.css" rel="stylesheet">
-    <link href="assets/ui.multiselect.css" rel="stylesheet">
-    <link href="assets/ui.jqgrid.css" rel="stylesheet">
-    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="include/vendor/codemirror/lib/codemirror.css"/>
+    <link href="assets/jquery-ui-1.10.3.custom.css" rel="stylesheet"/>
+    <link href="assets/searchFilter.css" rel="stylesheet"/>
+    <link href="assets/ui.multiselect.css" rel="stylesheet"/>
+    <link href="assets/ui.jqgrid.css" rel="stylesheet"/>
+    <link href="assets/bootstrap.min.css" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
 </head>
 
-<body ng-controller="TestController">
+<body ng-app>
+
 <script type="text/javascript" src="include/functional.js"></script>
-<script type="text/javascript" src="include/underscore.js"></script>
-<script type="text/javascript" src="include/jquery-2.0.0.js"></script>
+<script type="text/javascript" src="include/vendor/underscore.js"></script>
+<script type="text/javascript" src="include/vendor/jquery-2.0.0.js"></script>
 <script type="text/javascript" src="include/fancy.js"></script>
-<script type="text/javascript" src="include/angular.min.js"></script>
+<script type="text/javascript" src="include/vendor/angular.min.js"></script>
 <script type="text/javascript" src="include/HashMap.js"></script>
 
-<script type="text/javascript" src="challenge_data.js"></script>
-<script type="text/javascript" src="challenge_data_2.js"></script>
-<script type="text/javascript" src="challenge2.js"></script>
+<script type="text/javascript" src="challengeData/challenge_data.js"></script>
+<script type="text/javascript" src="challengeData/challenge_data_2.js"></script>
+<script type="text/javascript" src="challengeData/challenge3_filesystem.js"></script>
+<script type="text/javascript" src="challengeData/problems.js"></script>
+
 <script type="text/javascript" src="models/AutomatedTest.js"></script>
 <script type="text/javascript" src="models/TheGame.js"></script>
 
-<script type="text/javascript" src="include/codemirror/lib/codemirror.js"></script>
-<script type="text/javascript" src="include/codemirror/mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="include/vendor/codemirror/lib/codemirror.js"></script>
+<script type="text/javascript" src="include/vendor/codemirror/mode/javascript/javascript.js"></script>
 
-<script type="text/javascript" src="angApp/controller.js"></script>
+<script type="text/javascript" src="angular/controllers/gameController.js"></script>
+<script type="text/javascript" src="angular/controllers/chooseChallengeController.js"></script>
+
 <script type="text/javascript" src="models/StepModel.js"></script>
-<script type="text/javascript" src="include/Promise.js"></script>
+<script type="text/javascript" src="include/vendor/Promise.js"></script>
 <script type="text/javascript" src="include/SlideDown.js"></script>
 <script type="text/javascript" src="include/database.js"></script>
-<script type="text/javascript" src="include/clickToEdit.js"></script>
+<script type="text/javascript" src="angular/module/clickToEdit.js"></script>
 <script type="text/javascript" src="models/PersistantStorage.js"></script>
-<script type="text/javascript" src="include/bootstrap.min.js"></script>
-<script type="text/javascript" src="include/date.format.js"></script>
+<script type="text/javascript" src="include/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="include/vendor/date.format.js"></script>
 <script type="text/javascript" src="include/TabSystem.js"></script>
-<script type="text/javascript" src="include/jquery.jqGrid.src.js"></script>
-<script type="text/javascript" src="include/jquery.autosize.input.js"></script>
+<script type="text/javascript" src="include/vendor/jquery.jqGrid.src.js"></script>
+<script type="text/javascript" src="include/vendor/jquery.autosize.input.js"></script>
+<script type="text/javascript" src="angular/module/challengeStep.js"></script>
 
-Title and shit goes here.
-Also overall multi-challenge stuff.
-
-<div id="leftHalf" class="unselectable">
-    <div class="collapsible floatRight">&nbsp;</div>
-    <span id="innerLeftHalf">
-    <span id="challengeDescription">{{theGame.currentChallenge.description}}</span>
-        <span ng-repeat="eachStep in theGame.currentChallenge.steps"  ng-class="{active: (theGame.currentStepNum == eachStep.id),
-                                                             future: (theGame.currentStepNum < eachStep.id),
-                                                      challengeStep: true}">
-            <div class="stepDescription" ng-class="{past: (theGame.currentStepNum > eachStep.id)}">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>
-            <div ng-show="(theGame.currentStepNum >= eachStep.id)">
-                    <div class='stepControls'>
-                    <table><tr>
-                        <td><span>Attempts...</span></td>
-
-                        <td><span  alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step">{{ eachStep.keystrokes }}
-                            <img class="key_icon" src="assets/img/key.png">
-                        </span></td>
-                        <td><span> {{ eachStep.timeSpentPretty }} </span></td>
-                        <td><span class="button">View</span></td>
-                    </tr></table>
-                    </div>
-            </div>
-
-        </span>
-    </span>
-
+<div style="top:0; bottom: 0; left: 0; right:0; z-index: 9; position: fixed; height: 100%; background-color: rgb(0, 0, 0);  opacity: 0.8; " id="mySmokescreen">
 </div>
+<div  id="myTextPiece" class="centeredTextOverlayContainer">
+ <div  align="center" class="textOverlay">
+     <div style="font-size: 36px;">Work Work</div><br>
+     <i>The programming challenge that's <b>about programming</b>.</i>
 
-<div id="rightHalf" ng-model="rightHalf">
-    <div id="rightPanel" class="unselectable">
-        <div class="collapsible floatLeft">&nbsp;</div>
-        <div>
-            <div>Your tests</div>
-            <input type="button" value="+New" ng-click="theGame.addTest({})">
-            <input type="button" value="Run All" ng-click="theGame.runAllTests()">
-            <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
-
-            <span ng-repeat="test in theGame.userTests">
-                <automated-test bind-to="test"></automated-test>
-            </span>
-        </div>
-    </div>
-
-    <div id="centerPanel">
-        <div class="unselectable">
-            <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
-            {{theGame.currentChallenge.keystrokes}} keystrokes
-            <span id="saveButton" class="button saveButton" ng-click="theGame.saveCurrentEditor()">Save</span>
-            <a  role="button" class="btn" ng-click="theGame.pickAndLoadSave()">Load</a>
-        </div>
-        <div class="tabsContainer">
-            <span ng-click="theGame.tabSystem.addBlankTab()"  class="tab unselectable" title="New Tab">{{ theGame.tabSystem.newTabTab.caption }}</span>
-            <span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
-                <click-to-edit bind-to="tab.caption" on-change="tab.rename.bind(tab)"> </click-to-edit>
-                <span ng-click="theGame.tabSystem.closeTab($index)" title="Close Tab">×</span>
-            </span>
-        </div>
-        <div id="ideContainer"   ng-keyup="theGame.acknowledgeKeystroke()"> </div>
-    </div>
+     <br/><br/>
+     Professional programming is a delicate balance architecture and construction. Over-architected adds so much unnecessary
+     abstraction that you can't keep track of what you're doing. Under-architected code
+     is redundant and inflexible. Finding the middle ground consistently is hard.
+     <br/><br/>
+     In the real world, choosing wrong has consequences, but you may not learn the error of your ways for months and it comes at a high cost.
+     Welcome to the garden of practice. When you make choices in this low-stakes sandbox it'll only take minutes to reap what you have sewn.
+<br><br>
+     I also see this an alternative to traditional coding challenges (e.g. codility, google code jam) that seek to evaluate engineers with
+     a single math-intensive skill. The more I advance as an engineer, the more I see coding as a form of writing.
+<br><br>
+     -- <a href='http://www.alexrohde.com'>Alex.</a>
+     <br>
+     <input type="button" value="Okay!" id="closeOverlay">
+ </div>
 </div>
-
-<textarea id="logBox">{{theGame.log}}</textarea>
-
-<script type="text/javascript" src="general.js"></script>
 
 <div id="noteBox"></div>
 
-<!-- Modal -->
-<div id="modalLoadDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="view.hideLoadDialog()">×</button>
-        <h3 id="loadDialogTitle">Pick a save</h3>
-    </div>
-    <div id="loadDialogBody">
-        <table id="loadDialogTable">
-        </table>
-    </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true" ng-click="view.hideLoadDialog()">Cancel</button>
-        <button class="btn btn-primary" ng-click="view.attemptSubmitGrid()">Load</button>
-    </div>
-</div>
+<ng-view></ng-view>
 
+
+<script type="text/javascript" src="general.js"></script>
 </body>
 </html>

@@ -68,9 +68,19 @@ html,body {
 }
 
 .aTest {
-    background-color: #EEE;
+    background-color: #CCC;
     color:#000;
     -webkit-transition: all 1s ease-in;
+    transition: background-color .5s;
+    border-bottom-color: #AAA;
+    border-bottom: 1px solid;
+}
+
+input[type=button] {
+    transition: background-color .15s;
+    border:1px outset;
+    border-bottom-color: #666666;
+    border-right-color: #BBBBBB;
 }
 
 .collapsed#rightPanel {
@@ -88,7 +98,7 @@ html,body {
 }
 
 .testExpected {
-    width: 40px;
+    width: 60px;
     margin-left: 4px;
     margin-right: 0px;
 }
@@ -153,8 +163,21 @@ html,body {
 }
 
 .testFuncName {
-    width: 85px;
+    width: 105px;
     margin: 1px;
+}
+
+.deleteButton {
+    border: 1px outset;
+    cursor: pointer;
+    vertical-align: top;
+    float: right;
+    content: '×';
+    line-height: 3px;
+    width: 8px;
+    height: 3px;
+    padding: 6px 3px;
+    background-color: #EEEEEE;
 }
 
 .button {
@@ -180,6 +203,7 @@ html,body {
 .stepDescription {
     padding: 3px 15px;
 }
+
 #challengeDescription {
     float: right;
 }
@@ -235,6 +259,7 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     0%, 100% { -webkit-transform: translateY(-50px); }
     10%, 90% { -webkit-transform: translateY(0px); }
 }
+
 @-moz-keyframes slideDown {
     0%, 100% { -moz-transform: translateY(-50px); }
     10%, 90% { -moz-transform: translateY(0px); }
@@ -247,7 +272,7 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     margin-bottom: 3px;
 }
 
-.past{
+.past.stepDescription{
     overflow-y: hidden;
     max-height: 40px;
     text-overflow: ellipsis;
@@ -256,9 +281,17 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     -webkit-box-orient: vertical;
 }
 
-.past:hover {
+.past.stepDescription:hover {
     max-height: inherit;
     -webkit-line-clamp: 20;
+}
+
+.past.viewButton {
+    visibility: visible;
+}
+
+.viewButton {
+    visibility: hidden;
 }
 
 #modalLoadDialog {
@@ -335,6 +368,12 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     height: 14px;
 }
 
+.click-to-edit.locked .inlineEditIcon {
+   content: url('img/lock.png');
+    width: 16px;
+    height: 16px;
+}
+
 .inlineEditSaveIcon {
     content:url('img/check-mark-16.png');
 }
@@ -356,4 +395,45 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     border-bottom: 1px dotted #888;
     color: #333;
     margin-top: -3px;
+}
+
+.ui-jqgrid-bdiv {
+    max-height: 300px;
+}
+
+.centeredTextOverlayContainer {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.textOverlay {
+    margin-right: auto;
+    z-index: 11;
+    margin-left: auto;
+    overflow: hidden;
+    padding: 50px;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    width: 750px;
+    opacity: 1;
+    z-index: 10;
+    height: 100%;
+    background-color: #FFF;
+    background-position: initial initial;
+    background-repeat: initial initial;
+    color: #111;
+}
+
+.choiceOfChallenge {
+    width:100%;
+    border: 2px outset;
+    min-height: 80px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 3px outset #BBB;
+}
+
+.choiceOfChallenge:hover {
+    border: 3px outset #888;
 }

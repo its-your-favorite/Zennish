@@ -1,0 +1,65 @@
+Title and shit goes here.
+Also overall multi-challenge stuff.
+
+<div id="leftHalf" class="unselectable">
+    <div class="collapsible floatRight">&nbsp;</div>
+    <span id="innerLeftHalf">
+    <span id="challengeDescription">{{theGame.currentChallenge.description}}</span>
+        <div  ng-repeat="eachStep in theGame.currentChallenge.steps">
+            <challenge-step bind-to="eachStep">
+            </challenge-step>
+        </div>
+    </span>
+
+</div>
+
+<div id="rightHalf" ng-model="rightHalf">
+    <div id="rightPanel" class="unselectable">
+        <div class="collapsible floatLeft">&nbsp;</div>
+        <div>
+            <div>Your tests</div>
+            <input type="button" value="+New" ng-click="theGame.addTest({})">
+            <input type="button" value="Run All" ng-click="theGame.runAllTests()">
+            <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
+
+            <span ng-repeat="test in theGame.userTests">
+                <automated-test bind-to="test"></automated-test>
+            </span>
+        </div>
+    </div>
+
+    <div id="centerPanel">
+        <div class="unselectable">
+            <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
+            {{theGame.currentChallenge.keystrokes}} keystrokes
+            <input type="button" id="saveButton" ng-click="theGame.saveCurrentEditor()" value="Save" />
+            <input type="button" ng-click="theGame.pickAndLoadSave()" value="Load" />
+        </div>
+        <div class="tabsContainer">
+            <span ng-click="theGame.tabSystem.addBlankTab()"  class="tab unselectable" title="New Tab">{{ theGame.tabSystem.newTabTab.caption }}</span>
+            <span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
+                <click-to-edit bind-to="tab.caption" on-change="tab.rename.bind(tab)" locked="tab.extraneous.locked"> </click-to-edit>
+                <span ng-click="theGame.tabSystem.closeTab($index)" title="Close Tab">×</span>
+            </span>
+        </div>
+        <div id="ideContainer" ng-keyup="theGame.acknowledgeKeystroke()"> </div>
+    </div>
+</div>
+
+<textarea id="logBox">{{theGame.log}}</textarea>
+
+<!-- Modal -->
+<div id="modalLoadDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="view.hideLoadDialog()">×</button>
+        <h3 id="loadDialogTitle">Pick a save</h3>
+    </div>
+    <div id="loadDialogBody">
+        <table id="loadDialogTable">
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true" ng-click="view.hideLoadDialog()">Cancel</button>
+        <button class="btn btn-primary" ng-click="view.attemptSubmitGrid()">Load</button>
+    </div>
+</div>

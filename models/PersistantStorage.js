@@ -78,7 +78,11 @@ var PersistentStorage = {};
     };
 
     PersistentStorage.loadCodeInitial = function(stepId, challengeId) {
-        return PersistentStorage.loadCode({step_id: stepId, challenge_id: challengeId}, {session_id: "DESC", id: "DESC"}, 1);
+        return PersistentStorage.loadCode({step_id: stepId, challenge_id: challengeId}, {created_session_id: "DESC", id: "DESC"}, 1);
+    };
+
+    PersistentStorage.loadParticularSave = function(stepId, challengeId, sessionId){
+        return PersistentStorage.loadCode({step_id: stepId, challenge_id: challengeId, created_session_id: sessionId});
     };
 
     PersistentStorage.loadAllSaves = function(stepId, challengeId){

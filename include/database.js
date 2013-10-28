@@ -11,10 +11,12 @@ var delayedLog = {};
 delayedLog.log = function(x){
     this.data.push(x);
 };
+
 delayedLog.data = [];
 (function foreverLoop() {
-    if(delayedLog.data.length)
+    if(delayedLog.data.length) {
         console.log(delayedLog.data.splice(0,1)[0]);
+    }
     setTimeout(foreverLoop, 100);
 })();
 var log = delayedLog.log.bind(delayedLog);
@@ -33,12 +35,15 @@ var log = delayedLog.log.bind(delayedLog);
     }
 
     var testDump = function(args) {
+
         var resultSet = args[1];
         var len = resultSet.rows.length;
         var str = "Query Returned " + len + " rows";
         //Log(str);
-        for (var x=0; x < len; x++)
-            log(resultSet.rows.item(x));
+        for (var x=0; x < len; x++) {
+
+            //log(resultSet.rows.item(x));
+        }
         return resultSet.rows;
     }
 
@@ -77,9 +82,12 @@ var log = delayedLog.log.bind(delayedLog);
                 alert("Invalid database version.");
             } else {
                 alert("Unknown error "+e+".");
-            }return;
+            }
+            return;
         }
     }
+
+
     function createTables() {
         // app-specific @todo move
       var code= 'CREATE  TABLE IF NOT EXISTS "savedCode" (' +
@@ -87,11 +95,12 @@ var log = delayedLog.log.bind(delayedLog);
       '"name" varchar(100) ,' +
       '"snippet" BLOB NULL ,' +
       '"isSuccessful" TINYINT NULL ,' +
-      '"session_id" INT NULL , ' +
+      '"created_session_id" INT NULL , ' +
       '"when" DATETIME NULL , ' +
       '"isAutosave" TINYINT NULL ,' +
       '"challenge_id" INT NULL ,' +
-      '"step_id" INT NULL ' +
+      '"step_id" INT NULL , ' +
+      '"last_utilized_session_id" INT NULL ' +
        ')';
 
         execute(code);

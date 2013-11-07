@@ -30,18 +30,11 @@ var fe = function (selector) {
 };
 
 var collapsed = false;
-$(document).on(".collapsible", function(event) {
-
+$(document).on(".collapsible",function(event) {
     collapsed = !collapsed;
     fe(event.target).parent().toggleClass("collapsed");
     $(this).toggleClass("collapsed");
 });
-/*
-var myCodeMirror = CodeMirror(fe("#ideContainer")[0], {
-    value: "//write your javascript here\n",
-    mode: "javascript"
-});
-myCodeMirror.setSize(null, 550);*/
 
 var session_id = _.memoize(function() {return new Date()|0;} ); //timestamp at load time
 
@@ -55,6 +48,9 @@ var retrieveData = function(key) {
         return localStorage[key];
 };
 
+var summarizeTest = function(parameters, givenVal, expected) {
+    return name + "(" + parameters.map(JSON.stringify).join(", ") + ") returned " + JSON.stringify(givenVal) + ", expected " + JSON.stringify(expected);
+}
 
 var executeOneTest = function (functionToBeTested,name, userNamespace, /* array */parameters, comparer, expected, useDebugger){
     var givenVal;
@@ -66,8 +62,8 @@ var executeOneTest = function (functionToBeTested,name, userNamespace, /* array 
 
     if (comparer(givenVal, expected))
         return false; //not a failure
-    return name + "(" + parameters.map(JSON.stringify).join(", ") + ") returned " + JSON.stringify(givenVal) + ", expected " + JSON.stringify(expected);
-}
+    return summarizeTest(parameters, givenVal, expected);
+};
 
 var wouldBeValidJsonIfDoubleQuotes = function(json) {
     try {
@@ -108,6 +104,10 @@ var setIdeText = function(str){
     return prev;
 }
 
+var globalRecordToLog = function(message) {
+    globalCopy.theGame.recordToLog(message);
+};
+
 var appendToIde = function(str) {
     myCodeMirror.setValue( myCodeMirror.getValue() + str);
 };
@@ -117,17 +117,20 @@ var ideExtractFunction = function(name) {
 };
 
 var ideExtractFunctionAndDebugger = function (name, removeDebugger) {
-    console.log("ENSURE NAME IS valid js token");
     var extracted;
+    if (name.match(/[\\\{\}\[\]\(\)\.'"\s\n\r]/)) {
+        return false;
+    }
+
     window.extractFunction = function(x) { extracted = x};
-    var code = myCodeMirror.getValue() + "; extractFunction(" + name + ");" ; //this method still works with scopes
+    var code = myCodeMirror.getValue() + "\n\r\n /* */; extractFunction(" + name + ");" ; //this method still works with scopes
     if (removeDebugger) {
         code = code.replace(/debugger;/gi,'');
     }
     try {
         saferEval( code);
     } catch (e) {
-
+        return false;
     }
 
     return extracted;
@@ -218,7 +221,18 @@ GeneralCrap.setSelectedTab = function(x){
 };
 
 
-angular.element(document).ready(function() {
+GeneralCrap.closeOverlay = function(){
+  fe("#mySmokescreen").hide();
+  fe("#myTextPiece").hide();
+};
 
-    angular.bootstrap(document, ['inlineEditing', 'automatedTest']);
+$('#closeOverlay').on('click', function() {
+    GeneralCrap.closeOverlay();
+    PersistentStorage.saveSetting({showed_splash_screen: true});
 });
+
+GeneralCrap.setCodeMirrorLocked = function(val) {
+    myCodeMirror.setOption('readOnly', val);
+}
+
+angular.bootstrap(document, ['inlineEditing', 'automatedTest', 'challengeStep']);

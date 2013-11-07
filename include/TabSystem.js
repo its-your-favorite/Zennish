@@ -2,12 +2,11 @@
  * User: anfur_000
  * Date: 6/14/13, 12:11 AM
  *
- * at some point here text and extraneous should be refactored together/out. A tab needn't know what "Contents" it has
- *  this makes it less generic, just that it has a "contents" object to hand back.
+ *
  */
 
 // TODO refactor this out
-var Tab = function (caption, cannotClose, /*optional*/ id, extraneous){
+var Tab = function (caption, cannotClose, /*optional*/ id, extraneous /* in this specific app, this is used for contents*/ ){
     this.caption = caption;
     this.canClose = !cannotClose;
     this.id = id;
@@ -45,13 +44,13 @@ TabSystem.prototype.enumerateTabs = function(){
     return FA(this.tabs);
 };
 
-TabSystem.prototype.addTab = function(/*Tab*/ tab) {
+TabSystem.prototype.addTab = function(/*Tab*/ tab, selectIt) {
     this.tabs.push(tab);
     this.selectSomeTab();
 };
 
 TabSystem.prototype.addBlankTab = function() {
-    this.tabs.push(new Tab("New Tab",false,null,{}));
+    this.addTab(new Tab("New Tab",false,null,{}));
 };
 
 TabSystem.prototype.closeTab = function(id) {
@@ -80,6 +79,7 @@ TabSystem.prototype.selectTab = function(index, discardExisting){
         this.valueGetterCallback(this.tabs[oldIndex].getValue());//update by reference
     }
     var result = this.changeCallback(newVal); //update local copy of tab
+    return index;
 };
 
 /**

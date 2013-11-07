@@ -105,6 +105,15 @@ var PersistentStorage = {};
         return genericLoad("savedCode", obj, orderBy, limit);
     };
 
+    PersistentStorage.loadSettings = function(){
+        return genericLoad('appSettings', {'id': 0});
+    };
+
+    PersistentStorage.saveSetting = function(changes){
+        return genericUpdate('appSettings', changes, {'id': 0} );
+    }
+
+
     /**
      * Makes an array promise
      * @param sqlResultsetPromise

@@ -2,314 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.warnWords" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/module/challengeStep.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/views/chooseChallenge.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/controllers/chooseChallengeController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/controllers/gameController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/views/mainApp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challengeData/problems.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.txt" />
-      <change type="DELETED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\angApp\controller.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\challenges_data.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\Are you any good  - Code quality test in javascript.htm" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\challenge2.js" afterPath="$PROJECT_DIR$/challengeData/challenge3_filesystem.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\challenge_data.js" afterPath="$PROJECT_DIR$/challengeData/challenge_data.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\challenge_data_2.js" afterPath="$PROJECT_DIR$/challengeData/challenge_data_2.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\Promise.js" afterPath="$PROJECT_DIR$/include/vendor/Promise.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\angular.min.js" afterPath="$PROJECT_DIR$/include/vendor/angular.min.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\bootstrap.min.js" afterPath="$PROJECT_DIR$/include/vendor/bootstrap.min.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\clickToEdit.js" afterPath="$PROJECT_DIR$/angular/module/clickToEdit.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\.gitattributes" afterPath="$PROJECT_DIR$/include/vendor/codemirror/.gitattributes" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\.gitignore" afterPath="$PROJECT_DIR$/include/vendor/codemirror/.gitignore" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\.travis.yml" afterPath="$PROJECT_DIR$/include/vendor/codemirror/.travis.yml" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\CONTRIBUTING.md" afterPath="$PROJECT_DIR$/include/vendor/codemirror/CONTRIBUTING.md" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\LICENSE" afterPath="$PROJECT_DIR$/include/vendor/codemirror/LICENSE" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\README.md" afterPath="$PROJECT_DIR$/include/vendor/codemirror/README.md" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\dialog\dialog.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/dialog/dialog.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\dialog\dialog.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/dialog/dialog.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\display\placeholder.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/display/placeholder.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\edit\closebrackets.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/edit/closebrackets.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\edit\closetag.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/edit/closetag.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\edit\continuecomment.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/edit/continuecomment.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\edit\continuelist.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/edit/continuelist.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\edit\matchbrackets.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/edit/matchbrackets.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\fold\brace-fold.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/fold/brace-fold.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\fold\foldcode.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/fold/foldcode.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\fold\indent-fold.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/fold/indent-fold.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\fold\xml-fold.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/fold/xml-fold.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\hint\html-hint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/hint/html-hint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\hint\javascript-hint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/hint/javascript-hint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\hint\pig-hint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/hint/pig-hint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\hint\python-hint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/hint/python-hint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\hint\show-hint.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/hint/show-hint.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\hint\show-hint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/hint/show-hint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\hint\xml-hint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/hint/xml-hint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\lint\javascript-lint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/lint/javascript-lint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\lint\json-lint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/lint/json-lint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\lint\lint.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/lint/lint.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\lint\lint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/lint/lint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\mode\loadmode.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/mode/loadmode.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\mode\multiplex.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/mode/multiplex.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\mode\overlay.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/mode/overlay.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\runmode\colorize.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/runmode/colorize.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\runmode\runmode-standalone.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/runmode/runmode-standalone.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\runmode\runmode.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/runmode/runmode.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\runmode\runmode.node.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/runmode/runmode.node.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\search\match-highlighter.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/search/match-highlighter.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\search\search.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/search/search.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\search\searchcursor.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/search/searchcursor.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\selection\active-line.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/selection/active-line.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\addon\selection\mark-selection.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/addon/selection/mark-selection.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\bin\compress" afterPath="$PROJECT_DIR$/include/vendor/codemirror/bin/compress" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\bin\lint" afterPath="$PROJECT_DIR$/include/vendor/codemirror/bin/lint" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\activeline.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/activeline.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\bidi.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/bidi.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\btree.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/btree.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\buffers.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/buffers.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\changemode.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/changemode.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\closebrackets.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/closebrackets.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\closetag.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/closetag.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\complete.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/complete.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\emacs.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/emacs.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\folding.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/folding.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\fullscreen.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/fullscreen.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\html5complete.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/html5complete.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\indentwrap.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/indentwrap.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\lint.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/lint.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\loadmode.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/loadmode.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\marker.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/marker.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\markselection.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/markselection.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\matchhighlighter.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/matchhighlighter.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\multiplex.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/multiplex.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\mustache.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/mustache.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\placeholder.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/placeholder.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\preview.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/preview.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\resize.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/resize.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\runmode.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/runmode.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\search.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/search.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\spanaffectswrapping_shim.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/spanaffectswrapping_shim.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\theme.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/theme.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\variableheight.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/variableheight.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\vim.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/vim.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\visibletabs.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/visibletabs.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\widget.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/widget.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\demo\xmlcomplete.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/demo/xmlcomplete.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\baboon.png" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/baboon.png" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\baboon_vector.svg" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/baboon_vector.svg" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\compress.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/compress.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\docs.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/docs.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\internals.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/internals.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\manual.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/manual.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\modes.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/modes.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\oldrelease.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/oldrelease.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\realworld.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/realworld.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\reporting.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/reporting.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\upgrade_v2.2.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/upgrade_v2.2.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\doc\upgrade_v3.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/doc/upgrade_v3.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\keymap\emacs.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/keymap/emacs.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\keymap\vim.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/keymap/vim.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\lib\codemirror.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/lib/codemirror.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\lib\codemirror.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/lib/codemirror.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\apl\apl.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/apl/apl.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\apl\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/apl/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\asterisk\asterisk.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/asterisk/asterisk.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\asterisk\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/asterisk/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\clike\clike.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/clike/clike.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\clike\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/clike/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\clike\scala.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/clike/scala.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\clojure\clojure.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/clojure/clojure.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\clojure\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/clojure/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\coffeescript\LICENSE" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/coffeescript/LICENSE" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\coffeescript\coffeescript.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/coffeescript/coffeescript.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\coffeescript\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/coffeescript/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\commonlisp\commonlisp.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/commonlisp/commonlisp.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\commonlisp\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/commonlisp/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\css\css.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/css/css.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\css\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/css/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\css\scss.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/css/scss.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\css\scss_test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/css/scss_test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\css\test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/css/test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\d\d.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/d/d.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\d\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/d/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\diff\diff.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/diff/diff.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\diff\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/diff/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\ecl\ecl.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/ecl/ecl.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\ecl\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/ecl/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\erlang\erlang.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/erlang/erlang.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\erlang\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/erlang/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\gas\gas.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/gas/gas.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\gas\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/gas/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\gfm\gfm.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/gfm/gfm.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\gfm\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/gfm/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\gfm\test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/gfm/test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\go\go.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/go/go.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\go\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/go/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\groovy\groovy.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/groovy/groovy.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\groovy\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/groovy/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\haskell\haskell.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/haskell/haskell.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\haskell\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/haskell/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\haxe\haxe.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/haxe/haxe.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\haxe\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/haxe/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\htmlembedded\htmlembedded.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/htmlembedded/htmlembedded.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\htmlembedded\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/htmlembedded/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\htmlmixed\htmlmixed.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/htmlmixed/htmlmixed.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\htmlmixed\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/htmlmixed/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\http\http.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/http/http.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\http\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/http/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\javascript\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/javascript/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\javascript\javascript.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/javascript/javascript.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\javascript\typescript.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/javascript/typescript.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\jinja2\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/jinja2/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\jinja2\jinja2.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/jinja2/jinja2.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\less\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/less/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\less\less.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/less/less.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\livescript\LICENSE" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/livescript/LICENSE" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\livescript\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/livescript/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\livescript\livescript.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/livescript/livescript.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\livescript\livescript.ls" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/livescript/livescript.ls" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\lua\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/lua/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\lua\lua.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/lua/lua.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\markdown\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/markdown/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\markdown\markdown.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/markdown/markdown.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\markdown\test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/markdown/test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\meta.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/meta.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\mirc\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/mirc/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\mirc\mirc.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/mirc/mirc.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\ntriples\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/ntriples/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\ntriples\ntriples.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/ntriples/ntriples.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\ocaml\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/ocaml/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\ocaml\ocaml.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/ocaml/ocaml.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\pascal\LICENSE" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/pascal/LICENSE" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\pascal\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/pascal/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\pascal\pascal.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/pascal/pascal.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\perl\LICENSE" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/perl/LICENSE" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\perl\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/perl/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\perl\perl.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/perl/perl.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\php\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/php/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\php\php.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/php/php.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\pig\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/pig/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\pig\pig.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/pig/pig.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\properties\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/properties/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\properties\properties.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/properties/properties.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\python\LICENSE.txt" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/python/LICENSE.txt" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\python\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/python/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\python\python.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/python/python.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\q\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/q/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\q\q.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/q/q.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\r\LICENSE" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/r/LICENSE" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\r\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/r/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\r\r.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/r/r.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rpm\changes\changes.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rpm/changes/changes.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rpm\changes\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rpm/changes/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rpm\spec\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rpm/spec/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rpm\spec\spec.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rpm/spec/spec.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rpm\spec\spec.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rpm/spec/spec.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rst\LICENSE.txt" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rst/LICENSE.txt" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rst\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rst/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rst\rst.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rst/rst.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\ruby\LICENSE" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/ruby/LICENSE" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\ruby\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/ruby/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\ruby\ruby.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/ruby/ruby.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rust\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rust/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\rust\rust.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/rust/rust.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\sass\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/sass/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\sass\sass.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/sass/sass.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\scheme\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/scheme/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\scheme\scheme.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/scheme/scheme.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\shell\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/shell/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\shell\shell.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/shell/shell.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\sieve\LICENSE" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/sieve/LICENSE" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\sieve\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/sieve/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\sieve\sieve.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/sieve/sieve.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\smalltalk\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/smalltalk/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\smalltalk\smalltalk.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/smalltalk/smalltalk.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\smarty\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/smarty/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\smarty\smarty.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/smarty/smarty.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\sparql\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/sparql/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\sparql\sparql.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/sparql/sparql.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\sql\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/sql/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\sql\sql.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/sql/sql.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\stex\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/stex/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\stex\stex.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/stex/stex.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\stex\test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/stex/test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\tcl\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/tcl/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\tcl\tcl.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/tcl/tcl.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\tiddlywiki\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/tiddlywiki/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\tiddlywiki\tiddlywiki.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/tiddlywiki/tiddlywiki.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\tiddlywiki\tiddlywiki.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/tiddlywiki/tiddlywiki.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\tiki\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/tiki/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\tiki\tiki.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/tiki/tiki.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\tiki\tiki.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/tiki/tiki.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\turtle\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/turtle/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\turtle\turtle.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/turtle/turtle.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\vb\LICENSE.txt" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/vb/LICENSE.txt" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\vb\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/vb/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\vb\vb.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/vb/vb.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\vbscript\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/vbscript/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\vbscript\vbscript.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/vbscript/vbscript.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\velocity\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/velocity/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\velocity\velocity.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/velocity/velocity.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\verilog\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/verilog/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\verilog\verilog.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/verilog/verilog.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\xml\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/xml/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\xml\xml.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/xml/xml.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\xquery\LICENSE" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/xquery/LICENSE" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\xquery\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/xquery/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\xquery\test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/xquery/test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\xquery\xquery.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/xquery/xquery.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\yaml\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/yaml/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\yaml\yaml.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/yaml/yaml.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\z80\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/z80/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\mode\z80\z80.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/mode/z80/z80.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\package.json" afterPath="$PROJECT_DIR$/include/vendor/codemirror/package.json" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\doc_test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/doc_test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\driver.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/driver.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\index.html" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/index.html" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\lint\acorn.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/lint/acorn.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\lint\lint.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/lint/lint.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\lint\parse-js.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/lint/parse-js.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\lint\walk.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/lint/walk.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\mode_test.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/mode_test.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\mode_test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/mode_test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\phantom_driver.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/phantom_driver.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\run.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/run.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\test\vim_test.js" afterPath="$PROJECT_DIR$/include/vendor/codemirror/test/vim_test.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\ambiance-mobile.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/ambiance-mobile.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\ambiance.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/ambiance.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\blackboard.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/blackboard.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\cobalt.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/cobalt.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\eclipse.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/eclipse.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\elegant.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/elegant.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\erlang-dark.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/erlang-dark.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\lesser-dark.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/lesser-dark.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\midnight.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/midnight.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\monokai.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/monokai.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\neat.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/neat.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\night.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/night.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\rubyblue.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/rubyblue.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\solarized.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/solarized.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\twilight.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/twilight.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\vibrant-ink.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/vibrant-ink.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\xq-dark.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/xq-dark.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\codemirror\theme\xq-light.css" afterPath="$PROJECT_DIR$/include/vendor/codemirror/theme/xq-light.css" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\date.format.js" afterPath="$PROJECT_DIR$/include/vendor/date.format.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\jquery-1.9.0.min.js" afterPath="$PROJECT_DIR$/include/vendor/jquery-1.9.0.min.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\jquery-2.0.0.js" afterPath="$PROJECT_DIR$/include/vendor/jquery-2.0.0.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\jquery.autosize.input.js" afterPath="$PROJECT_DIR$/include/vendor/jquery.autosize.input.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\jquery.jqGrid.src.js" afterPath="$PROJECT_DIR$/include/vendor/jquery.jqGrid.src.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\underscore.js" afterPath="$PROJECT_DIR$/include/vendor/underscore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/AutomatedTest.js" afterPath="$PROJECT_DIR$/models/AutomatedTest.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/module/overviewApp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/PersistantStorage.js" afterPath="$PROJECT_DIR$/models/PersistantStorage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/TabSystem.js" afterPath="$PROJECT_DIR$/include/TabSystem.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/TheGame.js" afterPath="$PROJECT_DIR$/models/TheGame.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/views/chooseChallenge.html" afterPath="$PROJECT_DIR$/angular/views/chooseChallenge.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/database.js" afterPath="$PROJECT_DIR$/include/database.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/controllers/gameController.js" afterPath="$PROJECT_DIR$/angular/controllers/gameController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/general.js" afterPath="$PROJECT_DIR$/general.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/motivation.html" afterPath="$PROJECT_DIR$/motivation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -334,64 +35,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="challengeStep.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/module/challengeStep.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="39" selection-start="125" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="850">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="56" selection-start="4277" selection-end="4277" vertical-scroll-proportion="-21.692308" vertical-offset="643" max-vertical-offset="1496">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chooseChallenge.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/views/chooseChallenge.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="204">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="gameController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular/controllers/gameController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="612">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="1340" selection-end="1340" vertical-scroll-proportion="-0.47027028" vertical-offset="720" max-vertical-offset="1479">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersistantStorage.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/PersistantStorage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="22" selection-start="2348" selection-end="2348" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2142">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainApp.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular/views/mainApp.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="6" selection-start="3008" selection-end="3008" vertical-scroll-proportion="-41.846153" vertical-offset="0" max-vertical-offset="1190">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="challenge_data.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challengeData/challenge_data.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="problems.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challengeData/problems.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="44" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TheGame.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/TheGame.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="286" column="34" selection-start="10375" selection-end="10375" vertical-scroll-proportion="0.0" vertical-offset="4485" max-vertical-offset="6868">
+            <state line="8" column="55" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
@@ -400,25 +74,52 @@
       <file leaf-file-name="general.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="2" selection-start="1165" selection-end="1165" vertical-scroll-proportion="-14.88" vertical-offset="478" max-vertical-offset="3893">
+            <state line="230" column="64" selection-start="6419" selection-end="6419" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4131">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/database.js">
+      <file leaf-file-name="PersistantStorage.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/PersistantStorage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="46" selection-start="2360" selection-end="2360" vertical-scroll-proportion="0.0" vertical-offset="1459" max-vertical-offset="2040">
+            <state line="112" column="15" selection-start="3778" selection-end="3778" vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="2295">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chooseChallengeController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular/controllers/chooseChallengeController.js">
+      <file leaf-file-name="mainApp.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/views/mainApp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+            <state line="38" column="57" selection-start="1579" selection-end="1590" vertical-scroll-proportion="-13.076923" vertical-offset="306" max-vertical-offset="1190">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TabSystem.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/TabSystem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="45" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="1632">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TheGame.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/TheGame.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="96" column="72" selection-start="4319" selection-end="4319" vertical-scroll-proportion="0.5802048" vertical-offset="1054" max-vertical-offset="7157">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="overviewApp.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/module/overviewApp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
               <folding />
             </state>
           </provider>
@@ -442,22 +143,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/include/TabSystem.js" />
-        <option value="$PROJECT_DIR$/include/clickToEdit.js" />
-        <option value="$PROJECT_DIR$/angular/module/clickToEdit.js" />
         <option value="$PROJECT_DIR$/motivation.html" />
-        <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/challenge_data.js" />
         <option value="$PROJECT_DIR$/angular/views/mainApp.html" />
         <option value="$PROJECT_DIR$/angular/controllers/controller.js" />
         <option value="$PROJECT_DIR$/challengeData/problems.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/angular/controllers/chooseChallengeController.js" />
+        <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/angular/views/chooseChallenge.html" />
-        <option value="$PROJECT_DIR$/models/PersistantStorage.js" />
+        <option value="$PROJECT_DIR$/angular/controllers/chooseChallengeController.js" />
         <option value="$PROJECT_DIR$/angular/controllers/gameController.js" />
-        <option value="$PROJECT_DIR$/models/TheGame.js" />
+        <option value="$PROJECT_DIR$/include/TabSystem.js" />
+        <option value="$PROJECT_DIR$/include/database.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/angular/module/overviewApp.js" />
         <option value="$PROJECT_DIR$/general.js" />
+        <option value="$PROJECT_DIR$/models/PersistantStorage.js" />
+        <option value="$PROJECT_DIR$/models/TheGame.js" />
       </list>
     </option>
   </component>
@@ -493,6 +194,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -609,7 +311,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -637,6 +338,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -670,12 +384,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32928178" sideWeight="0.9921936" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14412998" sideWeight="0.67071825" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1451782" sideWeight="0.7038674" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31026787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -684,6 +397,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2961326" sideWeight="0.9921936" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -703,104 +417,108 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/angular/module/challengeStep.js">
+    <entry file="file://$PROJECT_DIR$/challengeData/challenge_data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="31" selection-start="1872" selection-end="1872" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular/module/clickToEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="96" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/motivation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="39" selection-start="2325" selection-end="2325" vertical-scroll-proportion="-24.846153" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/TabSystem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state line="36" column="0" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="437" column="27" selection-start="7442" selection-end="7442" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular/views/chooseChallenge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="56" selection-start="331" selection-end="331" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="46" selection-start="2360" selection-end="2360" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state line="411" column="15" selection-start="6914" selection-end="6914" vertical-scroll-proportion="0.59385663" vertical-offset="6639" max-vertical-offset="7531">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular/controllers/chooseChallengeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state line="5" column="54" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/vendor/jquery.jqGrid.src.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4782" column="30" selection-start="164471" selection-end="164471" vertical-scroll-proportion="-0.028428094" vertical-offset="81294" max-vertical-offset="213503">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challengeData/problems.js">
+    <entry file="file://$PROJECT_DIR$/angular/module/clickToEdit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="44" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state line="5" column="26" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1394" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="23" selection-start="3466" selection-end="3466" vertical-scroll-proportion="0.0" vertical-offset="1633" max-vertical-offset="2499">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challengeData/challenge_data.js">
+    <entry file="file://$PROJECT_DIR$/angular/module/challengeStep.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1188" selection-end="1188" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
+        <state line="4" column="39" selection-start="125" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular/views/mainApp.html">
+    <entry file="file://$PROJECT_DIR$/include/TabSystem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="6" selection-start="3008" selection-end="3008" vertical-scroll-proportion="-41.846153" vertical-offset="0" max-vertical-offset="1190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/PersistantStorage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="22" selection-start="2348" selection-end="2348" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state line="55" column="45" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="1632">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular/controllers/gameController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state line="8" column="55" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/TheGame.js">
+    <entry file="file://$PROJECT_DIR$/angular/views/mainApp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="34" selection-start="10375" selection-end="10375" vertical-scroll-proportion="0.0" vertical-offset="4485" max-vertical-offset="6868">
+        <state line="38" column="57" selection-start="1579" selection-end="1590" vertical-scroll-proportion="-13.076923" vertical-offset="306" max-vertical-offset="1190">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general.js">
+    <entry file="file://$PROJECT_DIR$/angular/module/overviewApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="2" selection-start="1165" selection-end="1165" vertical-scroll-proportion="-14.88" vertical-offset="478" max-vertical-offset="3893">
+        <state line="12" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/views/chooseChallenge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="1340" selection-end="1340" vertical-scroll-proportion="-0.47027028" vertical-offset="720" max-vertical-offset="1479">
+        <state line="71" column="56" selection-start="4277" selection-end="4277" vertical-scroll-proportion="-21.692308" vertical-offset="643" max-vertical-offset="1496">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/PersistantStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="15" selection-start="3778" selection-end="3778" vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="2295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="230" column="64" selection-start="6419" selection-end="6419" vertical-scroll-proportion="0.0" vertical-offset="3235" max-vertical-offset="4131">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/TheGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="72" selection-start="4319" selection-end="4319" vertical-scroll-proportion="0.5802048" vertical-offset="1054" max-vertical-offset="7157">
           <folding />
         </state>
       </provider>

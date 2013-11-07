@@ -88,7 +88,7 @@ var log = delayedLog.log.bind(delayedLog);
     }
 
 
-    function createTables() {
+    function createTablesIfNecessary() {
         // app-specific @todo move
       var code= 'CREATE  TABLE IF NOT EXISTS "savedCode" (' +
       '"id" INTEGER PRIMARY KEY AUTOINCREMENT  ,' +
@@ -101,14 +101,41 @@ var log = delayedLog.log.bind(delayedLog);
       '"challenge_id" INT NULL ,' +
       '"step_id" INT NULL , ' +
       '"last_utilized_session_id" INT NULL ' +
-       ')';
+       '); ';
 
+       var code2 = 'CREATE TABLE IF NOT EXISTS "appSettings" (' +
+            '"id" INTEGER PRIMARY KEY AUTOINCREMENT, ' +
+            '"showed_splash_screen" TINYINT NULL' +
+            ');' ;
+
+        
         execute(code);
+        return execute(code2);
+    }
+
+    function setupAppSettingsIfNecessary() {
+        var query = "SELECT count(id) from 'appSettings'; ";
+        var addQuery = "INSERT INTO appSettings (id, showed_splash_screen) VALUES (0, 0);";
+        return new Promise(function(succ, fail) {
+            execute(query).then(function(x){
+                if (_.values(x.item(0))[0])
+                    return succ(); //already has row
+                return execute(addQuery).then(succ);
+            });
+        });
+
+    }
+
+    function eradicate() {
+        execute("DELETE from savedCode");
+        execute("DELETE from app");
     }
 
     initDb();
-    createTables();
+    createTablesIfNecessary().then(function(){
+        setupAppSettingsIfNecessary();
+    });
 
-    DATABASE={db: db, execute: execute};
+    DATABASE={db: db, execute: execute, eradicate: eradicate};
     q = execute; //console use only
 }());

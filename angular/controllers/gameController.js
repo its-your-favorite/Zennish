@@ -4,16 +4,14 @@
  */
 var globalCopy; //For console debug purposes
 
-function GameController($scope) {
+function gameController($scope) {
     // Take care of global HTML elements
     myCodeMirror = CodeMirror(fe("#ideContainer")[0], {
-        value: "//write your javascript here\n",
         mode: "javascript"
     });
 
     myCodeMirror.setSize(null, 550);
     ////////////////////////////////////////////
-    ensureSmokescreen(false);
 
     $scope.view = GeneralCrap;
     $scope.challengeSet =  EXPORT.challengeSet;
@@ -26,5 +24,6 @@ function GameController($scope) {
         setTimeout(updateTimers,1000);
     });
     globalCopy = $scope;
+
     window.debugTests = $scope.theGame.debugTests.bind($scope.theGame); //make accessible easily via console
 } ;

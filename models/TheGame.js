@@ -30,10 +30,7 @@
 // BUG: XSS on load dialog
 
 // @todo -- below
-
-// Big Picture: Startup interface
-//      [Check] Name, author, what is this
-//      [] choose challenge (use known state to resume appropriately)
+// needs to hide forever by default
 // Goes into what I've currently made... which then needs a way to quit back out. (escape, etc) and a good way to retrieve it.
 
 // Preserve all state. Nothing should be lost on a refresh.
@@ -93,6 +90,12 @@
 // Make a good user experience, intro, layover screen
 // make 2nd challenge
 
+// Big Picture: Startup interface
+//      [Check] Name, author, what is this
+//      [] choose challenge (use known state to resume appropriately)
+
+// App should start with fading splash screen as it loads, not FLASHING.
+
 // Give a default test for every challenge for clarity? Tests need to be more readable and resizing needs to allow more than two sizes
 
 // http://adamschwartz.co/log/
@@ -121,7 +124,7 @@ var TheGame = function(challenges)  {
     this.tabSystem = new TabSystem(".tabsContainer", function(extraneous) {
        self.renderSave(extraneous);
     }, function(tab) {
-        tab.snippet = getIdeContents(); //actually updating a reference
+        tab.snippet = ideContents(); //actually updating a reference
     });
 };
 
@@ -163,18 +166,24 @@ TheGame.prototype.showPastSolution = function(challengeId, stepId, sessionId, sa
 TheGame.prototype.renderSave = function(save,b,c,d) {
     setIdeText(save.snippet);
 
-    //should be abstracted out
-    myCodeMirror.getDoc().markText({line:0, ch:0}, {line:9999999, ch: 0}, {readOnly: !!save.locked});
+    if (!save) {
+        GeneralCrap.setCodeMirrorLocked(true);
+    }
+    else {
+        //should be abstracted out
+        GeneralCrap.setCodeMirrorLocked(!!save.locked);
+    }
 };
 
 TheGame.prototype.advanceStep = function(){
   assert(this.currentChallenge);
   var nextStep = this.currentStepNum+1;
 
-  if (this.currentChallenge.steps.length <= nextStep)
+  if (this.currentChallenge.steps.length <= nextStep) {
         return alert("All solved!");
-    else
+  } else {
         this.gotoStep(nextStep);
+  }
 };
 
 TheGame.prototype.startChallenge = function(num) {
@@ -196,6 +205,8 @@ TheGame.prototype.gotoStep = function(num) {
           function(preload){
               if (preload.length){
                 self.loadSave(preload[0]);
+              } else {
+                self.loadBlankTab();
               }
           }, function(a) {
             alert("failed to load db");
@@ -378,7 +389,7 @@ TheGame.prototype.getRecentLoads = function() {
 
 TheGame.prototype.getSpecificLoad = function(step, challenge, session) {
     return PersistentStorage.loadParticularSave(step, challenge, session);
-}
+};
 
 /**
  * load(verb) save(noun)
@@ -386,6 +397,11 @@ TheGame.prototype.getSpecificLoad = function(step, challenge, session) {
  */
 TheGame.prototype.loadSave = function(save) {
     this.loadIntoNewTab( save );
+};
+
+TheGame.prototype.loadBlankTab = function() {
+    var tab = new Tab("Unsaved", false, (+new Date()), $.extend({snippet: '//write your javascript here\n'}) );
+    this.tabSystem.addTab(tab);
 };
 
 /**

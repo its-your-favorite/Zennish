@@ -1,5 +1,8 @@
+<div id="gameHeader">
+    Work-Work:
 Title and shit goes here.
 Also overall multi-challenge stuff.
+</div>
 
 <div id="leftHalf" class="unselectable">
     <div class="collapsible floatRight">&nbsp;</div>
@@ -32,7 +35,7 @@ Also overall multi-challenge stuff.
         <div class="unselectable">
             <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
             {{theGame.currentChallenge.keystrokes}} keystrokes
-            <input type="button" id="saveButton" ng-click="theGame.saveCurrentEditor()" value="Save" />
+            <input type="button" id="saveButton" ng-click="theGame.saveCurrentEditor(true)" value="Save" />
             <input type="button" ng-click="theGame.pickAndLoadSave()" value="Load" />
         </div>
         <div class="tabsContainer">

@@ -62,6 +62,12 @@ TabSystem.prototype.selectSomeTab = function() {
     this.selectTab(this.tabs.length - 1, true); //even handles the zero case
 };
 
+TabSystem.prototype.getSelectedTabOrNull = function() {
+    if (this.activeTab < 0 )
+        return null;
+    return this.tabs[ this.activeTab ];
+}
+
 /**
  *
  * @param id

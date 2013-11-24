@@ -29,6 +29,14 @@ var StepModel;
 
     };
 
+    StepModel.prototype.getExpectedSolutionOutline = function() {
+        if (! this.addFunction) {
+            return '';
+        }
+        var f = this.addFunction;
+        return '\nvar ' + f[0] + ' = function (' + f.slice(1).join(", ") + ") { \n\n }; ";
+    };
+
     StepModel.prototype.updateTimeSpent = function(){
         var twoDig = function(x) { return ("0" + x).slice(-2);};
         var seconds = 0|((new Date()|0) - this.startTime)/1000;

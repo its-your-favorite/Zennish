@@ -30,13 +30,13 @@ var fe = function (selector) {
 };
 
 var collapsed = false;
-$(document).on(".collapsible",function(event) {
+$(document).on("click", ".collapsible",function(event) {
     collapsed = !collapsed;
     fe(event.target).parent().toggleClass("collapsed");
     $(this).toggleClass("collapsed");
 });
 
-var session_id = _.memoize(function() {return new Date()|0;} ); //timestamp at load time
+var session_id = _.memoize(function() {return +new Date();} ); //timestamp at load time
 
 var saveData = function(key, value) {
     if(localStorage)
@@ -130,7 +130,10 @@ var ideExtractFunctionAndDebugger = function (name, removeDebugger) {
     try {
         saferEval( code);
     } catch (e) {
-        return false;
+        if (e.message === (name + " is not defined")) {
+                throw "Couldn't find any function named " + name + " in your code. Please define that function and have it return the solution.";
+        }
+        throw "Couldn't parse your code, you've got syntax errors.";
     }
 
     return extracted;
@@ -234,5 +237,15 @@ $('#closeOverlay').on('click', function() {
 GeneralCrap.setCodeMirrorLocked = function(val) {
     myCodeMirror.setOption('readOnly', val);
 }
+
+$(window).keydown(function(event) {
+    //control-s handler
+    if (!((event.which == 115 || event.which == 83) && event.ctrlKey) && !(event.which == 19)) return true;
+    if ($("#saveButton:visible").length) {
+        $("#saveButton:visible")[0].click();
+    }
+    event.preventDefault();
+    return false;
+});
 
 angular.bootstrap(document, ['inlineEditing', 'automatedTest', 'challengeStep']);

@@ -13,7 +13,7 @@ EXPORT.challengeSet = [
         story: "Put a story here!",
         description: "Given two 6-digit strings that each represent a color in RGB hex notation, find a color that is the average of the two. This can be done by averaging the Red, Green, and Blue pieces of the color. Return this color in 6 digit string using hex RGB notation. Round down when rounding is necessary. ",
         addFunction: ['averageColors', 'color1', 'color2'],
-        tests: [['ffffff', '000000' ], ['123456', 'AAAAAA']  ] /* answer followed by sets of parameters */
+        tests: [['ffffff', '000000' ], ['123456', 'AAAAAA'], ["000000","111111"]  ] /*   */
     },
     {
         id: 1,

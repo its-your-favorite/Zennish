@@ -93,7 +93,7 @@ AutomatedTest.prototype.run = function(useDebugger) {
         if (wouldBeValidJsonIfDoubleQuotes(this.paramsJson)){
             notifyGently("It looks like the parameters for one of your tests would be valid JSON if you swapped ' with \" ");
         };
-        return "Parameters weren't parsable";
+        return "Parameters weren't parsable json: [" + this.paramsJson + "]";
     }
 
     try {

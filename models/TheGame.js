@@ -30,10 +30,22 @@
 // BUG: XSS on load dialog
 
 // @todo -- below
-// needs to hide forever by default
-// Goes into what I've currently made... which then needs a way to quit back out. (escape, etc) and a good way to retrieve it.
+
+// don't show "Saved" on a read-only. Plus it probably is saving and updating the timestamp, so don't allow that either.
+
+// can have nameless save (which is then like impossible to rename)
+
+// general gui issues on load dialog
+
+// saves is super-polluted. What I propose is that save by default "overwrite" which means "delete" the old (flag). We then have a
+// a view switch to "show deleted / overwritten". Saves can then be "deleted" with right-click. Or undeleted.
+
+// need a collapse for bottom?
 
 // Preserve all state. Nothing should be lost on a refresh.
+// Let's list all inherent "State"...
+// -- View state (dialogs up [intro, load], collapses,)
+// -- All open tabs, and their current values
 // -- how do you propose to do that? Binding to local-save?
 
 // On completion it shows stats, (maybe allows leaderboard), maybe allows a share link,  and perhaps auto-quits.
@@ -42,10 +54,11 @@
 // needs to work better on laptop, code window too tall
 
 // all this needs to be namespaced & wrapped so user javascript can't mess with it.
-//   -- Ajax requests ?
+// I seem to have made some progress here...
 //   -- dom manipulation ?
 //          document.write ...
-//   -- window url and positioning
+//   -- They can still manipulate dom Via $ ... which I guess is okay? Unless I import a pseudo-jquery via wrapping it in a closure...
+//   -- Window.* , document.*
 //   -- take my solutions and such out of the global scope
 
 // line wrap option on code mirror?
@@ -87,8 +100,13 @@
 // make overlay
 // make transition between steps better. Just unmasking question marks does not indicate a transition sufficiently.
 
-// Make a good user experience, intro, layover screen
 // make 2nd challenge
+
+// move pseudo console to the right... save this to last because it may become irrelevant on graphical redesign
+
+// Intro needs to hide cleanly. When closed intro needs to hide forever by default
+// Goes into what I've currently made... which then needs a way to quit back out. (escape, etc) and a good way to retrieve it.
+
 
 // Big Picture: Startup interface
 //      [Check] Name, author, what is this
@@ -135,18 +153,20 @@ TheGame.prototype.showPastSolution = function(challengeId, stepId, sessionId, sa
     var customDatums = this.tabSystem.enumerateTabs();
     var self = this;
 
-    if ( !customDatums.some(function(tab, index){
+    //what does this do ?
+    var nameThis = function(tab, index){
         var customData = tab.getValue();
         if (customData.challenge_id == challengeId && customData.step_id == stepId && customData.session_id == sessionId) {
             self.tabSystem.selectTab(index);
             return true;
         };
         return false;
-    })) {
-        this.getSpecificLoad(stepId, challengeId, sessionId).then(function(saves){
-            self.loadIntoNewTab($.extend({locked: true}, saves[0]));
+    };
 
-        })
+    if ( !customDatums.some(nameThis)) {
+            this.getSpecificLoad(stepId, challengeId, sessionId).then(function(saves){
+                self.loadIntoNewTab($.extend({locked: true}, saves[0]));
+            })
         //load tab
     }
 
@@ -201,12 +221,14 @@ TheGame.prototype.gotoStep = function(num) {
     this.currentStepNum = num;
     this.startStep(this.getStep(num));
 
-    var preload = PersistentStorage.loadCodeInitial(this.getCurrentStep().id, this.getCurrentChallenge().id).then(
+    var preload = PersistentStorage.loadCodeInitial(num, this.getCurrentChallenge().id).then(
           function(preload){
               if (preload.length){
                 self.loadSave(preload[0]);
               } else {
-                self.loadBlankTab();
+                if (!self.tabSystem.tabs.length) //no tabs open, create one
+                    self.loadBlankTab();
+                 //otherwise just keep going in the current tab
               }
           }, function(a) {
             alert("failed to load db");
@@ -231,7 +253,7 @@ TheGame.prototype.startStep = function(step) {
         var f = step.addFunction;
         this.currentFunctionTestee = f[0];
         if (! ideContains(f[0]) ) //save'em a little typing
-            appendToIde('\nvar ' + f[0] + ' = function (' + f.slice(1).join(", ") + ") { \n\n }; ");
+            appendToIde(step.getExpectedSolutionOutline());
     }
     step.keystrokes = 0;
     step.start();
@@ -297,7 +319,11 @@ TheGame.prototype.gradeSolution = function(step, challenge) {
 
         comparer = assert(thisTest.comparer || challenge.defaultComparer);
 
-        var functionToBeTested = ideExtractFunctionAndDebugger(functionNameToBeTested, true);
+        try {
+            var functionToBeTested = ideExtractFunctionAndDebugger(functionNameToBeTested, true);
+        } catch (e){
+            return e;
+        }
         return executeOneTest(functionToBeTested, functionNameToBeTested, userNamespace, parameters, comparer, expected);
     }).filter();
 
@@ -322,7 +348,17 @@ TheGame.prototype.removeTestById = function(id) {
 };
 
 TheGame.prototype.saveCurrentEditor = function(manual, name){
-
+    if (arguments.length < 2) {
+        var tab = this.tabSystem.getSelectedTabOrNull();
+        if (!tab) {
+            // todo, make sure this is the appropriate place for an error
+            return NoteSystem.showNewNote("Failed: No tab to save!");
+        }
+        name = tab.caption;
+    }
+    if (manual) {
+        NoteSystem.showNewNote("Saved!");
+    }
     PersistentStorage.saveCode (
         {snippet: ideContents(),
          created_session_id: session_id(),
@@ -400,7 +436,7 @@ TheGame.prototype.loadSave = function(save) {
 };
 
 TheGame.prototype.loadBlankTab = function() {
-    var tab = new Tab("Unsaved", false, (+new Date()), $.extend({snippet: '//write your javascript here\n'}) );
+    var tab = new Tab("Unsaved", false, (+new Date()), $.extend({snippet: '//write your javascript here\n' + this.getCurrentStep().getExpectedSolutionOutline() }) );
     this.tabSystem.addTab(tab);
 };
 

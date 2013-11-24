@@ -42,7 +42,7 @@ var log = delayedLog.log.bind(delayedLog);
         //Log(str);
         for (var x=0; x < len; x++) {
 
-            //log(resultSet.rows.item(x));
+            log(resultSet.rows.item(x));
         }
         return resultSet.rows;
     }
@@ -128,7 +128,7 @@ var log = delayedLog.log.bind(delayedLog);
 
     function eradicate() {
         execute("DELETE from savedCode");
-        execute("DELETE from app");
+        execute("DELETE from appSettings");
     }
 
     initDb();

@@ -12,8 +12,8 @@ app.directive("clickToEdit", function() {
         '<a ng-click="enableEditor()"><img class="inlineEditIcon" alt="Edit This Text" title="Edit This Text"></a>' +
         '</span>' +
         '<span ng-show="view.editorEnabled">' +
-        '<input ng-model="view.editableValue" class="click-to-edit-textbox" data-autosize-input=\'{ "space": 1 }\'>' +
         '<img class="inlineEditSaveIcon" href="#" ng-click="save()" title="Save Changes">' +
+        '<input ng-model="view.editableValue" class="click-to-edit-textbox" data-autosize-input=\'{ "space": 1 }\'>' +
         '<img class="inlineEditCancelIcon" ng-click="disableEditor()" title="Cancel Changes">' +
         '</span>' +
         '</span>';

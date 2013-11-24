@@ -27,7 +27,6 @@ html,body {
 }
 
 #rightHalf {
-    margin-left: 300px;
     border: 3px inset;
     box-sizing: border-box;
     padding: 0px;
@@ -222,6 +221,9 @@ input[type=button] {
     font-family: lucida;
 }
 
+#gameHeader {
+    height: 60px;
+}
 /**
 Credit to http://css-tricks.com/examples/PopFromTopMessage/
 */
@@ -383,6 +385,7 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
 }
 
 .click-to-edit {
+    white-space:nowrap;
     border-bottom: 1px solid #EEEEEE;
 }
 

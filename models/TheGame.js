@@ -31,14 +31,9 @@
 
 // @todo -- below
 
+// Need a a default Icon
+
 // don't show "Saved" on a read-only. Plus it probably is saving and updating the timestamp, so don't allow that either.
-
-// can have nameless save (which is then like impossible to rename)
-
-// general gui issues on load dialog
-
-// saves is super-polluted. What I propose is that save by default "overwrite" which means "delete" the old (flag). We then have a
-// a view switch to "show deleted / overwritten". Saves can then be "deleted" with right-click. Or undeleted.
 
 // need a collapse for bottom?
 
@@ -52,6 +47,10 @@
 // explain the ability to debug tests(Put a help Icon by each piece)
 
 // needs to work better on laptop, code window too tall
+
+// not highest priority
+// saves is super-polluted. What I propose is that save by default "overwrite" which means "delete" the old (flag). We then have a
+// a view switch to "show deleted / overwritten". Saves can then be "deleted" with right-click. Or undeleted.
 
 // all this needs to be namespaced & wrapped so user javascript can't mess with it.
 // I seem to have made some progress here...
@@ -230,6 +229,14 @@ TheGame.prototype.gotoStep = function(num) {
                     self.loadBlankTab();
                  //otherwise just keep going in the current tab
               }
+              var x;
+              var currentStep = self.getCurrentStep();
+              var demoTests = currentStep.demoTests;
+              // add demoTests to help user understand the question
+              for (x=0; x < demoTests.length; x++) {
+                self.addTest(demoTests[x], true);
+              }
+
           }, function(a) {
             alert("failed to load db");
         });
@@ -298,33 +305,13 @@ TheGame.prototype.gradeSolution = function(step, challenge) {
     assert(step && step.tests);
 
     var failures = FA(step.tests).map(function(thisTest) {
-        var comparer, expected, parameters;
-        var functionNameToBeTested; //name of the function which this Step is evaluating for correctness. Will be dug out of code
-
-        if (thisTest instanceof Array) {
-            functionNameToBeTested =  false; //default to mostRecentlyUsed function
-            parameters = thisTest;
-            expected = false;
-        } else {
-            functionNameToBeTested = (thisTest.testee);
-            parameters = assertIs(thisTest.params);
-            expected = (thisTest.expected) || thisTest.solver || false;
-        }
-        functionNameToBeTested =  assert(functionNameToBeTested || step.defaultTestee || (step.addFunction && step.addFunction[0]) || challenge.defaultTestee);
-        expected = assert(expected || step.defaultSolution || challenge.defaultSolution, "missing solution");
-
-        if (expected instanceof Function ) {
-            expected = expected.apply(null,parameters); //calculate expected via callback
-        }
-
-        comparer = assert(thisTest.comparer || challenge.defaultComparer);
 
         try {
-            var functionToBeTested = ideExtractFunctionAndDebugger(functionNameToBeTested, true);
-        } catch (e){
+            var test = new AutomatedTest(thisTest, step, challenge);
+            return !test.run(false);
+        } catch (e) {
             return e;
         }
-        return executeOneTest(functionToBeTested, functionNameToBeTested, userNamespace, parameters, comparer, expected);
     }).filter();
 
     //write this more; @todo
@@ -337,10 +324,11 @@ TheGame.prototype.recordToLog = function(str) {
     //use other console. use color @todo
 };
 
-TheGame.prototype.addTest = function(obj) {
-    this.testsSoFar = (this.testsSoFar || 0);
-    this.userTests.push(new AutomatedTest(obj, this.currentStepTesteeFunctionName(), this.testsSoFar));
-    this.testsSoFar++;
+TheGame.prototype.addTest = function(obj, fillOut) {
+    if (!fillOut) {
+        obj.expected = '';
+    }
+    this.userTests.push(new AutomatedTest(obj, this.getCurrentStep(), this.getCurrentChallenge()));
 };
 
 TheGame.prototype.removeTestById = function(id) {
@@ -376,11 +364,11 @@ TheGame.prototype.updateTimeSpentForSteps = function() {
 };
 
 /**
- * Meant to be run from the console
+ *
  */
 TheGame.prototype.debugTests = function(doDebug) {
     return this.userTests.every(function(test) {
-       test.runAndDebug(doDebug);
+       return test.runAndDebug(doDebug);
     });
 };
 

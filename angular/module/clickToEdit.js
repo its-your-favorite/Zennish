@@ -60,6 +60,8 @@ app.directive("clickToEdit", function() {
             };
 
             $scope.save = function() {
+                if (! $scope.view.editableValue.length)
+                    return;
                 $scope.bindTo = $scope.view.editableValue;
                 $scope.disableEditor();
                 if ($scope.onChange) {

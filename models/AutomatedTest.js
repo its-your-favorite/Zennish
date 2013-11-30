@@ -35,13 +35,53 @@ app.directive("automatedTest", function(){
 
 var AutomatedTest;
 
-AutomatedTest = function (obj, funcName, id) {
-    this.obj = obj;
-    this.paramsJson = "";
-    this.expectedJson = '1';
-    this.funcName = funcName;
-    this.id = id;
+/**
+ * Serves as class for a user's automated Tests and also the applications testing to verify the user's answers
+ * @param obj
+ * @constructor
+ */
+AutomatedTest = function (obj, step, challenge) {
+    // what the hell is this? this.obj = obj;
+    this.parseFromArray(obj, step, challenge);
+    this.id = AutomatedTest.getNextId();
     //this.doGuiRun(false);
+};
+
+// singleton
+AutomatedTest.getNextId = function(){
+    AutomatedTest.testsSoFar = AutomatedTest.testsSoFar || 0;
+    return AutomatedTest.testsSoFar++;
+};
+
+// Construct from the abbreviated format I use in challenge data
+AutomatedTest.prototype.parseFromArray = function(thisTest, step, challenge) {
+    var UNIQUE_VALUE = {};
+    var comparer, expected=UNIQUE_VALUE, parameters;
+    var functionNameToBeTested; //name of the function which this Step is evaluating for correctness. Will be dug out of code
+
+    if (thisTest instanceof Array) {
+        functionNameToBeTested =  false; //default to mostRecentlyUsed function
+        parameters = thisTest;
+        if (thisTest.hasOwnProperty("expected"))
+            expected = thisTest.expected; // sure, allow sticking a property on an array
+    } else {
+        functionNameToBeTested = (thisTest.testee);
+        parameters = assertIs(thisTest.params);
+        expected = (thisTest.expected) || thisTest.solver || false;
+    }
+    functionNameToBeTested =  assert(functionNameToBeTested || step.defaultTestee || (step.addFunction && step.addFunction[0]) || challenge.defaultTestee);
+
+    if (expected === UNIQUE_VALUE) //haven't found expected yet
+        expected = assert( step.defaultSolution || challenge.defaultSolution, "missing solution");
+
+    if (expected instanceof Function ) {
+        expected = expected.apply(null,parameters); //calculate expected via callback
+    }
+
+    comparer = assert(thisTest.comparer || challenge.defaultComparer);
+    this.funcName = functionNameToBeTested;
+    this.expectedJson = JSON.stringify(expected);
+    this.paramsJson = JSON.stringify(parameters).slice(1,-1); //remove brackets
 };
 
 AutomatedTest.prototype.canParseParams = function() {
@@ -105,14 +145,11 @@ AutomatedTest.prototype.run = function(useDebugger) {
         return "Expected wasn't parsable";
     }
     try {
-        var functionToBeTested = ideExtractFunctionAndDebugger(fname);
-        if (prob = executeOneTest(functionToBeTested, fname, null, params, comparer, expected, useDebugger)) {
-            return prob;
-        }
+        var codebase = ideExtractAllCode(fname, useDebugger);
+        return match = executeOneTest(codebase, fname, null, params, comparer, expected, useDebugger);
     } catch (e) {
         return e.toString();
     }
-    return true;
 };
 
 /**
@@ -125,16 +162,17 @@ AutomatedTest.prototype.run = function(useDebugger) {
  */
 AutomatedTest.prototype.doGuiRun = function(useDebugger){
     var returned = this.run(useDebugger);
-    this.lastResult = (returned === true);
-    if (returned === true) {
+    this.lastResult = (returned === false);
+    if (this.lastResult) {
         this.lastMessage = 'Success';
         this.flashTo("#50FF50");
     } else {
         this.lastMessage = returned;
         this.flashTo("#FF5050");
     }
-    this.lastMessage = "Test #" + this.id + " returned: " + this.lastMessage;
+    this.lastMessage = "Test #" + this.id + ", " + this.lastMessage;
     globalRecordToLog(this.lastMessage);
+    return this.lastResult;
 }
 
 /**
@@ -145,5 +183,5 @@ AutomatedTest.prototype.runAndDebug = function() {
     if (this.doGuiRun(false)) {
         return true;
     }
-    this.run(true);
+    return this.run(true);
 }

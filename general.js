@@ -52,10 +52,16 @@ var summarizeTest = function(parameters, givenVal, expected) {
     return name + "(" + parameters.map(JSON.stringify).join(", ") + ") returned " + JSON.stringify(givenVal) + ", expected " + JSON.stringify(expected);
 }
 
-var executeOneTest = function (functionToBeTested,name, userNamespace, /* array */parameters, comparer, expected, useDebugger){
+var executeOneTest = function (allCode,name, userNamespace, /* array */parameters, comparer, expected, useDebugger){
     var givenVal;
     try {
-        givenVal = functionToBeTested.apply(userNamespace, parameters);
+        givenVal =
+        window.extract = function(x) { givenVal = x};
+        saferEval(""
+            + allCode
+            + (useDebugger ? "; debugger;" : "")
+            + " extract(" + name + ".apply(" + JSON.stringify(userNamespace) + ", " + JSON.stringify(parameters) + "));"
+            + "");
     } catch (e) {
         givenVal = "Exception: " + e;
     }
@@ -112,31 +118,40 @@ var appendToIde = function(str) {
     myCodeMirror.setValue( myCodeMirror.getValue() + str);
 };
 
+// for determining if the needed function is defined yet
 var ideExtractFunction = function(name) {
-    return ideExtractFunctionAndDebugger(name, false);
+    var result = false;
+    window.extractTo=function(x) {
+        result = x;
+    };
+    saferEval(ideExtractAllCode(name,false) + " extractTo(" + name + ");");
+    return result;
 };
 
-var ideExtractFunctionAndDebugger = function (name, removeDebugger) {
-    var extracted;
-    if (name.match(/[\\\{\}\[\]\(\)\.'"\s\n\r]/)) {
+/**
+ *  useDebugger = false/undefined/true
+ *
+ **/
+var ideExtractAllCode = function (name, useDebugger) {
+    var extracted, tmp;
+    if (name.match(/[\\\{\}\[\]\(\)\.'"\s\n\r]/)) { //invalid function name @todo improve logic here
         return false;
     }
 
-    window.extractFunction = function(x) { extracted = x};
-    var code = myCodeMirror.getValue() + "\n\r\n /* */; extractFunction(" + name + ");" ; //this method still works with scopes
-    if (removeDebugger) {
+    var code = myCodeMirror.getValue() + "\n\r\n /* */; " ; //this method still works with scopes
+    if (useDebugger) {
         code = code.replace(/debugger;/gi,'');
-    }
+    };
+
     try {
         saferEval( code);
+        return code;
     } catch (e) {
         if (e.message === (name + " is not defined")) {
                 throw "Couldn't find any function named " + name + " in your code. Please define that function and have it return the solution.";
         }
         throw "Couldn't parse your code, you've got syntax errors.";
     }
-
-    return extracted;
 };
 
 /**

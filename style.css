@@ -398,6 +398,7 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     border-bottom: 1px dotted #888;
     color: #333;
     margin-top: -3px;
+    min-width: 15px;
 }
 
 .ui-jqgrid-bdiv {
@@ -438,4 +439,9 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
 
 .choiceOfChallenge:hover {
     border: 3px outset #888;
+}
+
+/* have no idea why the grid needs this modification */
+.jqgfirstrow {
+    display: none;
 }

@@ -23,7 +23,7 @@ Tab.prototype.rename = function(newName) {
  */
 Tab.prototype.getValue = function() {
     return this.extraneous;
-}
+};
 
 /**
  *

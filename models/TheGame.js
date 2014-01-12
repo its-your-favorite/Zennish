@@ -4,118 +4,15 @@
  * Time: 3:24 PM
  */
 
-// CHECK - Add Keystrokes count
-// - Grading should be done based on keystrokes. This will allow the copy-paste
-// - The notice at the top should be a slide-down slide-under. If there's none, it slides down. Otherwise a new notice slides out from the one immediately above it.
-// - the test parameters shouldn't need to be wrapped in [ ]
-// - Add timer
-// - Replace save system with much more powerful web Sql one.
-// - Use promises to power web sql queries.
-// - Implement load system
-// - Implement modal load dialog here. http://twitter.github.io/bootstrap/javascript.html
-// - Have multiple text windows open at once? Closable separately?oken
-// - Need new frame button
-// - better gui on the unit tests. If params aren't parse-able then make the params box red.
-// - Same for the other 3. 
-// - Unit tests should remind semi-valid semi-json (e.g. ['aa']) to valid json ["aa"] with note
-// - need to be able to rename frames and have it save back
-// - need error log message when unit tests fail, plus a test # so tracking can be done
-// - running a test that just failed, and seeing the fail icon still (no change) makes it difficult to know that anything has changed
-// - need vertical scrolling on load dialog
-// - pressing enter on click-to-edit must submit, pressing escape must cancel
-// - Consolidate button UI. One class, and (that is, hover state, and mouse-down reaction) [see the link provided]
-// right now, view buttons on previous steps do nothing. Instead open a read-only window of it, no rename, focus it
-// [check] A) Make view button open a window and focus
-// [check] B) Make support for read-only windows
-// BUG: XSS on load dialog
+/*
+jquery.contextmenu.js
+* jQuery Plugin for Context Menus
+* http://www.JavascriptToolbox.com/lib/contextmenu/
+*
+* Copyright (c) 2008 Matt Kruse (javascripttoolbox.com)
+*/
 
-// @todo -- below
-
-// Need a a default Icon
-
-// don't show "Saved" on a read-only. Plus it probably is saving and updating the timestamp, so don't allow that either.
-
-// need a collapse for bottom?
-
-// Preserve all state. Nothing should be lost on a refresh.
-// Let's list all inherent "State"...
-// -- View state (dialogs up [intro, load], collapses,)
-// -- All open tabs, and their current values
-// -- how do you propose to do that? Binding to local-save?
-
-// On completion it shows stats, (maybe allows leaderboard), maybe allows a share link,  and perhaps auto-quits.
-// explain the ability to debug tests(Put a help Icon by each piece)
-
-// needs to work better on laptop, code window too tall
-
-// not highest priority
-// saves is super-polluted. What I propose is that save by default "overwrite" which means "delete" the old (flag). We then have a
-// a view switch to "show deleted / overwritten". Saves can then be "deleted" with right-click. Or undeleted.
-
-// all this needs to be namespaced & wrapped so user javascript can't mess with it.
-// I seem to have made some progress here...
-//   -- dom manipulation ?
-//          document.write ...
-//   -- They can still manipulate dom Via $ ... which I guess is okay? Unless I import a pseudo-jquery via wrapping it in a closure...
-//   -- Window.* , document.*
-//   -- take my solutions and such out of the global scope
-
-// line wrap option on code mirror?
-
-// need to put mapToReduce and mapToMap in fancy for now
-
-// Bug: Pick a save dialog malfunctions with only 1 save
-
-// Note for:
-// -- Not chrome
-// -- Console not open
-
-// need to be able to resize frames better
-
-// Perhaps instead of windows being tied to editors, windows are just "frames" which can be Unit Tests, editors, consoles.
-//      And unit-tests could be tied to any window, as could consoles be tied to any unit test.
-//      this could also resolve saving questions [save frame would save unit-test + console + whatever]
-
-// Bugs:
-//  Start a new database (incognito mode). Notice the default text comes without a tab (!). Shouldn't be able to enter text
-//    when there is no tab. Maybe read-only it, or auto-create a new tab.
-//  Also notice that when you save this unnamed tags, the title is saving incorrectly.
-
-// Refactor challengeSteps
-
-//  When in parse mode (just extracting function names but not running any test)
-//      - Debugger activates
-//      - alert does a console log, which should not happen. No side effects should happen at all.
-
-// write grading
-// shouldn't keystrokes be per-window? Are they saved?
-
-// Saving questions
-// -- Saving just editor
-//  -- Unit tests? (if so, is load a merge?)
-//  -- Records of keystrokes, etc?
-
-// animation on correct or wrong, and every attempted action
-// make overlay
-// make transition between steps better. Just unmasking question marks does not indicate a transition sufficiently.
-
-// make 2nd challenge
-
-// move pseudo console to the right... save this to last because it may become irrelevant on graphical redesign
-
-// Intro needs to hide cleanly. When closed intro needs to hide forever by default
-// Goes into what I've currently made... which then needs a way to quit back out. (escape, etc) and a good way to retrieve it.
-
-
-// Big Picture: Startup interface
-//      [Check] Name, author, what is this
-//      [] choose challenge (use known state to resume appropriately)
-
-// App should start with fading splash screen as it loads, not FLASHING.
-
-// Give a default test for every challenge for clarity? Tests need to be more readable and resizing needs to allow more than two sizes
-
-// http://adamschwartz.co/log/
+ // http://adamschwartz.co/log/
 // https://github.com/adamschwartz/chrome-inspector-detector
 // Plus my own method. If I call debugger and there's no halt, then the console is closed.
 // http://lab.hakim.se/ladda/
@@ -152,17 +49,16 @@ TheGame.prototype.showPastSolution = function(challengeId, stepId, sessionId, sa
     var customDatums = this.tabSystem.enumerateTabs();
     var self = this;
 
-    //what does this do ?
-    var nameThis = function(tab, index){
+    var selectTabIfSameChallengeStepAndSession = function(tab, index){
         var customData = tab.getValue();
-        if (customData.challenge_id == challengeId && customData.step_id == stepId && customData.session_id == sessionId) {
+        if (customData.challenge_id == challengeId && customData.step_id == stepId && customData.created_session_id == sessionId) {
             self.tabSystem.selectTab(index);
             return true;
         };
         return false;
     };
 
-    if ( !customDatums.some(nameThis)) {
+    if ( !customDatums.some(selectTabIfSameChallengeStepAndSession)) {
             this.getSpecificLoad(stepId, challengeId, sessionId).then(function(saves){
                 self.loadIntoNewTab($.extend({locked: true}, saves[0]));
             })
@@ -295,20 +191,21 @@ TheGame.prototype.currentStepTesteeFunctionName = function() {
 
 /**
  * Execute actual exam to see if provided answers let us move on to next step
+ *
  * @param step
  * @param challenge
- * @returns {Array}
+ * @returns array of string explanations of failures, empty array if success
  */
 TheGame.prototype.gradeSolution = function(step, challenge) {
     var userNamespace = window; //change later
 
     assert(step && step.tests);
 
-    var failures = FA(step.tests).map(function(thisTest) {
+    var failures = FA(step.tests).map(function(thisTest, i) {
 
         try {
             var test = new AutomatedTest(thisTest, step, challenge);
-            return !test.run(false);
+            return test.run(ideExtractAllCode(test.funcName, false), false);
         } catch (e) {
             return e;
         }
@@ -336,14 +233,23 @@ TheGame.prototype.removeTestById = function(id) {
 };
 
 TheGame.prototype.saveCurrentEditor = function(manual, name){
+    var fail = NoteSystem.showNewNote.bind(NoteSystem);
+
     if (arguments.length < 2) {
         var tab = this.tabSystem.getSelectedTabOrNull();
         if (!tab) {
             // todo, make sure this is the appropriate place for an error
-            return NoteSystem.showNewNote("Failed: No tab to save!");
+            return fail("Failed: No tab to save!");
+        }
+        if (tab.extraneous.locked) { // @todo this is also a violation of good coding... since "locked" Behavior isn't inherent to the tab-container it should be added in elsewhere... right?
+            if (manual) {
+                fail("Failed: Cannot save a read-only tab!");
+            }
+            return; //return either way.
         }
         name = tab.caption;
     }
+
     if (manual) {
         NoteSystem.showNewNote("Saved!");
     }
@@ -408,7 +314,7 @@ TheGame.prototype.getCurrentChallenge = function() {
 };
 
 TheGame.prototype.getRecentLoads = function() {
-    return PersistentStorage.loadAllSaves(this.getCurrentStep().id, this.getCurrentChallenge().id);
+    return PersistentStorage.loadAllUndeletedSaves(this.getCurrentStep().id, this.getCurrentChallenge().id);
 };
 
 TheGame.prototype.getSpecificLoad = function(step, challenge, session) {

@@ -98,6 +98,7 @@ var log = delayedLog.log.bind(delayedLog);
       '"created_session_id" INT NULL , ' +
       '"when" DATETIME NULL , ' +
       '"isAutosave" TINYINT NULL ,' +
+      '"deleted" TINYINT default 0 ,' +
       '"challenge_id" INT NULL ,' +
       '"step_id" INT NULL , ' +
       '"last_utilized_session_id" INT NULL ' +
@@ -129,6 +130,8 @@ var log = delayedLog.log.bind(delayedLog);
     function eradicate() {
         execute("DELETE from savedCode");
         execute("DELETE from appSettings");
+        execute("DROP TABLE savedCode");
+        execute("DROP TABLE appSettings");
     }
 
     initDb();

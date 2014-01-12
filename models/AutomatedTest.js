@@ -119,9 +119,9 @@ AutomatedTest.prototype.canExtractFunction = function() {
  * This runs a test and provides graphical feedback
  *
  * @param useDebugger can be undefined = neutral, true = force yes, false = force no
- * @returns {*}
+ * @returns Error message string on failure, false on success
  */
-AutomatedTest.prototype.run = function(useDebugger) {
+AutomatedTest.prototype.run = function(codebase, useDebugger) {
     // going forward we can test that these are valid values by json decoding then encoding them
     // if they can't have those done then they are invalid
     var fname = this.funcName;
@@ -145,7 +145,6 @@ AutomatedTest.prototype.run = function(useDebugger) {
         return "Expected wasn't parsable";
     }
     try {
-        var codebase = ideExtractAllCode(fname, useDebugger);
         return match = executeOneTest(codebase, fname, null, params, comparer, expected, useDebugger);
     } catch (e) {
         return e.toString();
@@ -161,7 +160,7 @@ AutomatedTest.prototype.run = function(useDebugger) {
  * @param useDebugger
  */
 AutomatedTest.prototype.doGuiRun = function(useDebugger){
-    var returned = this.run(useDebugger);
+    var returned = this.run(ideExtractAllCode(this.funcName, useDebugger), useDebugger); //probably should refactor later @todo this shouldn't just be "grabbing" stuff out of the dom in theory
     this.lastResult = (returned === false);
     if (this.lastResult) {
         this.lastMessage = 'Success';
@@ -183,5 +182,6 @@ AutomatedTest.prototype.runAndDebug = function() {
     if (this.doGuiRun(false)) {
         return true;
     }
-    return this.run(true);
+    var useDebugger = true;
+    return this.run(ideExtractAllCode(this.funcName, useDebugger), useDebugger); //probably should refactor later @todo this shouldn't just be "grabbing" stuff out of the dom in theory
 }

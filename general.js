@@ -167,8 +167,8 @@ GeneralCrap.setupLoadTable = function(){
         datatype: "local",
         colNames:['Name','Created', 'Lines of Code','is autosave','Step #','id'],
         colModel:[
-            {name:'name',index:'name', width:'300', sorttype:"string"},
-            {name:'prettyDate',index:'id', width:180, sorttype:"float"},
+            {name:'name',index:'name', width:385, sorttype:"string"}, /* these widths must also match the css for #loadDialogtable */
+            {name:'prettyDate',index:'prettyDate', width:100, sorttype:"float"},
             {name:'linesOfCode', index:'linesOfCode', width: 145, sorttype:"float"},
             {name:'isAutosave',index:'isAutosave', width:100,sorttype:"float"},
             {name:'stepNum',index:'step_id', width:130, sortable:false},
@@ -184,6 +184,7 @@ GeneralCrap.setupLoadTable = function(){
         height: $("#loadDialog").height()
     });
 
+
 };
 
 GeneralCrap.populateLoadTable = function(mydata){
@@ -192,6 +193,22 @@ GeneralCrap.populateLoadTable = function(mydata){
     $tableSelector.jqGrid('clearGridData');
     for(var i=0;i<=mydata.length;i++)
         $tableSelector.jqGrid('addRowData',i+1,mydata[i]);
+
+
+    var menu1 = [
+        {'Delete':function(menuItem, rightClickEvent) {
+            $row = $(rightClickEvent.target);
+            $row.hide();
+            theSaveRowNum = $row.attr("id");
+
+            var theSaveId = $tableSelector.jqGrid ('getCell', theSaveRowNum, 'id');
+            PersistentStorage.deleteParticularSave(theSaveId);
+        } } /*,
+        $.contextMenu.separator,
+        {'Option 2':function(menuItem,menu) { alert("You clicked Option 2!"); } }*/
+    ];
+
+    $tableSelector.find('tr').contextMenu(menu1,{theme:'vista'});
 };
 
 GeneralCrap.attemptSubmitGrid = function() {

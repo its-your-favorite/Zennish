@@ -68,7 +68,6 @@ var PersistentStorage = {};
         return x;
     }
 
-
     ///////////////////////////////////////////////////////////////
     // Specific to this app
 
@@ -85,14 +84,21 @@ var PersistentStorage = {};
         return PersistentStorage.loadCode({step_id: stepId, challenge_id: challengeId, created_session_id: sessionId});
     };
 
-    PersistentStorage.loadAllSaves = function(stepId, challengeId){
-        return PersistentStorage.loadCode({challenge_id: challengeId}, {id: "DESC"}).then(function(success,fail){
-            return success.map(function(load){
-               load.linesOfCode = load.snippet.split("\n").length;
-               load.prettyDate = (new Date(load.when)).format("mmm d h:MM:ss");
-               load.stepNum = load.step_id + 1;
+    PersistentStorage.deleteParticularSave = function (saveId) {
+        return genericUpdate("savedCode", {deleted: 1}, {id: saveId} );
+    }
 
-                return load;
+    PersistentStorage.loadAllUndeletedSaves = function(stepId, challengeId){
+        return PersistentStorage.loadCode({challenge_id: challengeId, deleted: 0}, {id: "DESC"}).then(function(success,fail){
+            return success.map(function(load){
+               var newLoad = {};
+               newLoad.name = load.name;
+               newLoad.linesOfCode = load.snippet.split("\n").length;
+               newLoad.prettyDate = (new Date(load.when)).format("mmm d h:MM:ss");
+               newLoad.stepNum = load.step_id + 1;
+               newLoad.id = load.id;
+
+               return newLoad;
             });
         });
     };

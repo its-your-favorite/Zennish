@@ -323,6 +323,25 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     text-align: center;
 }
 
+#loadDialogTable :nth-child(1) {
+    width: 385px;
+}
+#loadDialogTable :nth-child(2) {
+    width: 100px;
+}
+#loadDialogTable :nth-child(3) {
+    width: 145px;
+}
+#loadDialogTable :nth-child(4) {
+    width: 100px;
+}
+#loadDialogTable :nth-child(5) {
+    width: 130px;
+}
+#loadDialogTable :nth-child(6) {
+    width: 40px;
+}
+
 .tabsContainer {
     border-bottom: 10px #666 solid;
     margin-top: 5px;

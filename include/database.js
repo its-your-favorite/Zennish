@@ -34,15 +34,15 @@ var log = delayedLog.log.bind(delayedLog);
         log(sqlError.message);
     }
 
+    //used for select queries
     var testDump = function(args) {
-
         var resultSet = args[1];
         var len = resultSet.rows.length;
         var str = "Query Returned " + len + " rows";
         //Log(str);
         for (var x=0; x < len; x++) {
 
-            log(resultSet.rows.item(x));
+            //log(resultSet.rows.item(x));
         }
         return resultSet.rows;
     }
@@ -55,11 +55,19 @@ var log = delayedLog.log.bind(delayedLog);
     };
 
     function execute(sql, substitutions) {
+        var summarizeResults = testDump; //for select
+        if (sql.substring(0,6).toLowerCase() == "insert" ) {
+            summarizeResults = function(res){
+                return res[1];//insert Id and such info
+            }
+        }
+        //could do an update case too, and/or delete
+
         return (new Promise(function(resolve,reject) {
             db.transaction(function(transaction){
                 transaction.executeSql(sql, substitutions, argumentsToArray(resolve), argumentsToArray(reject));
             });
-        })).then( testDump, defaultHandleError) /* can remove this later */;
+        })).then( summarizeResults, defaultHandleError) /* can remove this later */;
     }
 
     function initDb() {

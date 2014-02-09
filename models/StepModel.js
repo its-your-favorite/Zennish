@@ -18,6 +18,7 @@ var StepModel;
 
     StepModel.prototype.start = function(){
         this.startTime = (new Date())|0;
+        this.timeSpent = 0;
     };
 
     StepModel.prototype.isVisible = function(currentStage) {
@@ -42,5 +43,6 @@ var StepModel;
         var seconds = 0|((new Date()|0) - this.startTime)/1000;
         var minutes = (seconds / 60) | 0;
         this.timeSpentPretty = (minutes) + ":" + twoDig(seconds % 60);
+        this.timeSpent = seconds;
     };
 }());

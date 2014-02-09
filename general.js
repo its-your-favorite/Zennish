@@ -3,6 +3,14 @@ var handleError = function (x) {
     debugger;
 };
 
+var isArray = function(x) {
+  return x && (x.constructor.toString().indexOf("Array") >= 0);
+};
+
+var isNestedArray = function(x) {
+    return (isArray(x) && x.hasOwnProperty(0) && isArray(x[0]) );//wee bit sloppy
+};
+
 var assert = function (x, name /*optional*/) {
     if (!x) {
         handleError("Assertion failed: " + name);

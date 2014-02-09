@@ -29,6 +29,7 @@ Also overall multi-challenge stuff.
                 <automated-test bind-to="test"></automated-test>
             </span>
         </div>
+
     </div>
 
     <div id="centerPanel">
@@ -47,9 +48,12 @@ Also overall multi-challenge stuff.
         </div>
         <div id="ideContainer" ng-keyup="theGame.acknowledgeKeystroke()"> </div>
     </div>
+    <span id="footer">
+        <textarea id="logBox" readonly>{{theGame.log}}</textarea>
+    </span>
 </div>
 
-<textarea id="logBox">{{theGame.log}}</textarea>
+
 
 <!-- Modal -->
 <div id="modalLoadDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

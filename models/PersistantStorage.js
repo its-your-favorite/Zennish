@@ -21,7 +21,9 @@ var PersistentStorage = {};
     var genericInsert = function (table, obj) {
         var toInsert = objToInsert(obj);
         var query = "INSERT INTO [" + table + "] " + toInsert[0];
-        return execute(query, toInsert[1]);
+        return execute(query, toInsert[1]).then(function(succ) {
+            return succ[1];
+        });
     };
 
     var getWhereClause = function (whereObj) {
@@ -64,7 +66,9 @@ var PersistentStorage = {};
         if (limit)
             query += " LIMIT " + limit;
 
-        x = execute(query, where[1]);
+        x = execute(query, where[1]).then(function(succ) {
+            return succ[0];
+        });
         return x;
     }
 
@@ -73,7 +77,7 @@ var PersistentStorage = {};
 
     PersistentStorage.saveCode = function(obj){
         var sets = [];
-        genericInsert("savedCode", obj);
+        return genericInsert("savedCode", obj);
     };
 
     PersistentStorage.loadCodeInitial = function(stepId, challengeId) {
@@ -97,6 +101,7 @@ var PersistentStorage = {};
                newLoad.prettyDate = (new Date(load.when)).format("mmm d h:MM:ss");
                newLoad.stepNum = load.step_id + 1;
                newLoad.id = load.id;
+               newLoad.snippet = load.snippet;
 
                return newLoad;
             });
@@ -130,7 +135,7 @@ var PersistentStorage = {};
             var newResult = FA([]);
             for (var x = 0; x < okay.length; x++)
                 newResult.push( okay.item(x));
-            return newResult;
+            return [newResult, okay];
         });
     };
 }(DATABASE));

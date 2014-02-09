@@ -33,7 +33,8 @@ var TheGame = function(challenges)  {
     var self = this;
     this.data = {challenges: challenges};
     this.startChallenge(0);
-    this.log = "-- App Started --\n";
+    this.log = "";
+    this.recordToLog("-- App Started --");
     this.userTests = FA([]);
     this.tabSystem = new TabSystem(".tabsContainer", function(extraneous) {
        self.renderSave(extraneous);
@@ -95,10 +96,25 @@ TheGame.prototype.advanceStep = function(){
   var nextStep = this.currentStepNum+1;
 
   if (this.currentChallenge.steps.length <= nextStep) {
-        return alert("All solved!");
+        var rating = this.scoreContestant(this.getStats(), this.currentChallenge.scoring);
+        var label = ['bronze', 'silver','gold'];
+        return alert("All solved! = " + label[rating.level ]);
   } else {
         this.gotoStep(nextStep);
   }
+};
+
+TheGame.prototype.scoreContestant = function(stats, goals) {
+    var achieved = FA(goals).reject(function(goal) {
+        return ((goal.hasOwnProperty('time') && (goal.time < stats.time))
+                || (goal.hasOwnProperty('keystrokes') && (goal.keystrokes < stats.keystrokes)));
+    });
+    return achieved.slice(-1)[0];
+};
+
+TheGame.prototype.getStats = function(){
+     return {keystrokes: this.currentChallenge.steps.pluck("keystrokes").reduce("+"),
+                time: this.currentChallenge.steps.pluck("timeSpent").reduce("+")}
 };
 
 TheGame.prototype.startChallenge = function(num) {
@@ -129,6 +145,7 @@ TheGame.prototype.gotoStep = function(num) {
               var currentStep = self.getCurrentStep();
               var demoTests = currentStep.demoTests;
               // add demoTests to help user understand the question
+              //assert( isNestedArray(demoTests));
               for (x=0; x < demoTests.length; x++) {
                 self.addTest(demoTests[x], true);
               }
@@ -216,7 +233,9 @@ TheGame.prototype.gradeSolution = function(step, challenge) {
 };
 
 TheGame.prototype.recordToLog = function(str) {
-    this.log += "\n" + str;
+    var timestamp = (new Date()).toLocaleTimeString();
+    str = timestamp + ": " + str;
+    this.log += str + "\n";
     console.log(str);
     //use other console. use color @todo
 };
@@ -233,10 +252,12 @@ TheGame.prototype.removeTestById = function(id) {
 };
 
 TheGame.prototype.saveCurrentEditor = function(manual, name){
+    var self = this;
     var fail = NoteSystem.showNewNote.bind(NoteSystem);
+    var tab = this.tabSystem.getSelectedTabOrNull();
 
     if (arguments.length < 2) {
-        var tab = this.tabSystem.getSelectedTabOrNull();
+
         if (!tab) {
             // todo, make sure this is the appropriate place for an error
             return fail("Failed: No tab to save!");
@@ -253,16 +274,28 @@ TheGame.prototype.saveCurrentEditor = function(manual, name){
     if (manual) {
         NoteSystem.showNewNote("Saved!");
     }
-    PersistentStorage.saveCode (
+
+    if (this.currentlyLoadedSave) {
+        PersistentStorage.deleteParticularSave(this.currentlyLoadedSave);
+    }
+    
+    this.lastSessionId = session_id();
+    var old = tab.extraneous.id;
+    var tmp = PersistentStorage.saveCode (
         {snippet: ideContents(),
-         created_session_id: session_id(),
+         created_session_id: this.lastSessionId,
          name: name || "unnamed",
          when: new Date(),
          isAutosave: !manual,
          challenge_id: this.getCurrentChallenge().id,
          step_id: this.getCurrentStep().id
         }
-    );
+    ).then(function(result){
+            tab.extraneous.id = result.insertId; //see above comment
+            //this isn't quite right but it may work for now
+        });
+    PersistentStorage.deleteParticularSave(old);
+
 };
 
 TheGame.prototype.updateTimeSpentForSteps = function() {

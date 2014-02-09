@@ -160,15 +160,21 @@ AutomatedTest.prototype.run = function(codebase, useDebugger) {
  * @param useDebugger
  */
 AutomatedTest.prototype.doGuiRun = function(useDebugger){
-    var returned = this.run(ideExtractAllCode(this.funcName, useDebugger), useDebugger); //probably should refactor later @todo this shouldn't just be "grabbing" stuff out of the dom in theory
-    this.lastResult = (returned === false);
-    if (this.lastResult) {
-        this.lastMessage = 'Success';
-        this.flashTo("#50FF50");
-    } else {
-        this.lastMessage = returned;
-        this.flashTo("#FF5050");
+    try{
+        var returned = this.run(ideExtractAllCode(this.funcName, useDebugger), useDebugger); //probably should refactor later @todo this shouldn't just be "grabbing" stuff out of the dom in theory
+        this.lastResult = (returned === false);
+        if (this.lastResult) {
+            this.lastMessage = 'Success';
+            this.flashTo("#50FF50");
+        } else {
+            this.lastMessage = returned;
+            this.flashTo("#FF5050");
+        }
+    } catch (e) {
+        this.lastMessage = e.toString();
+        this.lastResult = false;
     }
+
     this.lastMessage = "Test #" + this.id + ", " + this.lastMessage;
     globalRecordToLog(this.lastMessage);
     return this.lastResult;

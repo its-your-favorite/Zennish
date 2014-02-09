@@ -7,7 +7,8 @@ var globalCopy; //For console debug purposes
 function gameController($scope) {
     // Take care of global HTML elements
     myCodeMirror = CodeMirror(fe("#ideContainer")[0], {
-        mode: "javascript"
+        mode: "javascript",
+        lineWrapping: true
     });
 
     myCodeMirror.setSize(null, 550);

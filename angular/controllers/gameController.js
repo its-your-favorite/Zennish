@@ -4,7 +4,7 @@
  */
 var globalCopy; //For console debug purposes
 
-function gameController($scope) {
+function gameController($scope, $routeParams) {
     // Take care of global HTML elements
     myCodeMirror = CodeMirror(fe("#ideContainer")[0], {
         mode: "javascript",
@@ -16,7 +16,7 @@ function gameController($scope) {
 
     $scope.view = GeneralCrap;
     $scope.challengeSet =  EXPORT.challengeSet;
-    $scope.theGame = new TheGame($scope.challengeSet);
+    $scope.theGame = new TheGame($scope.challengeSet, FA($scope.challengeSet).pluck("id").indexOf($routeParams.challengeId));
     $scope.openTabs = $scope.theGame.tabSystem;
     $scope.test = $scope.challengeSet[$scope.activeTestId];
 

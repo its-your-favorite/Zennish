@@ -29,10 +29,10 @@ jquery.contextmenu.js
 
 //export
 var testContainer;
-var TheGame = function(challenges)  {
+var TheGame = function(challenges, activeChallengeId)  {
     var self = this;
     this.data = {challenges: challenges};
-    this.startChallenge(0);
+    this.startChallenge(activeChallengeId);
     this.log = "";
     this.recordToLog("-- App Started --");
     this.userTests = FA([]);
@@ -130,7 +130,11 @@ TheGame.prototype.startChallenge = function(num) {
 TheGame.prototype.gotoStep = function(num) {
     var self = this;
     this.currentStepNum = num;
+    try{
     this.startStep(this.getStep(num));
+    } catch (e) {
+        handleError(e);
+    }
 
     var preload = PersistentStorage.loadCodeInitial(num, this.getCurrentChallenge().id).then(
           function(preload){

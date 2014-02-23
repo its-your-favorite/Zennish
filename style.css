@@ -107,6 +107,7 @@ input[type=button] {
     width: 60px;
     margin-left: 4px;
     margin-right: 0px;
+    text-align: center;
 }
 
 .collapsible {

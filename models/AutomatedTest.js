@@ -125,7 +125,7 @@ AutomatedTest.prototype.run = function(codebase, useDebugger) {
     // going forward we can test that these are valid values by json decoding then encoding them
     // if they can't have those done then they are invalid
     var fname = this.funcName;
-    var comparer = function(a,b) { return a == b;}, e, prob;
+    var comparer = function(a,b) { return a === b;}, e, prob;
 
     try {
         var params = this.parseParams();

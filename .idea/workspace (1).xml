@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/challengeData/challenge4_cards.js" />
-      <change type="MOVED" beforePath="C:\Users\Jobs\Google Drive\Source Code\WorkWork\challengeData\challenge_data_2.js" afterPath="$PROJECT_DIR$/challengeData/challenge2_tags.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/AutomatedTest.js" afterPath="$PROJECT_DIR$/models/AutomatedTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/TheGame.js" afterPath="$PROJECT_DIR$/models/TheGame.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challengeData/challenge_data.js" afterPath="$PROJECT_DIR$/challengeData/challenge_data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/controllers/gameController.js" afterPath="$PROJECT_DIR$/angular/controllers/gameController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/views/mainApp.html" afterPath="$PROJECT_DIR$/angular/views/mainApp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challengeData/problems.js" afterPath="$PROJECT_DIR$/challengeData/problems.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
+    <list default="true" id="da28eb8e-b31e-4a3b-97b9-b8fb3927b9a8" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Thumbs.db" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WorkWork.iws" />
@@ -36,10 +26,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="67" selection-start="1416" selection-end="1416" vertical-scroll-proportion="-8.75" vertical-offset="195" max-vertical-offset="1395">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="todo.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0" vertical-offset="826" max-vertical-offset="2873">
+            <state line="100" column="0" selection-start="4845" selection-end="4845" vertical-scroll-proportion="0.0" vertical-offset="1097" max-vertical-offset="2730">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="challengeStep.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/module/challengeStep.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="challenge2_dates.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/challengeData/challenge2_dates.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="46" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.5319813" vertical-offset="199" max-vertical-offset="840">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="challenge3_colors.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/challengeData/challenge3_colors.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="3" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
               <folding />
             </state>
           </provider>
@@ -48,79 +74,16 @@
       <file leaf-file-name="problems.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/challengeData/problems.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="18" selection-start="9318" selection-end="9318" vertical-scroll-proportion="0.0" vertical-offset="1862" max-vertical-offset="2737">
+            <state line="95" column="24" selection-start="6815" selection-end="6815" vertical-scroll-proportion="-21.846153" vertical-offset="857" max-vertical-offset="2475">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style.css">
+      <file leaf-file-name="TheGame.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/TheGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="23" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0" vertical-offset="1487" max-vertical-offset="8143">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular/controllers/gameController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="28" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="612">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutomatedTest.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/AutomatedTest.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="47" selection-start="4989" selection-end="4989" vertical-scroll-proportion="0.0" vertical-offset="2055" max-vertical-offset="3366">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="challenge_data.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challengeData/challenge_data.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="4" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="1003">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="challenge2_tags.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/challengeData/challenge2_tags.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="39" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.31755915" vertical-offset="510" max-vertical-offset="1547">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="challenge3_filesystem.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challengeData/challenge3_filesystem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="2172" max-vertical-offset="2975">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="challenge4_cards.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challengeData/challenge4_cards.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="11" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="697">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainApp.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular/views/mainApp.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="10" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1275">
+            <state line="345" column="31" selection-start="10085" selection-end="10085" vertical-scroll-proportion="0.0" vertical-offset="5129" max-vertical-offset="5820">
               <folding />
             </state>
           </provider>
@@ -144,89 +107,26 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/angular/module/clickToEdit.js" />
-        <option value="$PROJECT_DIR$/include/vendor/jquery.jqGrid.src.js" />
-        <option value="$PROJECT_DIR$/models/PersistantStorage.js" />
-        <option value="$PROJECT_DIR$/include/database.js" />
         <option value="$PROJECT_DIR$/general.js" />
-        <option value="$PROJECT_DIR$/models/StepModel.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/angular/views/mainApp.html" />
-        <option value="$PROJECT_DIR$/angular/controllers/gameController.js" />
-        <option value="$PROJECT_DIR$/challengeData/challenge4_cards.js" />
-        <option value="$PROJECT_DIR$/challengeData/challenge_data.js" />
         <option value="$PROJECT_DIR$/models/TheGame.js" />
-        <option value="$PROJECT_DIR$/models/AutomatedTest.js" />
+        <option value="$PROJECT_DIR$/angular/module/overview.js" />
+        <option value="$PROJECT_DIR$/angular/module/overviewApp.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/challengeData/_challenge_tags.js" />
         <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$PROJECT_DIR$/challengeData/problems.js" />
-        <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/challengeData/challenge2_dates.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
+    <option name="x" value="20" />
+    <option name="y" value="22" />
+    <option name="width" value="1400" />
+    <option name="height" value="790" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>CSS</id>
-          </State>
-          <State>
-            <id>Code style issuesJavaScript</id>
-          </State>
-          <State>
-            <id>Control flow issuesJavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript function metricsJavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript validity issuesJavaScript</id>
-          </State>
-          <State>
-            <id>PHP</id>
-          </State>
-          <State>
-            <id>PHPDocPHP</id>
-          </State>
-          <State>
-            <id>Portability issues</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsJavaScript</id>
-          </State>
-          <State>
-            <id>Probable bugsJavaScript</id>
-          </State>
-          <State>
-            <id>SQL</id>
-          </State>
-          <State>
-            <id>UndefinedPHP</id>
-          </State>
-          <State>
-            <id>XPath</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>CoffeeScript</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -244,7 +144,7 @@
       <flattenPackages />
       <showMembers />
       <showModules />
-      <showLibraryContents ProjectPane="true" />
+      <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <autoscrollToSource />
@@ -308,39 +208,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="challengeData" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,27 +273,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.keymap" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="FullScreen" value="false" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\anfur_000\Google Drive\Source Code\WorkWork\img" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Jobs\Google Drive\Source Code\WorkWork\include\vendor\contextmenu" />
-      <recent name="C:\Users\anfur_000\Google Drive\Source Code\WorkWork\challengeData" />
-      <recent name="C:\Users\anfur_000\Google Drive\Source Code\WorkWork\angular\controllers" />
-      <recent name="C:\Users\anfur_000\Google Drive\Source Code\WorkWork\angular\module" />
-      <recent name="C:\Users\anfur_000\Google Drive\Source Code\WorkWork\img" />
-    </key>
+  <component name="PublishConfig">
+    <servers>
+      <server id="93007b79-1e71-4e42-9e0c-f6e86d814af4">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -444,54 +303,57 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="mySSHConnectionTimeout" value="30000" />
-    <option name="mySSHReadTimeout" value="30000" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" name="Default" comment="" />
-      <created>1366496543822</created>
-      <updated>1366496543822</updated>
+      <changelist id="da28eb8e-b31e-4a3b-97b9-b8fb3927b9a8" name="Default" comment="" />
+      <created>1383694261536</created>
+      <updated>1383694261536</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="20" y="22" width="1400" height="790" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32738096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27012712" sideWeight="0.69392264" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25701624" sideWeight="0.67261904" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31026787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30607736" sideWeight="0.9921936" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.7038674" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32738096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25701624" sideWeight="0.67261904" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -502,111 +364,117 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="4" />
-    </breakpoint-manager>
+    <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/angular/module/challengeStep.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="41" selection-start="1882" selection-end="1882" vertical-scroll-proportion="0.77640843" vertical-offset="239" max-vertical-offset="850" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/StepModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="27" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="11" selection-start="465" selection-end="465" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5032" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="66" selection-start="1498" selection-end="1498" vertical-scroll-proportion="-9.884615" vertical-offset="219" max-vertical-offset="1581" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular/controllers/chooseChallengeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="1" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/TheGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="50" selection-start="4801" selection-end="4801" vertical-scroll-proportion="0.0" vertical-offset="2140" max-vertical-offset="6596">
+        <state line="413" column="34" selection-start="13689" selection-end="13689" vertical-scroll-proportion="0.0" vertical-offset="5684" max-vertical-offset="6375">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular/controllers/gameController.js">
+    <entry file="file://$PROJECT_DIR$/angular/views/chooseChallenge.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="28" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/AutomatedTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="47" selection-start="4989" selection-end="4989" vertical-scroll-proportion="0.0" vertical-offset="2055" max-vertical-offset="3366">
+        <state line="0" column="32" selection-start="9" selection-end="30" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular/views/mainApp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="10" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1275">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challengeData/challenge4_cards.js">
+    <entry file="file://$PROJECT_DIR$/general.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="11" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="697">
+        <state line="156" column="3" selection-start="4121" selection-end="4121" vertical-scroll-proportion="0.0" vertical-offset="2325" max-vertical-offset="4440">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challengeData/challenge_data.js">
+    <entry file="file://$PROJECT_DIR$/angular/controllers/chooseChallengeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="4" selection-start="1553" selection-end="1553" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="422">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challengeData/problems.js">
+    <entry file="file://$PROJECT_DIR$/angular/module/overviewApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="18" selection-start="9318" selection-end="9318" vertical-scroll-proportion="0.0" vertical-offset="1862" max-vertical-offset="2737">
+        <state line="9" column="41" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
+    <entry file="file://$PROJECT_DIR$/challengeData/_challenge_tags.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="23" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.0" vertical-offset="1487" max-vertical-offset="8143">
+        <state line="5" column="3" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/views/chooseChallenge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="32" selection-start="9" selection-end="30" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challengeData/challenge1_cards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="12" selection-start="684" selection-end="684" vertical-scroll-proportion="1.0473815" vertical-offset="0" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="67" selection-start="1416" selection-end="1416" vertical-scroll-proportion="-8.75" vertical-offset="195" max-vertical-offset="1395">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="2873">
+        <state line="100" column="0" selection-start="4845" selection-end="4845" vertical-scroll-proportion="0.0" vertical-offset="1097" max-vertical-offset="2730">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challengeData/challenge3_filesystem.js">
+    <entry file="file://$PROJECT_DIR$/challengeData/challenge3_colors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2975">
+        <state line="6" column="3" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/challengeData/challenge2_tags.js">
+    <entry file="file://$PROJECT_DIR$/angular/module/challengeStep.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="39" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.31755915" vertical-offset="510" max-vertical-offset="1547">
+        <state line="0" column="3" selection-start="3" selection-end="3" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/TheGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="345" column="31" selection-start="10085" selection-end="10085" vertical-scroll-proportion="0.0" vertical-offset="5129" max-vertical-offset="5820">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challengeData/problems.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="24" selection-start="6815" selection-end="6815" vertical-scroll-proportion="-21.846153" vertical-offset="857" max-vertical-offset="2475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challengeData/challenge2_dates.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="46" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.5319813" vertical-offset="199" max-vertical-offset="840">
           <folding />
         </state>
       </provider>

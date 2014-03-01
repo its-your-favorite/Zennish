@@ -4,7 +4,12 @@
  */
 var globalCopy; //For console debug purposes
 
-function gameController($scope, $routeParams) {
+function gameController($scope, $routeParams, $location) {
+
+    $scope.backToMenu = function(id){
+        confirm("Abandon challenge?") && $location.path("/");
+    };
+
     // Take care of global HTML elements
     myCodeMirror = CodeMirror(fe("#ideContainer")[0], {
         mode: "javascript",

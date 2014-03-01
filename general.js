@@ -253,7 +253,7 @@ GeneralCrap.useLoadDialog = function(recentLoadsArrays) {
 };
 
 GeneralCrap.hideLoadDialog = function(){
-    var $modalLoadDialog = $("#modalLoadDialog");
+    var $modalLoadDuialog = $("#modalLoadDialog");
     $modalLoadDialog.modal("hide");
 };
 
@@ -263,6 +263,29 @@ GeneralCrap.setSelectedTab = function(x){
     this.selectedTabId=x;
 };
 
+GeneralCrap.hiddenTime = 0;
+GeneralCrap.lastHideTime = null;
+GeneralCrap.oldTitle = '';
+GeneralCrap.vizChange = function(){
+
+    if (document.visibilityState == 'visible') {
+            GeneralCrap.hiddenTime += (+new Date() - GeneralCrap.lastHideTime);
+            /*$("body").animate({opacity:1}, 1000);/*/
+            $("#myPauseScreen").animate({opacity: 0}, 700, function(){
+            $("#myPauseScreen").hide();
+        });
+        document.title = GeneralCrap.oldTitle;
+    }
+    else {
+        GeneralCrap.lastHideTime = +new Date();
+        /* $("body").animate({opacity:.3}, 800); /*/
+        $("#myPauseScreen").css('opacity', 1);
+        $("#myPauseScreen").show();
+        GeneralCrap.oldTitle = document.title;
+        document.title = '[PAUSED] - ' + document.title
+    }
+};
+document.addEventListener("visibilitychange", GeneralCrap.vizChange);
 
 GeneralCrap.closeOverlay = function(){
   fe("#mySmokescreen").hide();

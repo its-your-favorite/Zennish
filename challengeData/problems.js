@@ -4,6 +4,9 @@ EXPORT.challengeSet = [
         name: "Matching",
         id: '0-matching',
         description: "Challenges around patterns in cards",
+        difficulty: "Medium",
+        recommended: 1,
+        difficultyColor: avgColor("BB0", "B00",0),
         defaultComparer: tripleEquals, /* function used to judge if answer is correct */
         scoring: [{level: 0}, {level: 1, time: 60*17, keystrokes: 1500}, {level: 2, time: 60*8, keystrokes: 700}],
         steps: [
@@ -55,17 +58,20 @@ EXPORT.challengeSet = [
     name: "It's a date!",
     id: '1-dates',
     description: "Challenges around representations of dates and times",
+    difficulty: "Hard",
+    difficultyColor: avgColor("BB0", "B00", .5),
+    recommended: 0,
     defaultComparer: datesChallenge.datesEqual, /* function used to judge if answer is correct */
     defaultSolution: datesChallenge.cameFirst,
     scoring: [{level: 0},
-        {level: 1, time: 80, keystrokes: 5000},
-        {level: 2, time: 40,  keystrokes: 2500}],
+        {level: 1, time: 60*45, keystrokes: 3000},
+        {level: 2, time: 60*20,  keystrokes: 1900}],
     steps: [
     { // todo go over testcases for each and make sure all variants are well-covered
         // todo move all expected to avg color
         id: 0,
         story: "Put a story here!",
-        description: "You will receive two strings representing dates in mm-dd-yyyy format (or mm/dd/yyyy format). Return a Date object based off of the first date.",
+        description: "You will receive two strings representing dates in mm-dd-yyyy format (or mm/dd/yyyy format). Return a Date object of whichever date is earlier chronologically.",
         addFunction: ['cameFirst', 'date1', 'date2'],
         demoTests: [['10-15-2013', '10/17/2013']],
         tests: [['10-15-2013', '10/17/2013'], ['4/5/2012', '4-3-2011'], ["3/3/2013","3-3-2013"]  ] /*   */
@@ -93,7 +99,7 @@ EXPORT.challengeSet = [
         addFunction: ['typoDate', 'incorrectDate'],
         defaultSolution: datesChallenge.correctDate,
         demoTests: [['mAzy 3 2013']],
-        tests: [['mAzy 3 2013'], ['aprl 1 2011'], ['apriil 5 2013'], ['marchy 5 2013'], ['juney 5 2013'], ['ZdecemBER 22 1985'] ],
+        tests: [['mAzy 3, 2013'], ['aprl 1, 2011'], ['apriil 5, 2013'], ['marchy 5, 2013'], ['juney 5, 2013'], ['ZdecemBER 22, 1985'] ],
     },
     ], //</steps>
    },
@@ -103,9 +109,12 @@ EXPORT.challengeSet = [
         description: "Challenges around mixing colors",
         defaultComparer: striCompare, /* function used to judge if answer is correct */
         defaultSolution: avgColor,
+        difficulty: 'Harder',
+        difficultyColor: avgColor("BB0", "B00", .70),
+        recommended: 0,
         scoring: [{level: 0},
-            {level: 1, time: 120, keystrokes: 5000},
-            {level: 2, time: 60,  keystrokes: 2500}],
+            {level: 1, time: 120*60, keystrokes: 5000},
+            {level: 2, time: 60*60,  keystrokes: 2500}],
         steps: [
             { // todo go over testcases for each and make sure all variants are well-covered
                 // todo move all expected to avg color

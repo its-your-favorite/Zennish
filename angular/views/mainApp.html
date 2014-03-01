@@ -1,7 +1,10 @@
 <div id="gameHeader">
+    <div><input type="button" ng-click="backToMenu()" value="Exit Challenge"></div>
 
-<img src="favicon.png" width="32" height="32">ork Work - The zen garden of coding
+    <span width="32" height="32" style="background-color: #FFF; display: inline-block; border-radius: 10px; margin-right: -5px;" > <img src="favicon.png" width="32" height="32" style="opacity: .8"></span>
+    ork Work - The zen garden of coding
 Also overall multi-challenge stuff.
+
 </div>
 
 <div id="leftHalf" class="unselectable">
@@ -54,7 +57,7 @@ Also overall multi-challenge stuff.
 
 
 <!-- Modal -->
-<div id="modalLoadDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="modalLoadDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="SmyModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="view.hideLoadDialog()">×</button>
         <h3 id="loadDialogTitle">Pick a save</h3>

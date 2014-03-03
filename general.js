@@ -76,6 +76,9 @@ var executeOneTest = function (allCode,name, userNamespace, /* array */parameter
 
     if (comparer(givenVal, expected))
         return false; //not a failure
+    else
+        debugger;
+
     return summarizeTest(parameters, givenVal, expected);
 };
 
@@ -253,7 +256,7 @@ GeneralCrap.useLoadDialog = function(recentLoadsArrays) {
 };
 
 GeneralCrap.hideLoadDialog = function(){
-    var $modalLoadDuialog = $("#modalLoadDialog");
+    var $modalLoadDialog = $("#modalLoadDialog");
     $modalLoadDialog.modal("hide");
 };
 
@@ -311,4 +314,4 @@ $(window).keydown(function(event) {
     return false;
 });
 
-angular.bootstrap(document, ['inlineEditing', 'automatedTest', 'challengeStep']);
+angular.bootstrap(document, ['inlineEditing', 'automatedTest', 'challengeStep', 'rating']);

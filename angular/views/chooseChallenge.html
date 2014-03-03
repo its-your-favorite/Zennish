@@ -8,6 +8,11 @@
                 <span class="challengeDetails">
                     Difficulty:
                     <span class="challengeDifficulty" ng-style="{color: '#' + challenge.difficultyColor  }"> {{ challenge.difficulty }} </span>
+
+                    <span class="pastScore">
+                        Best Score:
+                        <rating score="challenge.bestScore"></rating>
+                    </span>
                 </span>
                 <div class="challengeRecommendedLabel">
                     {{ challenge.recommended ? "Recommended Challenge" : '' }}

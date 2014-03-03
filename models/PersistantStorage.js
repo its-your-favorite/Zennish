@@ -4,6 +4,7 @@
  */
 
 var PersistentStorage = {};
+const savedCode = "savedCode";
 
 /**
  * @param DB object with .execute that takes sql
@@ -77,8 +78,17 @@ var PersistentStorage = {};
 
     PersistentStorage.saveCode = function(obj){
         var sets = [];
-        return genericInsert("savedCode", obj);
+        return genericInsert(savedCode, obj);
     };
+
+    PersistentStorage.loadScores = function(){
+        return DATABASE.execute("" +
+            "SELECT max(score) as top_score, challenge_id FROM scores GROUP BY challenge_id");
+    };
+
+    PersistentStorage.saveScore = function(score, challengeId){
+        return genericInsert('scores', {score: score, when: new Date(), challenge_id: challengeId});
+    }
 
     PersistentStorage.loadCodeInitial = function(stepId, challengeId) {
         return PersistentStorage.loadCode({step_id: stepId, challenge_id: challengeId}, {created_session_id: "DESC", id: "DESC"}, 1);
@@ -89,7 +99,7 @@ var PersistentStorage = {};
     };
 
     PersistentStorage.deleteParticularSave = function (saveId) {
-        return genericUpdate("savedCode", {deleted: 1}, {id: saveId} );
+        return genericUpdate(savedCode, {deleted: 1}, {id: saveId} );
     }
 
     PersistentStorage.loadAllUndeletedSaves = function(stepId, challengeId){
@@ -108,12 +118,12 @@ var PersistentStorage = {};
         });
     };
 
-    PersistentStorage.renameSave = function(saveId, newName) {
-      return genericUpdate("savedCode", {"name": newName}, {"id": saveId});
+    PersistentStorage.renameSave = function(saveId, newName) {        
+        return genericUpdate(savedCode, {"name": newName}, {"id": saveId});
     };
 
     PersistentStorage.loadCode = function(obj, orderBy, limit) {
-        return genericLoad("savedCode", obj, orderBy, limit);
+        return genericLoad(savedCode, obj, orderBy, limit);
     };
 
     PersistentStorage.loadSettings = function(){

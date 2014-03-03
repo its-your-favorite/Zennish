@@ -2,27 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47c6ee4f-8eaf-44b8-b25c-57edcd3a74a0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/stargold.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/views/rating.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular/module/rating.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/AutomatedTest.js" afterPath="$PROJECT_DIR$/models/AutomatedTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/StepModel.js" afterPath="$PROJECT_DIR$/models/StepModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WorkWork (1).iml" afterPath="$PROJECT_DIR$/.idea/WorkWork (1).iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WorkWork.iml" afterPath="$PROJECT_DIR$/.idea/WorkWork.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/PersistantStorage.js" afterPath="$PROJECT_DIR$/models/PersistantStorage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/TheGame.js" afterPath="$PROJECT_DIR$/models/TheGame.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/module/challengeStep.js" afterPath="$PROJECT_DIR$/angular/module/challengeStep.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/views/chooseChallenge.html" afterPath="$PROJECT_DIR$/angular/views/chooseChallenge.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings (1).xml" afterPath="$PROJECT_DIR$/.idea/encodings (1).xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/controllers/gameController.js" afterPath="$PROJECT_DIR$/angular/controllers/gameController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/database.js" afterPath="$PROJECT_DIR$/include/database.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/general.js" afterPath="$PROJECT_DIR$/general.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/views/mainApp.html" afterPath="$PROJECT_DIR$/angular/views/mainApp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules (1).xml" afterPath="$PROJECT_DIR$/.idea/modules (1).xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/angular/module/overviewApp.js" afterPath="$PROJECT_DIR$/angular/module/overviewApp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/challengeData/problems.js" afterPath="$PROJECT_DIR$/challengeData/problems.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes (1)/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes (1)/scope_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs (1).xml" afterPath="$PROJECT_DIR$/.idea/vcs (1).xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace (1).xml" afterPath="$PROJECT_DIR$/.idea/workspace (1).xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WorkWork.iws" />
@@ -49,16 +43,25 @@
       <file leaf-file-name="todo.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="52" selection-start="4456" selection-end="4456" vertical-scroll-proportion="0.44270834" vertical-offset="1207" max-vertical-offset="3009">
+            <state line="94" column="70" selection-start="4940" selection-end="4940" vertical-scroll-proportion="0.41952983" vertical-offset="1366" max-vertical-offset="3111">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="problems.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/challengeData/problems.js">
+      <file leaf-file-name="rating.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/module/rating.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="40" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2958">
+            <state line="17" column="37" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="799">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rating.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/views/rating.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="170">
               <folding />
             </state>
           </provider>
@@ -67,57 +70,34 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="173" column="0" selection-start="2700" selection-end="2700" vertical-scroll-proportion="0.0" vertical-offset="2682" max-vertical-offset="8568">
+            <state line="498" column="24" selection-start="8507" selection-end="8507" vertical-scroll-proportion="0.0" vertical-offset="8181" max-vertical-offset="8857">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chooseChallenge.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular/views/chooseChallenge.html">
+      <file leaf-file-name="problems.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/challengeData/problems.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="6" selection-start="969" selection-end="969" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="391">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chooseChallengeController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular/controllers/chooseChallengeController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="54" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+            <state line="181" column="26" selection-start="12092" selection-end="12092" vertical-scroll-proportion="0.0" vertical-offset="2623" max-vertical-offset="3213">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular/controllers/gameController.js">
+      <file leaf-file-name="TheGame.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/TheGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="12" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+            <state line="102" column="51" selection-start="3008" selection-end="3008" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="6647">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainApp.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular/views/mainApp.html">
+      <file leaf-file-name="challengeStep.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/module/challengeStep.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="11" selection-start="779" selection-end="779" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="1326">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutomatedTest.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/AutomatedTest.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="96" selection-start="5038" selection-end="5038" vertical-scroll-proportion="0.0" vertical-offset="1362" max-vertical-offset="3366">
+            <state line="11" column="21" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -126,18 +106,25 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="5" selection-start="2773" selection-end="2773" vertical-scroll-proportion="-5.3076925" vertical-offset="729" max-vertical-offset="1649">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="29" column="45" selection-start="1477" selection-end="1477" vertical-scroll-proportion="0.65384614" vertical-offset="510" max-vertical-offset="1700">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TheGame.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/TheGame.js">
+      <file leaf-file-name="chooseChallenge.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/views/chooseChallenge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="14" selection-start="2987" selection-end="2988" vertical-scroll-proportion="-66.64" vertical-offset="0" max-vertical-offset="6596">
+            <state line="13" column="31" selection-start="863" selection-end="863" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="476">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chooseChallengeController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular/controllers/chooseChallengeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="6" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
               <folding />
             </state>
           </provider>
@@ -161,29 +148,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/include/vendor/jquery.jqGrid.src.js" />
-        <option value="$PROJECT_DIR$/models/PersistantStorage.js" />
-        <option value="$PROJECT_DIR$/include/database.js" />
-        <option value="$PROJECT_DIR$/challengeData/challenge4_cards.js" />
-        <option value="$PROJECT_DIR$/challengeData/challenge_data.js" />
-        <option value="$PROJECT_DIR$/models/TheGame.js" />
-        <option value="$PROJECT_DIR$/models/AutomatedTest.js" />
-        <option value="$PROJECT_DIR$/models/StepModel.js" />
-        <option value="$PROJECT_DIR$/general.js" />
+        <option value="$PROJECT_DIR$/angular/module/overviewApp.js" />
+        <option value="$PROJECT_DIR$/angular/module/challengeStep.js" />
+        <option value="$PROJECT_DIR$/angular/views/rating.js.html" />
+        <option value="$PROJECT_DIR$/angular/views/rating.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/challengeData/problems.js" />
-        <option value="$PROJECT_DIR$/angular/views/chooseChallenge.html" />
+        <option value="$PROJECT_DIR$/include/database.js" />
+        <option value="$PROJECT_DIR$/models/PersistantStorage.js" />
+        <option value="$PROJECT_DIR$/models/TheGame.js" />
+        <option value="$PROJECT_DIR$/general.js" />
+        <option value="$PROJECT_DIR$/models/AutomatedTest.js" />
         <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/angular/controllers/gameController.js" />
-        <option value="$PROJECT_DIR$/angular/views/mainApp.html" />
+        <option value="$PROJECT_DIR$/angular/controllers/chooseChallengeController.js" />
+        <option value="$PROJECT_DIR$/angular/views/chooseChallenge.html" />
+        <option value="$PROJECT_DIR$/angular/module/rating.js" />
+        <option value="$PROJECT_DIR$/challengeData/problems.js" />
         <option value="$PROJECT_DIR$/todo.txt" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1184" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -312,53 +301,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="challengeData" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorkWork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -428,12 +371,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jobs\Google Drive\Source Code\WorkWork\img" />
       <recent name="C:\Users\anfur_000\Google Drive\Source Code\WorkWork\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -487,16 +431,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1184" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29723758" sideWeight="0.9921936" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3713355" sideWeight="0.9921936" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20376712" sideWeight="0.7027624" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.123958334" sideWeight="0.6286645" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31026787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -524,117 +468,114 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/general.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="4" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="5032">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular/views/mainApp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="10" selection-start="1387" selection-end="1387" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1275" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/challengeData/challenge2_dates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="34" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="952" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="277" column="5" selection-start="8164" selection-end="8164" vertical-scroll-proportion="0.0" vertical-offset="4277" max-vertical-offset="5423">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular/module/challengeStep.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="54" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/StepModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="9" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0" vertical-offset="316" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/challengeData/problems.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="40" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2958">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular/views/chooseChallenge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="6" selection-start="969" selection-end="969" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="391">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="0" selection-start="2700" selection-end="2700" vertical-scroll-proportion="0.0" vertical-offset="2682" max-vertical-offset="8568">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular/controllers/gameController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="12" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+        <state line="7" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/PersistantStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="20" selection-start="2651" selection-end="2659" vertical-scroll-proportion="0.0" vertical-offset="880" max-vertical-offset="2652">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="40" selection-start="3846" selection-end="3846" vertical-scroll-proportion="0.0" vertical-offset="1577" max-vertical-offset="2839">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challengeData/challenge1_cards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="26" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="13" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.0" vertical-offset="920" max-vertical-offset="5474">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/AutomatedTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="96" selection-start="5038" selection-end="5038" vertical-scroll-proportion="0.0" vertical-offset="1974" max-vertical-offset="3366">
+        <state line="68" column="40" selection-start="3066" selection-end="3066" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="3366">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/angular/views/chooseChallenge.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="5" selection-start="2773" selection-end="2773" vertical-scroll-proportion="-5.3076925" vertical-offset="729" max-vertical-offset="1649">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/TheGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="14" selection-start="2987" selection-end="2988" vertical-scroll-proportion="-66.64" vertical-offset="0" max-vertical-offset="6596">
+        <state line="13" column="31" selection-start="863" selection-end="863" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="476">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angular/controllers/chooseChallengeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="54" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+        <state line="10" column="6" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular/views/mainApp.html">
+    <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="11" selection-start="779" selection-end="779" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="1326">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="498" column="24" selection-start="8507" selection-end="8507" vertical-scroll-proportion="0.0" vertical-offset="8181" max-vertical-offset="8857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/TheGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="51" selection-start="3008" selection-end="3008" vertical-scroll-proportion="0.0" vertical-offset="1467" max-vertical-offset="6647">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/module/challengeStep.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="21" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/views/rating.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/module/rating.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="37" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="799">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/challengeData/problems.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="26" selection-start="12092" selection-end="12092" vertical-scroll-proportion="0.0" vertical-offset="2623" max-vertical-offset="3213">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="45" selection-start="1477" selection-end="1477" vertical-scroll-proportion="0.65384614" vertical-offset="510" max-vertical-offset="1700">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="52" selection-start="4456" selection-end="4456" vertical-scroll-proportion="0.44270834" vertical-offset="1207" max-vertical-offset="3009">
+        <state line="94" column="70" selection-start="4940" selection-end="4940" vertical-scroll-proportion="0.41952983" vertical-offset="1366" max-vertical-offset="3111">
           <folding />
         </state>
       </provider>

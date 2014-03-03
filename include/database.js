@@ -117,9 +117,17 @@ var log = delayedLog.log.bind(delayedLog);
             '"showed_splash_screen" TINYINT NULL' +
             ');' ;
 
-        
+       var code3 = 'CREATE TABLE IF NOT EXISTS "scores" (' +
+           '"id" INTEGER PRIMARY KEY AUTOINCREMENT, ' +
+           '"score" INT default 0, ' +
+           '"WHEN" DATETIME NULL,' +
+           '"challenge_id" VARCHAR(30) NULL ' +
+           ' )';
+
+
         execute(code);
-        return execute(code2);
+        execute(code2);
+        return execute(code3);
     }
 
     function setupAppSettingsIfNecessary() {
@@ -140,6 +148,7 @@ var log = delayedLog.log.bind(delayedLog);
         execute("DELETE from appSettings");
         execute("DROP TABLE savedCode");
         execute("DROP TABLE appSettings");
+        execute("DROP TABLE scores");
     }
 
     initDb();

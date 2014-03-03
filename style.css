@@ -470,10 +470,20 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     padding: 15px;
 }
 
+.rating {
+    /*background: #DDD;*/
+    border-radius: 3px;
+    border-color: #000 #BBB #777;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    padding-bottom: 2px;
+
+    line-height: 16px;
+}
+
 .recommendedChallenge {
     border: 5px solid outset;
     border-color: #009900;
-    background: #EEFFEE;
 }
 
 .challengeRecommendedLabel {
@@ -486,11 +496,18 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
 
 .choiceOfChallenge:hover {
     border: 3px outset #888;
+    background: #EEFFEE;
 }
 
 .challengeDetails {
     float: right;
     width: 150px;
+}
+
+.pastScore {
+    float: right;
+    width: 150px;
+
 }
 
 /* have no idea why the grid needs this modification */

@@ -24,6 +24,8 @@ jquery.contextmenu.js
  *
  *
  *  Pencil Icon - Icon Pack:Crystal ProjectDesigner:YellowIcon
+ *
+ *  Star Icon: http://kyo-tux.deviantart.com/ (Asher)
  */
 'use strict';
 
@@ -98,7 +100,8 @@ TheGame.prototype.advanceStep = function(){
   if (this.currentChallenge.steps.length <= nextStep) {
         var rating = this.scoreContestant(this.getStats(), this.currentChallenge.scoring);
         var label = ['bronze', 'silver','gold'];
-        return alert("All solved! = " + label[rating.level ]);
+        PersistentStorage.saveScore( rating.level, this.currentChallenge.id );
+        return alert("All solved! You scored " + label[rating.level ]);
   } else {
         this.gotoStep(nextStep);
   }

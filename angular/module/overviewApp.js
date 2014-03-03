@@ -2,7 +2,7 @@
  * Created by alexr on 11/5/13.
  */
 var overviewApp = angular.module('overviewApp',
-    ['inlineEditing', 'automatedTest', 'challengeStep']);
+    ['rating', 'inlineEditing', 'automatedTest', 'challengeStep']);
 
 var appSettings = null;
 PersistentStorage.loadSettings().then(function(rs){

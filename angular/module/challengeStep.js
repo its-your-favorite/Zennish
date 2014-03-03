@@ -2,7 +2,7 @@
  * Contains code for the GUI for one of the steps of a challenge
  * Needs a refactor @todo
  */
-var app = angular.module('challengeStep', []);
+var app = angular.module('challengeStep', ['rating']);
 app.directive("challengeStep", function(){
     return {
         restrict: "E",

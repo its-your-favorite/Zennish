@@ -67,7 +67,7 @@ AutomatedTest.prototype.parseFromArray = function(thisTest, step, challenge) {
     } else {
         functionNameToBeTested = (thisTest.testee);
         parameters = assertIs(thisTest.params);
-        expected = (thisTest.expected) || thisTest.solver || false;
+        expected = (thisTest.expected) || thisTest.solver || UNIQUE_VALUE;
     }
     functionNameToBeTested =  assert(functionNameToBeTested || step.defaultTestee || (step.addFunction && step.addFunction[0]) || challenge.defaultTestee);
 
@@ -79,9 +79,9 @@ AutomatedTest.prototype.parseFromArray = function(thisTest, step, challenge) {
     }
 
     comparer = assert(thisTest.comparer || challenge.defaultComparer);
-    this.funcName = functionNameToBeTested;
-    this.expectedJson = JSON.stringify(expected);
-    this.paramsJson = JSON.stringify(parameters).slice(1,-1); //remove brackets
+    this.funcName = assertIs(functionNameToBeTested);
+    this.expectedJson = JSON.stringify(assertIs(expected));
+    this.paramsJson = JSON.stringify(assertIs(parameters)).slice(1,-1); //remove brackets
 };
 
 AutomatedTest.prototype.canParseParams = function() {

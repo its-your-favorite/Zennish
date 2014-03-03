@@ -6,6 +6,7 @@ EXPORT.challengeSet = [
         description: "Challenges around patterns in cards",
         difficulty: "Medium",
         recommended: 1,
+        bestScore: {val: 0},
         difficultyColor: avgColor("BB0", "B00",0),
         defaultComparer: tripleEquals, /* function used to judge if answer is correct */
         scoring: [{level: 0}, {level: 1, time: 60*17, keystrokes: 1500}, {level: 2, time: 60*8, keystrokes: 700}],
@@ -41,15 +42,14 @@ EXPORT.challengeSet = [
                 id: 3,
                 description: "Now make all the functions you wrote work with objects that have a suit and value property.",
                 addFunction: ['isFlush', 'card1','card2','card3','card4','card5'],
-                defaultSolution: cards.isFlush,
-                demoTests: [[{value:"A", suit:"H"}, {value:"9", suit:"H"}, {value:"8", suit:"H"}, {value:"7", suit:"H"}, {value:"K", suit:"H"}]],
+                demoTests: [{testee: "isFlush", solver: cards.isFlush, params: [{value:"A", suit:"H"}, {value:"9", suit:"H"}, {value:"8", suit:"H"}, {value:"7", suit:"H"}, {value:"K", suit:"H"}]}],
                 tests: [
-                    [{testee: "isPair", solver: cards.isPair, params: [{value:"A", suit:"H"}, {value:"9", suit:"C"}, {value:"8", suit:"S"}, {value:"A", suit:"S"}, {value:"K", suit:"H"}]}],
-                    [{testee: "isPair", solver: cards.isPair, params: [{value:"A", suit:"H"}, {value:"9", suit:"C"}, {value:"8", suit:"S"}, {value:"3", suit:"S"}, {value:"K", suit:"H"}]}],
-                    [{testee: "isTwoPair", solver: cards.isTwoPair, params: [{value:"A", suit:"H"}, {value:"A", suit:"S"}, {value:"8", suit:"H"}, {value:"8", suit:"D"}, {value:"2", suit:"H"}]}],
-                    [{testee: "isTwoPair", solver: cards.isTwoPair, params: [{value:"A", suit:"H"}, {value:"9", suit:"H"}, {value:"8", suit:"H"}, {value:"7", suit:"H"}, {value:"K", suit:"H"}]}],
-                    [{testee: "isFlush", solver: cards.isFlush, params: [{value:"A", suit:"H"}, {value:"9", suit:"H"}, {value:"8", suit:"H"}, {value:"7", suit:"H"}, {value:"K", suit:"H"}]}],
-                    [{testee: "isFlush", solver: cards.isFlush, params: [{value:"A", suit:"H"}, {value:"9", suit:"H"}, {value:"8", suit:"H"}, {value:"7", suit:"H"}, {value:"K", suit:"S"}]}],
+                    {testee: "isPair", solver: cards.atLeastPair, params: [{value:"A", suit:"H"}, {value:"9", suit:"C"}, {value:"8", suit:"S"}, {value:"A", suit:"S"}, {value:"K", suit:"H"}]},
+                    {testee: "isPair", solver: cards.atLeastPair, params: [{value:"A", suit:"H"}, {value:"9", suit:"C"}, {value:"8", suit:"S"}, {value:"3", suit:"S"}, {value:"K", suit:"H"}]},
+                    {testee: "isTwoPair", solver: cards.atLeastTwoPair, params: [{value:"A", suit:"H"}, {value:"A", suit:"S"}, {value:"8", suit:"H"}, {value:"8", suit:"D"}, {value:"2", suit:"H"}]},
+                    {testee: "isTwoPair", solver: cards.atLeastTwoPair, params: [{value:"A", suit:"H"}, {value:"9", suit:"H"}, {value:"8", suit:"H"}, {value:"7", suit:"H"}, {value:"K", suit:"H"}]},
+                    {testee: "isFlush", solver: cards.isFlush, params: [{value:"A", suit:"H"}, {value:"9", suit:"H"}, {value:"8", suit:"H"}, {value:"7", suit:"H"}, {value:"K", suit:"H"}]},
+                    {testee: "isFlush", solver: cards.isFlush, params: [{value:"A", suit:"H"}, {value:"9", suit:"H"}, {value:"8", suit:"H"}, {value:"7", suit:"H"}, {value:"K", suit:"S"}]},
                 ], /* answer followed by sets of parameters */
             },
         ],
@@ -61,6 +61,7 @@ EXPORT.challengeSet = [
     difficulty: "Hard",
     difficultyColor: avgColor("BB0", "B00", .5),
     recommended: 0,
+    bestScore: {val: 0},
     defaultComparer: datesChallenge.datesEqual, /* function used to judge if answer is correct */
     defaultSolution: datesChallenge.cameFirst,
     scoring: [{level: 0},
@@ -110,6 +111,7 @@ EXPORT.challengeSet = [
         defaultComparer: striCompare, /* function used to judge if answer is correct */
         defaultSolution: avgColor,
         difficulty: 'Harder',
+        bestScore: {val: 0},
         difficultyColor: avgColor("BB0", "B00", .70),
         recommended: 0,
         scoring: [{level: 0},
@@ -166,3 +168,16 @@ EXPORT.challengeSet = [
         ], //</steps>
     },
  ];
+
+EXPORT.loadBestScores = function(){
+    var challengeSet = EXPORT.challengeSet;
+    var rekey = function(arr, key) {
+       return _.object(FA(arr).pluck(key), arr);
+    };
+    var lookup = rekey(challengeSet, "id");
+    return PersistentStorage.loadScores().then(function(scores){
+           for (var x = 0; x < scores.length; x++) {
+                lookup[ scores.item(x)['challenge_id'] ].bestScore.val = scores.item(x)['top_score'] + 1;
+           }
+    }); //return a promise
+};

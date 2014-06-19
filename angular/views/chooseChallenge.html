@@ -1,5 +1,7 @@
 <div id="chooseChallengeDialog">
+
     <div class="textOverlay" style="background-color: #FFF">
+        <span class="whatIs"><a href ng-click="showOverlay()">??</a></span>
         <div style="font-size: 26px;">I made a few different challenges that you can try. Pick any one you want.</div>
         <br><Br><Br><br>
             <div  ng-repeat="challenge in challengeSet" class="choiceOfChallenge" ng-class="{ recommendedChallenge: challenge.recommended  }" ng-click="goToChallenge( challenge.id )">

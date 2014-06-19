@@ -9,7 +9,6 @@ app.directive("rating", function() {
             score: "=", /* bindTo: "=", */
         },
 
-
         controller: function($scope) {
             EXPORT.loadBestScores().then(function(){
                 $scope.$apply();

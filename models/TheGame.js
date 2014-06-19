@@ -333,8 +333,7 @@ TheGame.prototype.getStep = function(n){
 };
 
 
-TheGame.prototype.acknowledgeKeystroke = function() {
-
+TheGame.prototype.acknowledgeKeystroke = function(event) {
     var val = this.currentChallenge;
     if (val) {
         val.keystrokes++;

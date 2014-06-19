@@ -6,6 +6,10 @@
 function chooseChallengeController($scope, $location){
     $scope.challengeSet =  EXPORT.challengeSet;
 
+    $scope.showOverlay = function(){
+        GeneralCrap.showOverlay();
+    };
+
     $scope.goToChallenge = function(id){
         $location.path("/challenge/id/" + id);
     };

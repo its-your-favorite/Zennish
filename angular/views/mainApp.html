@@ -4,7 +4,7 @@
     <span width="32" height="32" style="background-color: #FFF; display: inline-block; border-radius: 10px; margin-right: -5px;" > <img src="favicon.png" width="32" height="32" style="opacity: .8"></span>
     ork Work - The zen garden of coding
 Also overall multi-challenge stuff.
-
+<span class="whatIs"><a href ng-click="showOverlay()">What is this?</a></span>
 </div>
 
 <div id="leftHalf" class="unselectable">
@@ -19,26 +19,25 @@ Also overall multi-challenge stuff.
 
 </div>
 <div id="rightHalf" ng-model="rightHalf">
-    <div id="rightPanel" class="unselectable">
-        <div class="collapsible floatLeft">&nbsp;</div>
-        <div>
-            <div>Your tests</div>
-            <input type="button" value="+New" ng-click="theGame.addTest([])">
-            <input type="button" value="Run All" ng-click="theGame.runAllTests()">
-            <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
+    <div id="rightPanel" class="unselectable overflow" style="position: relative;">
+        <div class="collapsible floatLeft" style="position: absolute; left: 0;">&nbsp;</div>
 
-            <span ng-repeat="test in theGame.userTests">
-                <automated-test bind-to="test"></automated-test>
-            </span>
-        </div>
+        <div>Your tests</div>
+        <input type="button" value="+New" ng-click="theGame.addTest([])">
+        <input type="button" value="Run All" ng-click="theGame.runAllTests()">
+        <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
+
+        <span ng-repeat="test in theGame.userTests" class="test">
+            <automated-test bind-to="test"></automated-test>
+        </span>
     </div>
 
     <div id="centerPanel">
         <div class="unselectable">
             <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
             {{theGame.currentChallenge.keystrokes}} keystrokes
-            <input type="button" id="saveButton" ng-click="theGame.saveCurrentEditor(true)" value="Save" />
-            <input type="button" ng-click="theGame.pickAndLoadSave()" value="Load" />
+            <input type="button" id="saveButton" ng-click="theGame.saveCurrentEditor(true)" value="Save Code" />
+            <input type="button" ng-click="theGame.pickAndLoadSave()" value="Load Code" />
         </div>
         <div class="tabsContainer">
             <span ng-click="theGame.tabSystem.addBlankTab()"  class="tab unselectable" title="New Tab">{{ theGame.tabSystem.newTabTab.caption }}</span>
@@ -47,10 +46,10 @@ Also overall multi-challenge stuff.
                 <span ng-click="theGame.tabSystem.closeTab($index)" title="Close Tab">×</span>
             </span>
         </div>
-        <div id="ideContainer" ng-keyup="theGame.acknowledgeKeystroke()"> </div>
+        <div id="ideContainer" ng-keypress="theGame.acknowledgeKeystroke($event)"> </div>
     </div>
     <span id="footer">
-        <textarea id="logBox" readonly>{{theGame.log}}</textarea>
+        <pre id="logBox" class="overflow">{{theGame.log}}</pre>
     </span>
 </div>
 

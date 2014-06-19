@@ -35,7 +35,13 @@ app.directive("challengeStep", function(){
     '</div>' +
 '</span>',
 
-        link: function($scope) {
+        controller: function($scope) {
+            EXPORT.loadBestScores().then(function(){
+                $scope.$apply();
+            });
+        },
+
+            link: function($scope) {
             // pretty sure this isn't the correct place to put this
             $scope.showPastSolution = function() {
                 $scope.theGame.showPastSolution($scope.theGame.getCurrentChallenge().id, $scope.eachStep.id, session_id());

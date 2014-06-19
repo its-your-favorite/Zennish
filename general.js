@@ -76,8 +76,6 @@ var executeOneTest = function (allCode,name, userNamespace, /* array */parameter
 
     if (comparer(givenVal, expected))
         return false; //not a failure
-    else
-        debugger;
 
     return summarizeTest(parameters, givenVal, expected);
 };
@@ -271,20 +269,26 @@ GeneralCrap.lastHideTime = null;
 GeneralCrap.oldTitle = '';
 GeneralCrap.vizChange = function(){
 
-    if (document.visibilityState == 'visible') {
-            GeneralCrap.hiddenTime += (+new Date() - GeneralCrap.lastHideTime);
+    if ((document.visibilityState == 'visible') && (!$(".textOverlay:visible").length) || (document.location.toString().indexOf("challenge/id/"))<0) {
+        // todo -- that's the most hackish line in this whole codebase... probably should do it better
+            if (GeneralCrap.lastHideTime) {
+                GeneralCrap.hiddenTime += (+new Date() - GeneralCrap.lastHideTime);
+                document.title = GeneralCrap.oldTitle;
+            }
+            GeneralCrap.lastHideTime = false;
             /*$("body").animate({opacity:1}, 1000);/*/
             $("#myPauseScreen").animate({opacity: 0}, 700, function(){
             $("#myPauseScreen").hide();
         });
-        document.title = GeneralCrap.oldTitle;
     }
-    else {
+    else if (! GeneralCrap.lastHideTime) {
         GeneralCrap.lastHideTime = +new Date();
         /* $("body").animate({opacity:.3}, 800); /*/
         $("#myPauseScreen").css('opacity', 1);
         $("#myPauseScreen").show();
         GeneralCrap.oldTitle = document.title;
+        if (document.title.indexOf("PAUSE") >= 0)
+            alert("Double pause");
         document.title = '[PAUSED] - ' + document.title
     }
 };
@@ -293,6 +297,17 @@ document.addEventListener("visibilitychange", GeneralCrap.vizChange);
 GeneralCrap.closeOverlay = function(){
   fe("#mySmokescreen").hide();
   fe("#myTextPiece").hide();
+  GeneralCrap.vizChange();
+};
+
+GeneralCrap.isOverlayVisible = function(){
+    return !!(fe("#mySmokescreen:visible").length + fe("#myTextPiece:visible"));
+};
+
+GeneralCrap.showOverlay = function(){
+    fe("#mySmokescreen").show();
+    fe("#myTextPiece").show();
+    GeneralCrap.vizChange();
 };
 
 $('#closeOverlay').on('click', function() {
@@ -305,13 +320,19 @@ GeneralCrap.setCodeMirrorLocked = function(val) {
 }
 
 $(window).keydown(function(event) {
+    //escape
+    if (event.which == 27 && (GeneralCrap.isOverlayVisible())) GeneralCrap.closeOverlay();
+
     //control-s handler
     if (!((event.which == 115 || event.which == 83) && event.ctrlKey) && !(event.which == 19)) return true;
-    if ($("#saveButton:visible").length) {
+
+    if ($("#saveButton:visible").length && ! GeneralCrap.isOverlayVisible()) {
         $("#saveButton:visible")[0].click();
     }
     event.preventDefault();
     return false;
+
+
 });
 
 angular.bootstrap(document, ['inlineEditing', 'automatedTest', 'challengeStep', 'rating']);

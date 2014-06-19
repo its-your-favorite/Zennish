@@ -9,7 +9,7 @@ EXPORT.challengeSet = [
         bestScore: {val: 0},
         difficultyColor: avgColor("BB0", "B00",0),
         defaultComparer: tripleEquals, /* function used to judge if answer is correct */
-        scoring: [{level: 0}, {level: 1, time: 60*17, keystrokes: 1500}, {level: 2, time: 60*8, keystrokes: 700}],
+        scoring: [{level: 0}, {level: 1, time: 60*17, keystrokes: 1500}, {level: 2, time: 60*9, keystrokes: 700}],
         steps: [
             {
                 id: 0,
@@ -179,5 +179,8 @@ EXPORT.loadBestScores = function(){
            for (var x = 0; x < scores.length; x++) {
                 lookup[ scores.item(x)['challenge_id'] ].bestScore.val = scores.item(x)['top_score'] + 1;
            }
+        if (scores.length) {
+            FA(challengeSet).map(".recommended=0");
+        }
     }); //return a promise
 };

@@ -10,13 +10,17 @@ function gameController($scope, $routeParams, $location) {
         confirm("Abandon challenge?") && $location.path("/");
     };
 
+    $scope.showOverlay = function(){
+        GeneralCrap.showOverlay();
+    };
+
     // Take care of global HTML elements
     myCodeMirror = CodeMirror(fe("#ideContainer")[0], {
         mode: "javascript",
         lineWrapping: true
     });
 
-    myCodeMirror.setSize(null, 550);
+    myCodeMirror.setSize(null, "100%");
     ////////////////////////////////////////////
 
     $scope.view = GeneralCrap;

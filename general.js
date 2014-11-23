@@ -301,7 +301,7 @@ GeneralCrap.closeOverlay = function(){
 };
 
 GeneralCrap.isOverlayVisible = function(){
-    return !!(fe("#mySmokescreen:visible").length + fe("#myTextPiece:visible"));
+    return !!($("#mySmokescreen:visible").length + $("#myTextPiece:visible"));
 };
 
 GeneralCrap.showOverlay = function(){

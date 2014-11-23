@@ -15,7 +15,8 @@ function gameController($scope, $routeParams, $location) {
     };
 
     // Take care of global HTML elements
-    myCodeMirror = CodeMirror(fe("#ideContainer")[0], {
+    var ce = fe("#ideContainer")[0];
+    window.myCodeMirror = CodeMirror(function(node){ce.parentNode.replaceChild(node, ce);}, {
         mode: "javascript",
         lineWrapping: true
     });

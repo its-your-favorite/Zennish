@@ -6,53 +6,54 @@
 Also overall multi-challenge stuff.
 <span class="whatIs"><a href ng-click="showOverlay()">What is this?</a></span>
 </div>
-
-<div id="leftHalf" class="unselectable">
-    <div class="collapsible floatRight">&nbsp;</div>
-    <span id="innerLeftHalf">
-    <span id="challengeDescription">{{theGame.currentChallenge.description}}</span>
-        <div  ng-repeat="eachStep in theGame.currentChallenge.steps">
-            <challenge-step bind-to="eachStep">
-            </challenge-step>
-        </div>
-    </span>
-
-</div>
-<div id="rightHalf" ng-model="rightHalf">
-    <div id="rightPanel" class="unselectable overflow" style="position: relative;">
-        <div class="collapsible floatLeft" style="position: absolute; left: 0;">&nbsp;</div>
-
-        <div>Your tests</div>
-        <input type="button" value="+New" ng-click="theGame.addTest([])">
-        <input type="button" value="Run All" ng-click="theGame.runAllTests()">
-        <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
-
-        <span ng-repeat="test in theGame.userTests" class="test">
-            <automated-test bind-to="test"></automated-test>
+<div id="topHalf">
+    <div id="leftHalf" class="unselectable">
+        <div class="collapsible floatRight">&nbsp;</div>
+        <span id="innerLeftHalf">
+        <span id="challengeDescription">{{theGame.currentChallenge.description}}</span>
+                <div  ng-repeat="eachStep in theGame.currentChallenge.steps">
+                    <challenge-step bind-to="eachStep">
+                    </challenge-step>
+                </div>
         </span>
     </div>
 
-    <div id="centerPanel">
-        <div class="unselectable">
-            <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
-            {{theGame.currentChallenge.keystrokes}} keystrokes
-            <input type="button" id="saveButton" ng-click="theGame.saveCurrentEditor(true)" value="Save Code" />
-            <input type="button" ng-click="theGame.pickAndLoadSave()" value="Load Code" />
-        </div>
-        <div class="tabsContainer">
-            <span ng-click="theGame.tabSystem.addBlankTab()"  class="tab unselectable" title="New Tab">{{ theGame.tabSystem.newTabTab.caption }}</span>
-            <span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
-                <click-to-edit bind-to="tab.caption" on-change="tab.rename.bind(tab)" locked="tab.extraneous.locked"> </click-to-edit>
-                <span ng-click="theGame.tabSystem.closeTab($index)" title="Close Tab">×</span>
+    <div id="rightHalf" ng-model="rightHalf">
+        <div id="rightPanel" class="unselectable overflow" style="position: relative;">
+            <div class="collapsible floatLeft" style="position: absolute; left: 0;">&nbsp;</div>
+
+            <div>Your tests</div>
+            <input type="button" value="+New" ng-click="theGame.addTest([])">
+            <input type="button" value="Run All" ng-click="theGame.runAllTests()">
+            <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
+
+            <span ng-repeat="test in theGame.userTests" class="test">
+                <automated-test bind-to="test"></automated-test>
             </span>
         </div>
-        <div id="ideContainer" ng-keypress="theGame.acknowledgeKeystroke($event)"> </div>
+
+        <div id="centerPanel">
+            <div class="unselectable">
+                <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
+                {{theGame.currentChallenge.keystrokes}} keystrokes
+                <input type="button" id="saveButton" ng-click="theGame.saveCurrentEditor(true)" value="Save Code" />
+                <input type="button" ng-click="theGame.pickAndLoadSave()" value="Load Code" />
+            </div>
+            <div class="tabsContainer">
+                <span ng-click="theGame.tabSystem.addBlankTab()"  class="tab unselectable" title="New Tab">{{ theGame.tabSystem.newTabTab.caption }}</span>
+                <span ng-repeat="tab in theGame.tabSystem.tabs" class="tab unselectable" ng-class="{selected: theGame.tabSystem.activeTab == $index}" ng-click="theGame.tabSystem.selectTab($index)">
+                    <click-to-edit bind-to="tab.caption" on-change="tab.rename.bind(tab)" locked="tab.extraneous.locked"> </click-to-edit>
+                    <span ng-click="theGame.tabSystem.closeTab($index)" title="Close Tab">×</span>
+                </span>
+            </div>
+            <div id="ideContainer" ng-keypress="theGame.acknowledgeKeystroke($event)"> </div>
+        </div>
+
     </div>
-    <span id="footer">
+</div>
+<span id="footer" style="display: none">
         <pre id="logBox" class="overflow">{{theGame.log}}</pre>
     </span>
-</div>
-
 
 
 <!-- Modal -->

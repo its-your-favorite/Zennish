@@ -5,6 +5,11 @@ body {
     height: 100%;
 }
 
+.fancyTitle {
+    font-family: cursive;
+    font-size: 1.3em;
+}
+
 html, body {
     height:100%; /* apparently necessary because css sucks (for collapsible http://stackoverflow.com/questions/1122381/how-to-force-child-div-to-100-of-parents-div-without-specifying-parents-heigh)*/
 }
@@ -88,19 +93,21 @@ html, body {
 
 .aTest {
     text-overflow: ellipsis;
-    background-color: #CCC;
-    color:#000;
+    background-color: #666;
+    color:#EEE;
     -webkit-transition: all 1s ease-in;
     transition: background-color .5s;
-    border-bottom-color: #AAA;
-    border-bottom: 1px solid;
+    border-bottom: 2px solid #555;
 }
 
 input[type=button] {
     transition: background-color .15s;
-    border:1px outset;
-    border-bottom-color: #666666;
-    border-right-color: #BBBBBB;
+    border-radius: 3px;
+    background: #333;
+    color: #ddd;
+    text-shadow: 2px 2px 2px #000;
+    margin: 2px;
+    border-color: lightslategray;
 }
 
 .collapsed#rightPanel {
@@ -189,10 +196,18 @@ input[type=button] {
     width: 105px;
     margin: 1px;
     text-overflow: ellipsis;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.clickable, .tab {
+    border: 1px outset lightslategray;
+    cursor: pointer;
 }
 
 .deleteButton {
-    border: 1px outset;
+    border: 1px outset lightslategray;
+    box-sizing: content-box;
     cursor: pointer;
     vertical-align: top;
     float: right;
@@ -201,19 +216,7 @@ input[type=button] {
     width: 8px;
     height: 3px;
     padding: 6px 3px;
-    background-color: #EEEEEE;
-}
-
-.button {
-    border: 3px #000 outset;
-    border-color: #AAA #888 #666 #333;
-    padding: 0px 3px;
-    cursor: pointer;
-    margin: 5px;
-    line-height: 25px;
-
-    background: #777;
-    box-sizing: border-box;
+    background-color: #333;
 }
 
 .challengeStep {
@@ -371,22 +374,16 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     border-bottom: 10px #666 solid;
     margin-top: 5px;
     min-height:15px;
-
 }
 
 .tab {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    border-right: 1px solid #222;
-    border-left: 1px solid #111;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #000;
-    background-color: #444;
     margin-left: 4px;
     padding: 5px 5px 1px 5px;
-    cursor: pointer;
     color: #DDD;
     text-align: center;
+
 }
 
 .tab.selected {
@@ -429,6 +426,7 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
 }
 
 .click-to-edit {
+    white-space:nowrap;
     white-space:nowrap;
     border-bottom: 1px solid #EEEEEE;
 }

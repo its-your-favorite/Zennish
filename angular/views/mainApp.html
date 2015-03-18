@@ -1,8 +1,10 @@
 <div id="gameHeader">
-    <div><input type="button" ng-click="backToMenu()" value="Exit Challenge"></div>
+    <div class="floatLeft"><input type="button" ng-click="backToMenu()" value="Exit Challenge"></div>
 
+    <div class="text-center fancyTitle">
     <span width="32" height="32" style="background-color: #FFF; display: inline-block; border-radius: 10px; margin-right: -5px;" > <img src="favicon.png" width="32" height="32" style="opacity: .8"></span>
     ork Work - The zen garden of coding
+    </div>
 Also overall multi-challenge stuff.
 <span class="whatIs"><a href ng-click="showOverlay()">What is this?</a></span>
 </div>
@@ -20,7 +22,7 @@ Also overall multi-challenge stuff.
 
     <div id="rightHalf" ng-model="rightHalf">
         <div id="rightPanel" class="unselectable overflow" style="position: relative;">
-            <div class="collapsible floatLeft" style="position: absolute; left: 0;">&nbsp;</div>
+            <div class="collapsible floatLeft" style="left: 0;">&nbsp;</div>
 
             <div>Your tests</div>
             <input type="button" value="+New" ng-click="theGame.addTest([])">

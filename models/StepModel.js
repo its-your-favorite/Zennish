@@ -26,7 +26,7 @@ var StepModel;
     };
 
     StepModel.prototype.visibleDescription = function (currentStage) {
-        return this.isVisible(currentStage) ? this.description : '?????????';
+        return this.isVisible(currentStage) ? this.description : '?';
 
     };
 
@@ -40,10 +40,8 @@ var StepModel;
 
     StepModel.prototype.updateTimeSpent = function(){
         if (document.visibilityState == 'visible') {
-            var twoDig = function(x) { return ("0" + x).slice(-2);};
             var seconds = 0|((+new Date()) - this.startTime - GeneralCrap.hiddenTime)/1000;
-            var minutes = (seconds / 60) | 0;
-            this.timeSpentPretty = (minutes) + ":" + twoDig(seconds % 60);
+            this.timeSpentPretty = prettifyTime(seconds);
             this.timeSpent = seconds;
         }
     };

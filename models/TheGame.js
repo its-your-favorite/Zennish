@@ -116,8 +116,8 @@ TheGame.prototype.scoreContestant = function(stats, goals) {
 };
 
 TheGame.prototype.getStats = function(){
-     return {keystrokes: this.currentChallenge.steps.pluck("keystrokes").reduce("+"),
-                time: this.currentChallenge.steps.pluck("timeSpent").reduce("+")}
+     return {keystrokes: this.currentChallenge.steps.pluck("keystrokes").map("0|x").reduce("+"),
+                time: this.currentChallenge.steps.pluck("timeSpent").map("0|x").reduce("+")}
 };
 
 TheGame.prototype.startChallenge = function(num) {
@@ -308,6 +308,12 @@ TheGame.prototype.saveCurrentEditor = function(manual, name){
 TheGame.prototype.updateTimeSpentForSteps = function() {
     this.getCurrentStep().updateTimeSpent();
 };
+
+TheGame.prototype.updateTotalTimeSpent = function() {
+    var stats = this.getStats();
+    this.getCurrentChallenge().totalTimeSpent = prettifyTime(stats.time);
+    this.getCurrentChallenge().currentRating = {val: this.scoreContestant(stats, this.currentChallenge.scoring).level + 1} ;
+}
 
 /**
  *

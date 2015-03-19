@@ -5,7 +5,13 @@
     <span width="32" height="32" style="background-color: #FFF; display: inline-block; border-radius: 10px; margin-right: -5px;" > <img src="favicon.png" width="32" height="32" style="opacity: .8"></span>
     ork Work - The zen garden of coding
     </div>
-Also overall multi-challenge stuff.
+    <span>
+    <span class="challengeInfo">Challenge: <span class="challengeValue">{{theGame.currentChallenge.name}}</span></span>
+    <span class="challengeInfo">Time spent: <span class="challengeValue">{{theGame.currentChallenge.totalTimeSpent}}</span></span>
+    <span class="challengeInfo">Keystrokes: <span class="challengeValue">{{theGame.currentChallenge.keystrokes}}</span></span>
+    <span class="challengeInfo">Best Score Yet:  <span class="challengeValue"><rating score="theGame.currentChallenge.bestScore"></rating></span></span>
+    <span class="challengeInfo">Current Target:  <span class="challengeValue"><rating score="theGame.currentChallenge.currentRating"></rating></span></span>
+        </span>
 <span class="whatIs"><a href ng-click="showOverlay()">What is this?</a></span>
 </div>
 <div id="topHalf">
@@ -37,7 +43,6 @@ Also overall multi-challenge stuff.
         <div id="centerPanel">
             <div class="unselectable">
                 <input type="button" id="submitCode" value="Submit Code" ng-click="theGame.submitStep()">
-                {{theGame.currentChallenge.keystrokes}} keystrokes
                 <input type="button" id="saveButton" ng-click="theGame.saveCurrentEditor(true)" value="Save Code" />
                 <input type="button" ng-click="theGame.pickAndLoadSave()" value="Load Code" />
             </div>

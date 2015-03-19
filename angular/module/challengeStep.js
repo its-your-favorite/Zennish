@@ -10,7 +10,7 @@ app.directive("challengeStep", function(){
         template: '<span  ng-class="{active: (theGame.currentStepNum == eachStep.id),' +
             'future: (theGame.currentStepNum < eachStep.id),' +
             'challengeStep: true}" >' +
-            '<div class="stepDescription" ng-class="{past: (theGame.currentStepNum > eachStep.id)}">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>'+
+            '<div class="stepDescription" ng-class="{past: (theGame.currentStepNum > eachStep.id), expanded: isExpanded[id]}" ng-click="toggleExpanded(id)">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>'+
             '<div ng-show = "(theGame.currentStepNum >= eachStep.id)" >' +
             '<div class="stepControls">'+
             '<table>' +
@@ -39,6 +39,10 @@ app.directive("challengeStep", function(){
             EXPORT.loadBestScores().then(function(){
                 $scope.$apply();
             });
+
+            $scope.toggleExpanded = function(x){
+                $scope.isExpanded[x] = !$scope.isExpanded[x];
+            }
         },
 
             link: function($scope) {
@@ -46,6 +50,8 @@ app.directive("challengeStep", function(){
             $scope.showPastSolution = function() {
                 $scope.theGame.showPastSolution($scope.theGame.getCurrentChallenge().id, $scope.eachStep.id, session_id());
             }
+
+            $scope.isExpanded = [];
         }
     };
 });

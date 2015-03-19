@@ -31,8 +31,6 @@ app.directive("clickToEdit", function() {
         controller: function($scope) {
             var isLocked = false;
 
-
-
             $scope.view = {
                 editableValue: $scope.bindTo,
                 editorEnabled: false

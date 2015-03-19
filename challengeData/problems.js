@@ -1,9 +1,9 @@
 var EXPORT = EXPORT || {};
 EXPORT.challengeSet = [
     {
-        name: "Matching",
+        name: "Poker Face",
         id: '0-matching',
-        description: "Challenges around patterns in cards",
+        description: "Finding patterns in cards",
         difficulty: "Medium",
         recommended: 1,
         bestScore: {val: 0},
@@ -13,7 +13,7 @@ EXPORT.challengeSet = [
         steps: [
             {
                 id: 0,
-                description: "You'll need to write a function that receives 5 cards. Each represented as a number (2-10) or face (J, Q, K, A) followed by a letter representing its suit (C,D,H,S). So the three of spades would be 3S and the ten of diamonds would be 10D and the Ace of hearts would be AH. Return true if that hand contains *at least* two of the same-value (i.e. number) card.",
+                description: "Write a function that receives 5 cards, each represented as characters. The value of the card is represented as 2-10, J, Q, K, or A. The value is one of (C,D,H,S). So the three of spades would be 3S and the ten of diamonds would be 10D and the Ace of hearts would be AH. Return true if that hand contains *at least* two of the same-value (i.e. same-number) card, regardless of suit.",
                 addFunction: ['isPair', 'card1','card2','card3','card4','card5'],
                 defaultSolution: cards.atLeastPair,
                 defaultTestee: 'isPair',

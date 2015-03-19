@@ -127,6 +127,12 @@ var appendToIde = function(str) {
     myCodeMirror.setValue( myCodeMirror.getValue() + str);
 };
 
+var prettifyTime = function(seconds){
+    var twoDig = function(x) { return ("0" + x).slice(-2);};
+    var minutes = (seconds / 60) | 0;
+    return (minutes) + ":" + twoDig(seconds % 60);
+}
+
 // for determining if the needed function is defined yet
 var ideExtractFunction = function(name) {
     var result = false;
@@ -148,8 +154,8 @@ var ideExtractAllCode = function (name, useDebugger) {
     }
 
     var code = myCodeMirror.getValue() + "\n\r\n /* */; " ; //this method still works with scopes
-    if (useDebugger) {
-        code = code.replace(/debugger;/gi,'');
+    if (! useDebugger) {
+        code = code.replace(/\bdebugger\b;?/gi,'');
     };
 
     try {

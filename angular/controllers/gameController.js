@@ -32,6 +32,7 @@ function gameController($scope, $routeParams, $location) {
 
     setTimeout(function updateTimers(){
         $scope.$apply($scope.theGame.updateTimeSpentForSteps.bind($scope.theGame));
+        $scope.$apply($scope.theGame.updateTotalTimeSpent.bind($scope.theGame));
         setTimeout(updateTimers,1000);
     });
     globalCopy = $scope;

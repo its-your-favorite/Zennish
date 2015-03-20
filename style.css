@@ -3,6 +3,37 @@ body {
     color: #FFF;
     margin-right: 0px;
     height: 100%;
+    min-height: 600px;
+}
+
+#fullContainer {
+    height: 100%;
+    width: 100%;
+}
+
+#challengeExitRequest {
+    /*background: -webkit-linear-gradient(left top,
+    #AFA 20px,
+    #FFF 30px,
+    #AFA 40px);*/
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5em;
+    transition:opacity 1s linear;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.inactive #challengeExitRequest {
+    visibility: inherit;
+    opacity: 100;
+    transition:opacity 1s linear;
+}
+
+.inactive #exitChallengeButton {
+    border-radius: 5px;
+    border-color: deepskyblue;
 }
 
 .fancyTitle {
@@ -12,6 +43,11 @@ body {
 
 html, body {
     height:100%; /* apparently necessary because css sucks (for collapsible http://stackoverflow.com/questions/1122381/how-to-force-child-div-to-100-of-parents-div-without-specifying-parents-heigh)*/
+}
+
+.inactive #submitCode {
+    border-color: #000;
+    opacity: .4;
 }
 
 #ideContainer {
@@ -250,7 +286,7 @@ input[type=button] {
 }
 
 .challengeInfo {
-    margin-left:80px;
+    margin-left:55px;
     font-size: 1.1em;
     font-family: lucida;
     font-weight: bold;
@@ -474,6 +510,10 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     z-index: 10;
 }
 
+#myScoringPiece {
+    display: none;
+}
+
 .textOverlay {
     margin-right: auto;
     z-index: 10;
@@ -490,6 +530,7 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     background-repeat: initial initial;
     color: #111;
     border-radius: 0px 0px 10px 10px;
+    padding-bottom: 30px;
 }
 
 .choiceOfChallenge {
@@ -544,6 +585,7 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
 
 .whatIs {
     float: right;
+    text-align: right;
 }
 
 .overflow {

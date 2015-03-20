@@ -7,12 +7,23 @@ var globalCopy; //For console debug purposes
 function gameController($scope, $routeParams, $location) {
 
     $scope.backToMenu = function(id){
-        confirm("Abandon challenge?") && $location.path("/");
+        if ($scope.theGame.currentChallenge.state) { //no dialog if challenge over
+            swal({   title: "Leave Challenge?",   text: "Unsubmitted work won't be saved",   type: "info",
+                showCancelButton: true,   confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Leave.",   closeOnConfirm: true },
+                function(){
+                    $location.path("/");
+            });
+        }
     };
 
     $scope.showOverlay = function(){
         GeneralCrap.showOverlay();
     };
+
+    $scope.showScoringOverlay = function(){
+        GeneralCrap.showScoringOverlay();
+    }
 
     // Take care of global HTML elements
     var ce = fe("#ideContainer")[0];
@@ -31,6 +42,9 @@ function gameController($scope, $routeParams, $location) {
     $scope.test = $scope.challengeSet[$scope.activeTestId];
 
     setTimeout(function updateTimers(){
+        if ($scope.theGame.getCurrentChallenge().state != 1) {
+            return; // kill timers if we finished the challenge
+        }
         $scope.$apply($scope.theGame.updateTimeSpentForSteps.bind($scope.theGame));
         $scope.$apply($scope.theGame.updateTotalTimeSpent.bind($scope.theGame));
         setTimeout(updateTimers,1000);

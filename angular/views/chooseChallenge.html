@@ -2,8 +2,10 @@
 
     <div class="textOverlay" style="background-color: #FFF">
         <span class="whatIs"><a href ng-click="showOverlay()">??</a></span>
-        <div style="font-size: 26px;">I made a few different challenges that you can try. Pick any one you want.</div>
-        <br><Br><Br><br>
+        <div style="font-size: 26px;">Pick your challenge</div>
+        <br><Br>
+        <a href ng-click="showScoringOverlay()">How does scoring work?</a>
+        <Br><br>
             <div  ng-repeat="challenge in challengeSet" class="choiceOfChallenge" ng-class="{ recommendedChallenge: challenge.recommended  }" ng-click="goToChallenge( challenge.id )">
                 <span class="challengeTitle">{{ challenge.name }} - {{ challenge.description }}</span>
 

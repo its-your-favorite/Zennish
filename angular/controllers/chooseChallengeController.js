@@ -10,6 +10,10 @@ function chooseChallengeController($scope, $location){
         GeneralCrap.showOverlay();
     };
 
+    $scope.showScoringOverlay = function(){
+        GeneralCrap.showScoringOverlay();
+    };
+
     $scope.goToChallenge = function(id){
         $location.path("/challenge/id/" + id);
     };

@@ -11,6 +11,7 @@
     <link href="assets/bootstrap.min.css" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
     <link href="include/vendor/contextmenu/jquery.contextmenu.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="include/vendor/sweetalert-master/lib/sweet-alert.css">
     <link rel="shortcut icon" href="favicon.png" sizes="256x256">
 </head>
 
@@ -54,6 +55,8 @@
 <script type="text/javascript" src="angular/module/challengeStep.js"></script>
 <script type="text/javascript" src="angular/module/overviewApp.js"> </script>
 
+<script type="text/javascript" src="include/vendor/sweetalert-master/lib/sweet-alert.min.js"></script>
+
 <div style="top:0; bottom: 0; left: 0; right:0; z-index: 9; position: fixed; height: 100%; background-color: rgb(0, 0, 0);  opacity: 0.8; " id="mySmokescreen" class="smokescreen"></div>
 <div style="display: none; top:0; bottom: 0; left: 0; right:0; text-align: center; vertical-align: middle; z-index: 9; position: fixed; height: 80%; width: 80%; background-color: rgb(0, 0, 0);  opacity: 1; font-size: 48px; margin-top: auto; margin-bottom: auto; margin-left: auto; margin-right: auto; border-radius: 30px; vertical-align: middle; opacity: 0;" id="myPauseScreen" class="smokescreen">
     <div style="position: absolute; top: 50%; left: 30%; font-size: 70px; color: EEE;">
@@ -62,24 +65,48 @@
 </div>
 <div  id="myTextPiece" class="centeredTextOverlayContainer" >
  <div  align="center" class="textOverlay">
-     <div style="font-size: 36px;">Work Work</div><br>
-     Programming challenges that resemble <b>programming</b>.</i>
+     <div style="font-size: 36px;">Zennish</div><br>
+     A programming puzzle inspired by <b>a programming career</b>.</i>
 
      <br/><br/>
      Professional programming involves balance between the opposing philosophies of architecture (GRASP, SOLID) and pragmatism (KISS, YAGNI).
-     Over-architected code becomes illegible to solve problems that will never come. Under-architected code
-     gets exponentially more difficult with each new requirement. Finding the middle ground consistently, our job, is hard.
+     Over-architected code front-loads difficulty to solve problems that <a href="http://dilbert.com/strip/2010-03-06">won't necessarily ever come</a>. Under-architected code
+     causes exponentially more pain with each new requirement, like a house on a bad foundation. Finding the middle ground consistently, our job, is hard.
      <br/><br/>
-     In the real world the feedback loop on such decisions may be months or years.
+     But in the real world the changes you have to make over your code are so spaced out and forgotten. Thus the feedback loop on your coding such decisions may be months or years.
      Welcome to the garden of practice. When you make choices in this low-stakes sandbox it'll only take minutes to reap what you have sewn.
-<br><br>
-     I also see this an alternative to traditional coding challenges (e.g. codility, google code jam) that seek to evaluate engineers on a narrow range
-     of math-intensive skills. Expert engineering is not about plugging a sequence of numbers into the OEIS; it's creative composition.
-<br><br>
+    <br><br>
+     I also see this an alternative to traditional coding challenges (e.g. codility, google code jam) that challenges the traditional valuation of engineers on academic math-intensive skills.
+     Expert engineering is not about plugging a sequence of numbers into the OEIS; it's creative composition.
+    <br><br>
      -- <a href='http://www.alexrohde.com'>Alex.</a>
      <br>
      <input type="button" value="Okay!" id="closeOverlay">
  </div>
+</div>
+
+<div id="myScoringPiece" class="centeredTextOverlayContainer" >
+    <div  align="center" class="textOverlay">
+        <div style="font-size: 36px;">How does scoring work?</div>
+        <br><br>
+        Your score is measured on productivity and efficiency. Your productivity will be measured in time; you choose how much time to
+        spend planning, architecting, and coding. Just like the real world, time will be your biggest foe.
+        <BR><BR>
+        However, you will also be scored on efficiency, measured by how much typing you have to do. In the real world, changing
+        things creates a cost on your team (PRs, test-cycles, time for your teammates to relearn your code). As an exercise in
+        writing reusable code keystrokes will be counted.
+        <BR><BR>
+        You won't be penalized for the following:<br><br>
+        <ul style="width: 400px; text-align: left">
+        <li>Copy-pasting, even if it is the root of all evil</li>
+        <li>Deleting code, navigating with arrow keys, etc</li>
+        <li>Time spent researching on stack overflow</li>
+        </ul>
+        Good Luck! (p.s. My difficulty ratings are strict... like <a href="http://www.ftlgame.com/" target="otherWindow">FTL</a> strict)
+        <br><br>
+
+        <input type="button" value="Got it!" id="closeScoringOverlay">
+    </div>
 </div>
 
 <div id="noteBox"></div>

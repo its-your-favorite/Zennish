@@ -5,6 +5,11 @@
  */
 
 /*
+Sweet Alert http://tristanedwards.me/sweetalert
+created by Tristan Edwards http://tristanedwards.me/
+ */
+
+/*
 jquery.contextmenu.js
 * jQuery Plugin for Context Menus
 * http://www.JavascriptToolbox.com/lib/contextmenu/
@@ -94,14 +99,25 @@ TheGame.prototype.renderSave = function(save,b,c,d) {
 };
 
 TheGame.prototype.advanceStep = function(){
-  assert(this.currentChallenge);
+    var currentChallenge = this.getCurrentChallenge();
+    if (currentChallenge.state != 1) {
+        return; //We're completed, this button shouldn't even be clickable.
+    }
+  assert(currentChallenge);
   var nextStep = this.currentStepNum+1;
 
-  if (this.currentChallenge.steps.length <= nextStep) {
-        var rating = this.scoreContestant(this.getStats(), this.currentChallenge.scoring);
+  if (currentChallenge.steps.length <= nextStep) {
+        var rating = this.scoreContestant(this.getStats(), currentChallenge.scoring);
         var label = ['bronze', 'silver','gold'];
-        PersistentStorage.saveScore( rating.level, this.currentChallenge.id );
-        return alert("All solved! You scored " + label[rating.level ]);
+        var applause = ["Good job", "Awesome work", "Nailed it!"];
+        PersistentStorage.saveScore( rating.level, currentChallenge.id );
+        currentChallenge.state = 0; //done/off
+        //label[rating.level ]
+        swal({   title: applause[rating.level],
+            text: "You scored " + label[rating.level ] + fe("#thisRunsScore").html(),
+          html: true });
+        GeneralCrap.gleamingGreen(fe("#challengeExitRequest"));
+        return;
   } else {
         this.gotoStep(nextStep);
   }
@@ -121,9 +137,11 @@ TheGame.prototype.getStats = function(){
 };
 
 TheGame.prototype.startChallenge = function(num) {
-    this.currentFunctionTestee = "someFunction";
+    this.currentFunctionTestee = "someFunction"; //I wish I remember why I did this line
     this.currentChallenge = this.data.challenges[num];
     this.currentChallenge.keystrokes = 0;
+    this.currentChallenge.totalTimeSpent = 0;
+    this.currentChallenge.state = 1; //running
 
     this.currentChallenge.steps = FA(this.currentChallenge.steps).map(function(x) { return new StepModel(x); });
     this.gotoStep(0);
@@ -340,11 +358,13 @@ TheGame.prototype.getStep = function(n){
 
 
 TheGame.prototype.acknowledgeKeystroke = function(event) {
-    var val = this.currentChallenge;
-    if (val) {
-        val.keystrokes++;
+    var challenge = this.getCurrentChallenge();
+    
+    if (!challenge || !challenge.state) {
+        return; //challenge not running
     }
     if (this.currentStepNum.constructor === (0).constructor){
+        challenge.keystrokes++;
         this.getCurrentStep().keystrokes++;
     }
 };
@@ -388,7 +408,10 @@ TheGame.prototype.pickAndLoadSave = function(){
         GeneralCrap.useLoadDialog(loads).then(function(row){
             //post successful load
              self.loadSave( loads.filter("x.id == " + row)[0] );
-        });
+        },
+            function(){
+                //fail
+            });
     });
 
 };

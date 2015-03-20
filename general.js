@@ -270,6 +270,31 @@ GeneralCrap.setSelectedTab = function(x){
     this.selectedTabId=x;
 };
 
+GeneralCrap.gleamingGreen = function (jqs) {
+    var width = jqs.width() + 40;
+    var res = jqs;
+    var duration = 2000;
+    const pausePeriod = duration * 1.3;
+
+    for (var x = 0; x < 5; x++) {
+        res = GeneralCrap.rotate(res, width, 0);
+        res = GeneralCrap.rotate(res, -40, duration);
+        res = res.delay(pausePeriod);
+    }
+}
+
+GeneralCrap.rotate = function (jqs, width, duration) {
+    return $(jqs).animate({"border-spacing": width  }, {
+        step: function(now,fx) {
+            now = parseInt(now);
+
+            $(this).css('background', '-webkit-linear-gradient(135deg, #8F8 ' + now + 'px, #FFF ' + (now + 1) + 'px, #FFF ' + (now + 20) + 'px, #8F8 ' + (now + 21) + 'px)')
+            $(this).css('-webkit-background-clip', 'text');
+            },
+        duration: duration
+    },'linear');
+}
+
 GeneralCrap.hiddenTime = 0;
 GeneralCrap.lastHideTime = null;
 GeneralCrap.oldTitle = '';
@@ -300,10 +325,18 @@ GeneralCrap.vizChange = function(){
 };
 document.addEventListener("visibilitychange", GeneralCrap.vizChange);
 
+GeneralCrap.closeAnOverlay = function(sSelector){
+    fe("#mySmokescreen").hide();
+    fe(sSelector).hide();
+    GeneralCrap.vizChange();
+}
+
 GeneralCrap.closeOverlay = function(){
-  fe("#mySmokescreen").hide();
-  fe("#myTextPiece").hide();
-  GeneralCrap.vizChange();
+  return GeneralCrap.closeAnOverlay("#myTextPiece");
+};
+
+GeneralCrap.closeScoringOverlay = function(){
+    return GeneralCrap.closeAnOverlay("#myScoringPiece");
 };
 
 GeneralCrap.isOverlayVisible = function(){
@@ -316,9 +349,19 @@ GeneralCrap.showOverlay = function(){
     GeneralCrap.vizChange();
 };
 
+GeneralCrap.showScoringOverlay = function(){
+    fe("#mySmokescreen").show();
+    fe("#myScoringPiece").show();
+    GeneralCrap.vizChange();
+};
+
 $('#closeOverlay').on('click', function() {
     GeneralCrap.closeOverlay();
     PersistentStorage.saveSetting({showed_splash_screen: true});
+});
+
+$('#closeScoringOverlay').on('click', function() {
+    GeneralCrap.closeScoringOverlay();
 });
 
 GeneralCrap.setCodeMirrorLocked = function(val) {

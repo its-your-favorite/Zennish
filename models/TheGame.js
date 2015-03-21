@@ -126,14 +126,28 @@ TheGame.prototype.advanceStep = function(){
 TheGame.prototype.scoreContestant = function(stats, goals) {
     var achieved = FA(goals).reject(function(goal) {
         return ((goal.hasOwnProperty('time') && (goal.time < stats.time))
-                || (goal.hasOwnProperty('keystrokes') && (goal.keystrokes < stats.keystrokes)));
+                || (goal.hasOwnProperty('keystrokes') && (goal.keystrokes < stats.keystrokes))
+                || (goal.hasOwnProperty("mistakes") && (goal.mistakes < stats.mistakes))
+            );
     });
     return achieved.slice(-1)[0];
 };
 
+/**
+ * Get the overall success metrics for the challenge, these paired with the scoring criteria will
+ * determine the grade to assign
+ * @returns {{keystrokes: , time: , mistakes: }}
+ */
 TheGame.prototype.getStats = function(){
-     return {keystrokes: this.currentChallenge.steps.pluck("keystrokes").map("0|x").reduce("+"),
-                time: this.currentChallenge.steps.pluck("timeSpent").map("0|x").reduce("+")}
+    var that = this;
+    var extractSumAcrossSteps = function(sKey) {
+        return that.currentChallenge.steps.pluck(sKey).map("0|x").reduce("+");
+    };
+     return {
+         keystrokes: extractSumAcrossSteps("keystrokes"),
+         time: extractSumAcrossSteps("timeSpent"),
+         mistakes: extractSumAcrossSteps("mistakes")
+     };
 };
 
 TheGame.prototype.startChallenge = function(num) {
@@ -212,9 +226,10 @@ TheGame.prototype.submitStep = function() {
     assert(this.getCurrentStep());
 
     var failures = this.gradeSolution(this.getCurrentStep(), this.currentChallenge);
-    if (failures.length)
+    if (failures.length) {
         this.recordToLog(failures[0]);
-    else {
+        this.getCurrentStep().mistakes = (0|this.getCurrentStep().mistakes) + 1;
+    } else {
 
         this.recordToLog("Passed step " + (this.currentStepNum + 1));
         this.saveCurrentEditor(false, "Your Correct Solution Step " + (this.currentStepNum + 1));

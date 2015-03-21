@@ -482,6 +482,16 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     content:url('img/x-mark-16.png');
 }
 
+.errorsIcon {
+    content:url('img/x-mark-16.png');
+    top: 3px;
+    position: relative;
+}
+
+.allGood {
+    content:url('img/check-mark-16.png');
+}
+
 .click-to-edit {
     white-space:nowrap;
     white-space:nowrap;

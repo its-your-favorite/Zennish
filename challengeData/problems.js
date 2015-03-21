@@ -9,7 +9,7 @@ EXPORT.challengeSet = [
         bestScore: {val: 0},
         difficultyColor: avgColor("BB0", "B00",0),
         defaultComparer: tripleEquals, /* function used to judge if answer is correct */
-        scoring: [{level: 0}, {level: 1, time: 60*17, keystrokes: 1500}, {level: 2, time: 60*9, keystrokes: 700}],
+        scoring: [{level: 0}, {level: 1, time: 60*17, keystrokes: 1500, mistakes:3}, {level: 2, time: 60*9, keystrokes: 700, mistakes: 1}],
         steps: [
             {
                 id: 0,
@@ -65,8 +65,8 @@ EXPORT.challengeSet = [
     defaultComparer: datesChallenge.datesEqual, /* function used to judge if answer is correct */
     defaultSolution: datesChallenge.cameFirst,
     scoring: [{level: 0},
-        {level: 1, time: 60*45, keystrokes: 3000},
-        {level: 2, time: 60*20,  keystrokes: 1900}],
+        {level: 1, time: 60*45, keystrokes: 3000, mistakes: 2},
+        {level: 2, time: 60*20,  keystrokes: 1900, mistakes: 0}],
     steps: [
     { // todo go over testcases for each and make sure all variants are well-covered
         // todo move all expected to avg color
@@ -115,8 +115,8 @@ EXPORT.challengeSet = [
         difficultyColor: avgColor("BB0", "B00", .70),
         recommended: 0,
         scoring: [{level: 0},
-            {level: 1, time: 120*60, keystrokes: 5000},
-            {level: 2, time: 60*60,  keystrokes: 2500}],
+            {level: 1, time: 120*60, keystrokes: 5000, mistakes: 4},
+            {level: 2, time: 60*60,  keystrokes: 2500, mistakes: 1}],
         steps: [
             { // todo go over testcases for each and make sure all variants are well-covered
                 // todo move all expected to avg color

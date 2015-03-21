@@ -2,38 +2,12 @@
  * Contains code for the GUI for one of the steps of a challenge
  * Needs a refactor @todo
  */
-var app = angular.module('challengeStep', ['rating']);
+var app = angular.module('challengeStep', ['screwupCount']);
 app.directive("challengeStep", function(){
     return {
         restrict: "E",
         replace: true,
-        template: '<span  ng-class="{active: (theGame.currentStepNum == eachStep.id),' +
-            'future: (theGame.currentStepNum < eachStep.id),' +
-            'challengeStep: true}" >' +
-            '<div class="stepDescription" ng-class="{past: (theGame.currentStepNum > eachStep.id), expanded: isExpanded[id]}" ng-click="toggleExpanded(id)">{{ eachStep.visibleDescription(theGame.currentStepNum) }}</div>'+
-            '<div ng-show = "(theGame.currentStepNum >= eachStep.id)" >' +
-            '<div class="stepControls">'+
-            '<table>' +
-                '<tr>' +
-                    '<td>' +
-                        '<span>Attempts...</span>' +
-                    '</td>' +
-                    '<td>' +
-                        '<span alt="Number of keystrokes used to complete this step" title="Number of keystrokes used to complete this step">{{ eachStep.keystrokes }}' +
-                            '<img class="key_icon" src="assets/img/key.png"/>' +
-                        '</span>' +
-                    '</td>' +
-                    '<td>' +
-                        '<span> {{ eachStep.timeSpentPretty }} </span>' +
-                    '</td>' +
-                    '<td>' +
-                        '<input type=button class="viewButton" value="View"  ng-class="{past: (theGame.currentStepNum > eachStep.id)}" ng-click="showPastSolution()"/>' +
-                    '</td>' +
-                '</tr>' +
-            '</table>'+
-        '</div>' +
-    '</div>' +
-'</span>',
+        templateUrl: "angular/views/challengeStep.html",
 
         controller: function($scope) {
             EXPORT.loadBestScores().then(function(){

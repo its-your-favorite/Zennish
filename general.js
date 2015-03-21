@@ -384,4 +384,4 @@ $(window).keydown(function(event) {
 
 });
 
-angular.bootstrap(document, ['inlineEditing', 'automatedTest', 'challengeStep', 'rating']);
+angular.bootstrap(document, ['inlineEditing', 'automatedTest', 'challengeStep', 'rating', 'screwupCount']);

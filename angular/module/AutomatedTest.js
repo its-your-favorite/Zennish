@@ -16,7 +16,6 @@ app.directive("automatedTest", function(){
         'testPassed: (test.lastResult == true),' +
         'testFailed: (test.lastResult == false)}">' +
         '<input type="button" ng-click="test.doGuiRun()" value="&gt;" />' +
-        '<input type="button" ng-click="test.doGuiRun()" value="&gt;" />' +
         '<input ng-model="test.funcName" value="{{theGame.currentStepTesteeFunctionName()}}" class="testFuncName" ng-class="{testParamsFailed: !test.canExtractFunction()}" title="{{ {true: \'Got it\', false: \'Cannot find a function by that name in your global scope\'}[test.canExtractFunction()] }}">' +
         '(<input ng-model="test.paramsJson" class="testParams" ng-class="{testParamsFailed: !test.canParseParams()}" title="{{ {true: \'Got it\', false: \'Not valid JSON array contents\'}[test.canParseParams()] }}">) =' +
         '<input ng-model="test.expectedJson" class="testExpected" ng-class="{testParamsFailed: !test.canParseExpected()}" title="{{ {true: \'Got it\', false: \'Not valid JSON value\'}[test.canParseExpected()] }}">' +

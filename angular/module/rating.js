@@ -20,7 +20,7 @@ app.directive("rating", function() {
 
             $scope.updateStars = function() {
                 $scope.stars = [];
-                var score = $scope.score.val | 0;
+                var score = $scope.score && $scope.score.val || 0;
                 var lookupColor = function (x, countEarned) {
                     var lookup = ['white', 'bronze', 'silver', 'gold'];
                     if (x >= countEarned)

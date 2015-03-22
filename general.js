@@ -184,8 +184,8 @@ GeneralCrap.setupLoadTable = function(){
         colModel:[
             {name:'name',index:'name', width:385, sorttype:"string"}, /* these widths must also match the css for #loadDialogtable */
             {name:'prettyDate',index:'prettyDate', width:100, sorttype:"float"},
-            {name:'linesOfCode', index:'linesOfCode', width: 145, sorttype:"float"},
             {name:'isAutosave',index:'isAutosave', width:100,sorttype:"float"},
+            {name:'linesOfCode', index:'linesOfCode', width: 145,sorttype:"float"},
             {name:'stepNum',index:'step_id', width:130, sortable:false},
             {name:'id', index:"id", key: true, width: 10} /**/
         ],

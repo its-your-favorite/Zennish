@@ -102,8 +102,8 @@ const savedCode = "savedCode";
         return genericUpdate(savedCode, {deleted: 1}, {id: saveId} );
     }
 
-    PersistentStorage.loadAllUndeletedSaves = function(stepId, challengeId){
-        return PersistentStorage.loadCode({challenge_id: challengeId, deleted: 0}, {id: "DESC"}).then(function(success,fail){
+    PersistentStorage.loadAllUndeletedSaves = function(sessionId, challengeId){
+        return PersistentStorage.loadCode({challenge_id: challengeId, deleted: 0, created_session_id: sessionId}, {id: "DESC"}).then(function(success,fail){
             return success.map(function(load){
                var newLoad = {};
                newLoad.name = load.name;

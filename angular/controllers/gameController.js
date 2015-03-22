@@ -7,13 +7,19 @@ var globalCopy; //For console debug purposes
 function gameController($scope, $routeParams, $location) {
 
     $scope.backToMenu = function(id){
-        if ($scope.theGame.currentChallenge.state) { //no dialog if challenge over
+
+        var leave = function(){
+            $location.path("/");
+        };
+
+        if (!$scope.theGame.currentChallenge.state) { //no dialog if challenge over
+            leave();
+        } else {
             swal({   title: "Leave Challenge?",   text: "Unsubmitted work won't be saved",   type: "info",
                 showCancelButton: true,   confirmButtonColor: "#DD6B55",
                 confirmButtonText: "Leave.",   closeOnConfirm: true },
-                function(){
-                    $location.path("/");
-            });
+                leave
+            );
         }
     };
 

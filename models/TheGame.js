@@ -173,7 +173,8 @@ TheGame.prototype.gotoStep = function(num) {
 
     var preload = PersistentStorage.loadCodeInitial(num, this.getCurrentChallenge().id).then(
           function(preload){
-              if (preload.length){
+              if (false /* disable preloading, forgot why I ever implemented it*/ && preload.length){
+                //preloading is automatically loading the code from any successful solution to this step from the past... across any session
                 self.loadSave(preload[0]);
               } else {
                 if (!self.tabSystem.tabs.length) //no tabs open, create one
@@ -393,8 +394,8 @@ TheGame.prototype.getCurrentChallenge = function() {
     return this.currentChallenge;
 };
 
-TheGame.prototype.getRecentLoads = function() {
-    return PersistentStorage.loadAllUndeletedSaves(this.getCurrentStep().id, this.getCurrentChallenge().id);
+TheGame.prototype.getRecentLoadsForSession = function(iSessionId) {
+    return PersistentStorage.loadAllUndeletedSaves(iSessionId, this.getCurrentChallenge().id);
 };
 
 TheGame.prototype.getSpecificLoad = function(step, challenge, session) {
@@ -419,14 +420,12 @@ TheGame.prototype.loadBlankTab = function() {
  */
 TheGame.prototype.pickAndLoadSave = function(){
     var self=this;
-    this.getRecentLoads().then(function(loads){
+    this.getRecentLoadsForSession(session_id()).then(function(loads){
         GeneralCrap.useLoadDialog(loads).then(function(row){
             //post successful load
              self.loadSave( loads.filter("x.id == " + row)[0] );
-        },
-            function(){
+        }, function(){
                 //fail
             });
     });
-
 };

@@ -10,6 +10,9 @@ function gameController($scope, $routeParams, $location) {
 
         var leave = function(){
             $location.path("/");
+            setTimeout(function(){//one of the ugliest things I've had to do...
+                $scope.theGame = null;
+            },3000);
         };
 
         if (!$scope.theGame.currentChallenge.state) { //no dialog if challenge over
@@ -48,8 +51,8 @@ function gameController($scope, $routeParams, $location) {
     $scope.test = $scope.challengeSet[$scope.activeTestId];
 
     setTimeout(function updateTimers(){
-        if ($scope.theGame.getCurrentChallenge().state != 1) {
-            return; // kill timers if we finished the challenge
+        if (!$scope.theGame || $scope.theGame.getCurrentChallenge().state != 1) {
+            return true; // kill timers if we finished the challenge
         }
         $scope.$apply($scope.theGame.updateTimeSpentForSteps.bind($scope.theGame));
         $scope.$apply($scope.theGame.updateTotalTimeSpent.bind($scope.theGame));

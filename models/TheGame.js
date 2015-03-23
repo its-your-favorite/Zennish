@@ -214,6 +214,7 @@ TheGame.prototype.startStep = function(step) {
         this.currentFunctionTestee = f[0];
         if (! ideContains(f[0]) ) //save'em a little typing
             appendToIde(step.getExpectedSolutionOutline());
+        appendToIde(step.getExtraCode());
     }
     step.keystrokes = 0;
     step.start();
@@ -411,7 +412,8 @@ TheGame.prototype.loadSave = function(save) {
 };
 
 TheGame.prototype.loadBlankTab = function() {
-    var tab = new Tab("Unsaved", false, (+new Date()), $.extend({snippet: '//write your javascript here\n' + this.getCurrentStep().getExpectedSolutionOutline() }) );
+    var sDefaultText = '//write your javascript here\n' + this.getCurrentStep().getExpectedSolutionOutline() + this.getCurrentStep().getExtraCode();
+    var tab = new Tab("Unsaved", false, (+new Date()), $.extend({snippet: sDefaultText }) );
     this.tabSystem.addTab(tab);
 };
 

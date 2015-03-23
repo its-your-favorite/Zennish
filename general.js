@@ -56,7 +56,7 @@ var retrieveData = function(key) {
         return localStorage[key];
 };
 
-var summarizeTest = function(parameters, givenVal, expected) {
+var summarizeTest = function(name, parameters, givenVal, expected) {
     return name + "(" + parameters.map(JSON.stringify).join(", ") + ") returned " + JSON.stringify(givenVal) + ", expected " + JSON.stringify(expected);
 }
 
@@ -77,7 +77,7 @@ var executeOneTest = function (allCode,name, userNamespace, /* array */parameter
     if (comparer(givenVal, expected))
         return false; //not a failure
 
-    return summarizeTest(parameters, givenVal, expected);
+    return summarizeTest(name, parameters, givenVal, expected);
 };
 
 var wouldBeValidJsonIfDoubleQuotes = function(json) {

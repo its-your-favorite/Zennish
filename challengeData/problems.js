@@ -1,6 +1,45 @@
 var EXPORT = EXPORT || {};
 EXPORT.challengeSet = [
     {
+        name: "Tutorial",
+        id: '9-tutorial',
+        description: "A basic tutorial on using this interface",
+        difficulty: "So Easy",
+        recommended: 1,
+        bestScore: {val: 0},
+        difficultyColor: avgColor("BB0", "B00",0),
+        defaultComparer: tripleEquals, /* function used to judge if answer is correct */
+        scoring: [{level: 0}, {level: 1, time: 60*17, keystrokes: 1500, mistakes:3}, {level: 2, time: 60*9, keystrokes: 200, mistakes: 1}],
+        steps: [
+            {
+                id: 0,
+                description: "Write a function that returns the number 3. You'll see on the right that I've already provided a test for you. You'll get one of these in all challenges to help clarify what is being asked of you. You can always add more tests yourself.",
+                addFunction: ['getThree'],
+                defaultSolution: tutorial.getThree,
+                defaultTestee: 'getThree',
+                demoTests: [[]],
+                tests: [[], ['4']] /* answer followed by sets of parameters */
+            },
+            {
+                id: 1,
+                description: "Now write a function that returns true if a number is negative, false otherwise. You should open up your javascript console in your chrome dev tools for superior feedback. ",
+                addFunction: ['isNegative', 'number'],
+                defaultSolution: tutorial.isNegative,
+                defaultTestee: 'isNegative',
+                demoTests: [[4]],
+                tests: [[13],[-13], [0]] /* answer followed by sets of parameters */
+            },
+            {
+                id: 2,
+                description: "Now write a function to return the sum of two numbers",
+                addFunction: ['addThem', 'x','y'],
+                defaultSolution: tutorial.addThem,
+                demoTests: [[1.3,2]],
+                tests: [[0,0],[1,2],[-4,-1], [-9,9],[34,103], [1.3, 2.4] ], /* answer followed by sets of parameters */
+            },
+        ],
+    },
+    {
         name: "Poker Face",
         id: '0-matching',
         description: "Finding patterns in cards",
@@ -79,8 +118,7 @@ EXPORT.challengeSet = [
     },
     {
         id: 1,
-        description: "You will recieve two strings representing dates. Each will be one of the following: a unix timestamp, mm-dd-yyyy, yyyy-mm-dd, yyyy/mm/dd, or mm/dd/yyyyy. Return a a date object representing the date that came first.",
-        /*addFunction: ['mixColors', 'color1', 'color2', 'balance'],*/
+        description: "Now make the same function more versatile. You will receive two strings representing dates. Each will be one of the following: a unix timestamp, mm-dd-yyyy, yyyy-mm-dd, yyyy/mm/dd, or mm/dd/yyyyy. Return a a date object representing the date that came first.",
         defaultTestee: "cameFirst",
         demoTests: [["1357027200","2013/01/02"]],
         tests: [["135702720","2013/01/02"], ["2013-01-02", "1357027200"], ['1357027200', '1357027201'], ],
@@ -96,8 +134,9 @@ EXPORT.challengeSet = [
     },
     {
         id: 3,
-        description: "You will receive dates in the format: MonthName day, year. However, there may be typos in the month name. The capitalizaiton may be incorrect and there may be one letter added or letter missing from the month name (but not both). Parse this string into a date-object.",
+        description: "You will receive dates in the format: MonthName day, year. However, there may be typos in the month name. The capitalizaiton may be incorrect and there may be one letter added or letter missing from the month name (but not both). Parse this string into a date-object. I also have provided all months spelled correctly",
         addFunction: ['typoDate', 'incorrectDate'],
+        addCode:  'var monthsSpelledCorrectly = ["January","February","March","April","May","June","July","August","September","October","November","December"];',
         defaultSolution: datesChallenge.correctDate,
         demoTests: [['mAzy 3 2013']],
         tests: [['mAzy 3, 2013'], ['aprl 1, 2011'], ['apriil 5, 2013'], ['marchy 5, 2013'], ['juney 5, 2013'], ['ZdecemBER 22, 1985'] ],
@@ -110,6 +149,7 @@ EXPORT.challengeSet = [
         description: "Challenges around mixing colors",
         defaultComparer: striCompare, /* function used to judge if answer is correct */
         defaultSolution: avgColor,
+        defaultTestee: "averageColors",
         difficulty: 'Harder',
         bestScore: {val: 0},
         difficultyColor: avgColor("BB0", "B00", .70),

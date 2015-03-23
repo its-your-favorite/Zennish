@@ -31,12 +31,22 @@ var StepModel;
     };
 
     StepModel.prototype.getExpectedSolutionOutline = function() {
-        if (! this.addFunction) {
-            return '';
+        var result = "";
+        if (this.addFunction) {
+            var f = this.addFunction;
+            result += '\n\nvar ' + f[0] + ' = function (' + f.slice(1).join(", ") + ") { \n\n }; ";
         }
-        var f = this.addFunction;
-        return '\nvar ' + f[0] + ' = function (' + f.slice(1).join(", ") + ") { \n\n }; ";
+        return result;
+
     };
+
+    StepModel.prototype.getExtraCode = function() {
+        var result = "";
+        if (this.addCode) {
+            result += "\n\n" + this.addCode;
+        }
+        return result;
+    }
 
     StepModel.prototype.updateTimeSpent = function(){
         if (document.visibilityState == 'visible') {

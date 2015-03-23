@@ -1,29 +1,23 @@
 <div id="fullContainer" ng-class="{active: theGame.currentChallenge.state, inactive: !theGame.currentChallenge.state}">
     <div id="gameHeader">
-        <div class="floatLeft"><input type="button" ng-click="backToMenu()" value="Exit Challenge" id="exitChallengeButton"> <span id="challengeExitRequest">CHALLENGE COMPLETE</span> </div>
+        <div class="floatLeft" id="exitChallengeContainer"><input type="button" ng-click="backToMenu()" value="Exit Challenge" id="exitChallengeButton"> <span id="challengeExitRequest">CHALLENGE COMPLETE</span> </div>
         <span class="whatIs">
-            <a href ng-click="showOverlay()">What is this?</a><br>
-            <span class="whatIs"><a href ng-click="showScoringOverlay()">How does scoring work?</a></span>
+            <a href ng-click="showOverlay()" class="pulldown">What is this?</a>
+            <a href ng-click="showScoringOverlay()" class="pulldown">How does scoring work?</a>
         </span>
 
 
         <div class="text-center fancyTitle">
             <span width="32" height="32"
-                  style="background-color: #FFF; display: inline-block; border-radius: 10px; margin-right: -5px;"> <img
-                    src="favicon.png" width="32" height="32" style="opacity: .8"></span>
-            ork Work - The zen garden of coding
+                  style="background-color: #FFF; display: inline-block; border-radius: 10px; margin-right: -5px;"> <img src="favicon.png" width="32" height="32" style="opacity: .8"></span>
+            ennify - your garden of coding
         </div>
         <span>
-            <span class="challengeInfo">Challenge: <span
-                    class="challengeValue">{{theGame.currentChallenge.name}}</span></span>
-            <span class="challengeInfo">Time spent: <span
-                    class="challengeValue">{{theGame.currentChallenge.totalTimeSpent}}</span></span>
-            <span class="challengeInfo">Keystrokes: <span
-                    class="challengeValue">{{theGame.currentChallenge.keystrokes}}</span></span>
-            <span class="challengeInfo">Previous Best:  <span class="challengeValue"><rating
-                    score="theGame.currentChallenge.bestScore"></rating></span></span>
-            <span class="challengeInfo"> {{ theGame.currentChallenge.state ? "Current Target" : "You Earned" }} :  <span
-                    class="challengeValue"><rating id="thisRunsScore" score="theGame.currentChallenge.currentRating"></rating></span></span>
+            <span class="challengeInfo">Challenge: <span class="challengeValue">{{theGame.currentChallenge.name}}</span></span>
+            <span class="challengeInfo">Time spent: <span class="challengeValue">{{theGame.currentChallenge.totalTimeSpent}}</span></span>
+            <span class="challengeInfo">Keystrokes: <span class="challengeValue">{{theGame.currentChallenge.keystrokes}}</span></span>
+            <span class="challengeInfo">Previous Best:  <span class="challengeValue"><rating score="theGame.currentChallenge.bestScore"></rating></span></span>
+            <span class="challengeInfo"> {{ theGame.currentChallenge.state ? "Current Target" : "You Earned" }} :  <span class="challengeValue"><rating id="thisRunsScore" score="theGame.currentChallenge.currentRating"></rating></span></span>
         </span>
 
     </div>

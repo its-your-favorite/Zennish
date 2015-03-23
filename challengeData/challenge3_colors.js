@@ -21,7 +21,7 @@ var avgColor = {}, threeWay;
     };
     var hex6ToArray =  function(color) {
         if (color instanceof Array)
-            return FA(color).map("(x*255/100)|0"); //already set
+            return FA(color).map("(x*255.0/100)"); //already set
         color = toSixDigitColor(color);
         return FA(color.split("")).chunk(2).map(function(a) { return parseInt(a.join(""),16); });
     };

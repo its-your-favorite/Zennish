@@ -31,9 +31,14 @@ body {
     transition:opacity 1s linear;
 }
 
+#exitChallengeContainer {
+    position:absolute; /*helps not throw of the centering of the title*/
+}
+
 .inactive #exitChallengeButton {
     border-radius: 5px;
     border-color: deepskyblue;
+
 }
 
 .fancyTitle {
@@ -236,7 +241,7 @@ input[type=button] {
 
 }
 
-.clickable, .tab {
+.clickable, .tab, .pulldown {
     border: 1px outset lightslategray;
     cursor: pointer;
 }
@@ -282,14 +287,25 @@ input[type=button] {
 }
 
 .challengeInfo:first-child {
-    margin-left:15px;
+    /*margin-left:15px;*/
+}
+
+.pulldown {
+    margin-right: 10px;
+    border-radius:2px;
+    border-width: 0px 3px 3px 3px;
+    padding:5px;
+    padding-top: -1px;
+    spacing-top: 0px;
 }
 
 .challengeInfo {
-    margin-left:55px;
     font-size: 1.1em;
     font-family: lucida;
     font-weight: bold;
+    float:left;
+    width: 20%;
+    max-width: 230px;
 }
 
 .challengeValue {

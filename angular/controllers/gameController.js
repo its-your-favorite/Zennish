@@ -34,6 +34,14 @@ function gameController($scope, $routeParams, $location) {
         GeneralCrap.showScoringOverlay();
     }
 
+    $scope.showScoringData = function(ref){
+        swal({
+            title: "Scoring",
+            text: $("#invisibleScore").html(),
+            html:true
+        });
+    }
+
     // Take care of global HTML elements
     var ce = fe("#ideContainer")[0];
     window.myCodeMirror = CodeMirror(function(node){ce.parentNode.replaceChild(node, ce);}, {

@@ -10,9 +10,9 @@ app.directive("rating", function() {
         },
 
         controller: function($scope) {
-            EXPORT.loadBestScores().then(function(){
+            /*EXPORT.loadBestScores().then(function(){
                 $scope.$apply();
-            });
+            });*/
 
             $scope.$watch("score.val", function(newv, old){
                 $scope.updateStars();

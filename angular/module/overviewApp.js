@@ -2,13 +2,15 @@
  * Created by alexr on 11/5/13.
  */
 var overviewApp = angular.module('overviewApp',
-    ['rating', 'inlineEditing', 'automatedTest', 'challengeStep']);
+    ['rating', 'inlineEditing', 'automatedTest', 'challengeStep','scoringDiagram']);
 
 var appSettings = null;
 PersistentStorage.loadSettings().then(function(rs){
    appSettings = rs[0];
-    if (appSettings.showed_splash_screen)
-        GeneralCrap.closeOverlay();
+    if (appSettings.showed_splash_screen) {
+        if (GeneralCrap)
+            GeneralCrap.closeOverlay();
+    }
 });
 
 overviewApp.config(['$routeProvider',

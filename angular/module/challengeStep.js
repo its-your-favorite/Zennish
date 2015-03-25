@@ -16,14 +16,14 @@ app.directive("challengeStep", function(){
 
             $scope.toggleExpanded = function(x){
                 $scope.isExpanded[x] = !$scope.isExpanded[x];
-            }
+            };
         },
 
             link: function($scope) {
             // pretty sure this isn't the correct place to put this
             $scope.showPastSolution = function() {
                 $scope.theGame.showPastSolution($scope.theGame.getCurrentChallenge().id, $scope.eachStep.id, session_id());
-            }
+            };
 
             $scope.isExpanded = [];
         }

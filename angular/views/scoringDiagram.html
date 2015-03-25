@@ -1,0 +1,9 @@
+<span class="scoringDiagram">
+    <div ng-repeat="x in myScoring">
+        <rating score="x['score']"></rating>
+          &nbsp;-
+        <span class="scoringRequirement"><span class="clockIcon"></span> {{ x['time'] }}</span>
+        <span class="scoringRequirement"><span class="keyIcon"></span> {{ x['keystrokes'] }}</span>
+        <span class="scoringRequirement"><span class="errorsIcon"></span> {{x['mistakes'] }}</span>
+    </div>
+</span>

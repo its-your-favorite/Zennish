@@ -3,22 +3,22 @@
     <div class="textOverlay" style="background-color: #FFF">
         <span class="whatIs"><a href ng-click="showOverlay()">??</a></span>
         <div style="font-size: 26px;">Pick your challenge</div>
+
         <br><Br>
         <a href ng-click="showScoringOverlay()">How does scoring work?</a>
         <Br><br>
             <div  ng-repeat="challenge in challengeSet" class="choiceOfChallenge" ng-class="{ recommendedChallenge: challenge.recommended  }" ng-click="goToChallenge( challenge.id )">
-                <span class="challengeTitle">{{ challenge.name }} - {{ challenge.description }}</span>
-
+                <div class="challengeTitle">{{ challenge.name }} - {{ challenge.description }}
+                </div>
                 <span class="challengeDetails">
                     Difficulty:
                     <span class="challengeDifficulty" ng-style="{color: '#' + challenge.difficultyColor  }"> {{ challenge.difficulty }} </span>
-
                     <span class="pastScore">
                         Best Score:
                         <rating score="challenge.bestScore"></rating>
                     </span>
                 </span>
-                <div class="challengeRecommendedLabel">
+                <span class="challengeRecommendedLabel">
                     {{ challenge.recommended ? "Recommended Challenge" : '' }}
                 </div>
 

@@ -370,11 +370,34 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
     10%, 90% { -moz-transform: translateY(0px); }
 }
 
+.scoringDiagram {
+    text-align: left;
+}
 
-.key_icon {
+.currentScore {
+    cursor: pointer;
+    color: #9BE;
+}
+
+.keyIcon {
     height: 20px;
+    width: 20px;
     vertical-align: middle;
     margin-bottom: 3px;
+    content: url('img/key.png');
+}
+
+.scoringRequirement {
+    min-width: 80px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.clockIcon {
+    height: 16px;
+    width: 16px;
+    content: url("img/clock.png");
+    vertical-align: middle;
 }
 
 .past.stepDescription{

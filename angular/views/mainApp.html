@@ -17,7 +17,10 @@
             <span class="challengeInfo">Time spent: <span class="challengeValue">{{theGame.currentChallenge.totalTimeSpent}}</span></span>
             <span class="challengeInfo">Keystrokes: <span class="challengeValue">{{theGame.currentChallenge.keystrokes}}</span></span>
             <span class="challengeInfo">Previous Best:  <span class="challengeValue"><rating score="theGame.currentChallenge.bestScore"></rating></span></span>
-            <span class="challengeInfo"> {{ theGame.currentChallenge.state ? "Current Target" : "You Earned" }} :  <span class="challengeValue"><rating id="thisRunsScore" score="theGame.currentChallenge.currentRating"></rating></span></span>
+            <span class="challengeInfo currentScore" ng-click="showScoringData()"> {{ theGame.currentChallenge.state ? "Current Target" : "You Earned" }} :  <span class="challengeValue"><rating id="thisRunsScore" score="theGame.currentChallenge.currentRating"></rating></span></span>
+            <span style="display:none" id="invisibleScore">
+                <scoring-diagram bind-to="theGame.currentChallenge.scoring" style="float:left"></scoring-diagram>
+            </span>
         </span>
 
     </div>

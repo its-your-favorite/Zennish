@@ -368,6 +368,22 @@ GeneralCrap.setCodeMirrorLocked = function(val) {
     myCodeMirror.setOption('readOnly', val);
 }
 
+GeneralCrap.showCodeMirrorSuccess = function(){
+    var $step=$(".challengeStep.active");
+    $step.css("background-color","#4A4");
+    setTimeout(function(){
+        $step.css("background-color","#666");
+    }, 500);
+};
+
+GeneralCrap.showCodeMirrorFail = function(){
+    var $step=$(".challengeStep.active");
+    $step.css("background-color","#A44");
+    setTimeout(function(){
+        $step.css("background-color","#666");
+    }, 500);
+};
+
 GeneralCrap.showTutorialStepOne = function(){
     guiders.createGuider({
         attachTo: "#submitCode",

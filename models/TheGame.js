@@ -234,13 +234,17 @@ TheGame.prototype.submitStep = function() {
 
     var failures = this.gradeSolution(this.getCurrentStep(), this.currentChallenge);
     if (failures.length) {
-        this.recordToLog(failures[0]);
+        this.recordToLog(failures[0].text);
         this.getCurrentStep().mistakes = (0|this.getCurrentStep().mistakes) + 1;
-    } else {
+        this.addTest(failures[0].test, true);
+        GeneralCrap.showCodeMirrorFail();
 
+    } else {
         this.recordToLog("Passed step " + (this.currentStepNum + 1));
         this.saveCurrentEditor(false, "Your Correct Solution Step " + (this.currentStepNum + 1));
+        GeneralCrap.showCodeMirrorSuccess();
         this.advanceStep();
+
     }
     return failures.length;
 };
@@ -258,7 +262,7 @@ TheGame.prototype.currentStepTesteeFunctionName = function() {
  *
  * @param step
  * @param challenge
- * @returns array of string explanations of failures, empty array if success
+ * @returns array of {text:string, test: test} explanations of failures, empty array if success
  */
 TheGame.prototype.gradeSolution = function(step, challenge) {
     var userNamespace = window; //change later
@@ -269,11 +273,11 @@ TheGame.prototype.gradeSolution = function(step, challenge) {
 
         try {
             var test = new AutomatedTest(thisTest, step, challenge);
-            return test.run(ideExtractAllCode(test.funcName, false), false);
+            return {text: test.run(ideExtractAllCode(test.funcName, false), false), test: thisTest};
         } catch (e) {
-            return e;
+            return {text: thisTest, test: thisTest};
         }
-    }).filter();
+    }).filter(".text.length");
 
     //write this more; @todo
     return failures;

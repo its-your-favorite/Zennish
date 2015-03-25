@@ -10,8 +10,8 @@ app.directive("screwupCount", function() {
         },
 
         controller: function($scope) {
-            $scope.$watch("bindTo.mistakes", function(newv, old){
-                $scope.errors++;
+            $scope.$watch("bindTo.mistakes", function(iNewValue, old){
+                $scope.errors = iNewValue;
             }, true);
         },
 

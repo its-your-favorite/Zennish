@@ -268,6 +268,7 @@ input[type=button] {
     border-color: #888 #333 #222 #555;
     display: block;
     margin-right: 5px;
+    transition: all .5s;
 }
 
 .stepDescription {

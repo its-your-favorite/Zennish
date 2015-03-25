@@ -38,7 +38,7 @@ EXPORT.challengeSet = [
                 defaultSolution: tutorial.addThem,
                 demoTests: [[1.3,2]],
                 tests: [[0,0],[1,2],[-4,-1], [-9,9],[34,103], [1.3, 2.4] ], /* answer followed by sets of parameters */
-                onStart: function() { GeneralCrap.showTutorialStepThree() },
+                onStart: function() { GeneralCrap.showTutorialStepThree(); },
             },
         ],
     },

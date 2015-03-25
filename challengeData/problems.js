@@ -8,7 +8,7 @@ EXPORT.challengeSet = [
         recommended: 1,
         bestScore: {val: 0},
         difficultyColor: avgColor("BB0", "B00",0),
-        defaultComparer: tripleEquals, /* function used to judge if answer is correct */
+        defaultComparer: null, /* function used to judge if answer is correct */
         scoring: [{level: 0}, {level: 1, time: 60*17, keystrokes: 1500, mistakes:3}, {level: 2, time: 60*9, keystrokes: 200, mistakes: 1}],
         steps: [
             {
@@ -18,16 +18,18 @@ EXPORT.challengeSet = [
                 defaultSolution: tutorial.getThree,
                 defaultTestee: 'getThree',
                 demoTests: [[]],
-                tests: [[], ['4']] /* answer followed by sets of parameters */
+                tests: [[], ['4']], /* answer followed by sets of parameters */
+                onStart: function() { GeneralCrap.showTutorialStepOne() },
             },
             {
                 id: 1,
-                description: "Now write a function that returns true if a number is negative, false otherwise. You should open up your javascript console in your chrome dev tools for superior feedback. ",
+                description: "Now write a function that returns true if a number is negative, false otherwise. ",
                 addFunction: ['isNegative', 'number'],
                 defaultSolution: tutorial.isNegative,
                 defaultTestee: 'isNegative',
                 demoTests: [[4]],
-                tests: [[13],[-13], [0]] /* answer followed by sets of parameters */
+                tests: [[13],[-13], [0]], /* answer followed by sets of parameters */
+                onStart: function() { GeneralCrap.showTutorialStepTwo() },
             },
             {
                 id: 2,
@@ -36,6 +38,7 @@ EXPORT.challengeSet = [
                 defaultSolution: tutorial.addThem,
                 demoTests: [[1.3,2]],
                 tests: [[0,0],[1,2],[-4,-1], [-9,9],[34,103], [1.3, 2.4] ], /* answer followed by sets of parameters */
+                onStart: function() { GeneralCrap.showTutorialStepThree() },
             },
         ],
     },
@@ -114,8 +117,8 @@ EXPORT.challengeSet = [
         description: "You will receive two strings representing dates in mm-dd-yyyy format (or mm/dd/yyyy format). Return a Date object of whichever date is earlier chronologically.",
         addFunction: ['cameFirst', 'date1', 'date2'],
         demoTests: [['10-15-2013', '10/17/2013']],
-        tests: [['10-15-2013', '10/17/2013'], ['4/5/2012', '4-3-2011'], ["3/3/2013","3-3-2013"]  ] /*   */
-    },
+        tests: [['10-15-2013', '10/17/2013'], ['4/5/2012', '4-3-2011'], ["3/3/2013","3-3-2013"]  ], /*   */
+},
     {
         id: 1,
         description: "Now make the same function more versatile. You will receive two strings representing dates. Each will be one of the following: a unix timestamp, mm-dd-yyyy, yyyy-mm-dd, yyyy/mm/dd, or mm/dd/yyyyy. Return a a date object representing the date that came first.",

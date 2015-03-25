@@ -12,15 +12,7 @@ app.directive("automatedTest", function(){
     return {
         restrict: "E",
         replace: true,
-        template: '<div ng-class="{aTest: true,' +
-        'testPassed: (test.lastResult == true),' +
-        'testFailed: (test.lastResult == false)}">' +
-        '<input type="button" ng-click="test.doGuiRun()" value="&gt;" />' +
-        '<input ng-model="test.funcName" value="{{theGame.currentStepTesteeFunctionName()}}" class="testFuncName" ng-class="{testParamsFailed: !test.canExtractFunction()}" title="{{ {true: \'Got it\', false: \'Cannot find a function by that name in your global scope\'}[test.canExtractFunction()] }}">' +
-        '(<input ng-model="test.paramsJson" class="testParams" ng-class="{testParamsFailed: !test.canParseParams()}" title="{{ {true: \'Got it\', false: \'Not valid JSON array contents\'}[test.canParseParams()] }}">) =' +
-        '<input ng-model="test.expectedJson" class="testExpected" ng-class="{testParamsFailed: !test.canParseExpected()}" title="{{ {true: \'Got it\', false: \'Not valid JSON value\'}[test.canParseExpected()] }}">' +
-        '<span class="deleteButton" ng-click="theGame.removeTestById($index)" title="Delete Test">×</span>' +
-        '</div>',
+        templateUrl: "angular/views/automatedTest.html",
         link: function($scope, element) {
             $scope.test.flashTo = function(color ) {
                 element.css("backgroundColor", color);
@@ -78,7 +70,6 @@ AutomatedTest.prototype.parseFromArray = function(thisTest, step, challenge) {
         expected = expected.apply(null,parameters); //calculate expected via callback
     }
 
-    comparer = assert(thisTest.comparer || challenge.defaultComparer);
     this.funcName = assertIs(functionNameToBeTested);
     this.expectedJson = JSON.stringify(assertIs(expected));
     this.paramsJson = JSON.stringify(assertIs(parameters)).slice(1,-1); //remove brackets
@@ -157,11 +148,11 @@ AutomatedTest.prototype.run = function(codebase, useDebugger) {
  *
  *  This is a terrible name. As evidenced by the fact that I bothered to write a doc-block.
  *
- * @param useDebugger
+ * @param useDebugger (0 = NO, 1 = Leave existing instances intact, 2 = 1 & add an instance at end)
  */
 AutomatedTest.prototype.doGuiRun = function(useDebugger){
     try{
-        var returned = this.run(ideExtractAllCode(this.funcName, useDebugger), useDebugger); //probably should refactor later @todo this shouldn't just be "grabbing" stuff out of the dom in theory
+        var returned = this.run(ideExtractAllCode(this.funcName, useDebugger), (useDebugger>1)); //probably should refactor later @todo this shouldn't just be "grabbing" stuff out of the dom in theory
         this.lastResult = (returned === false);
         if (this.lastResult) {
             this.lastMessage = 'Success';

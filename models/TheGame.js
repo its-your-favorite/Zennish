@@ -156,6 +156,8 @@ TheGame.prototype.startChallenge = function(num) {
     this.currentChallenge.keystrokes = 0;
     this.currentChallenge.totalTimeSpent = 0;
     this.currentChallenge.state = 1; //running
+    this.currentChallenge.mistakes = 0; //running
+
 
     this.currentChallenge.steps = FA(this.currentChallenge.steps).map(function(x) { return new StepModel(x); });
     this.gotoStep(0);
@@ -166,7 +168,7 @@ TheGame.prototype.gotoStep = function(num) {
     var self = this;
     this.currentStepNum = num;
     try{
-    this.startStep(this.getStep(num));
+        this.startStep(this.getStep(num));
     } catch (e) {
         handleError(e);
     }
@@ -217,7 +219,10 @@ TheGame.prototype.startStep = function(step) {
         appendToIde(step.getExtraCode());
     }
     step.keystrokes = 0;
+    step.mistakes = 0;
+    step.timeSpent = 0;
     step.start();
+    step.onStart && setTimeout(step.onStart, 400);
 };
 
 /**

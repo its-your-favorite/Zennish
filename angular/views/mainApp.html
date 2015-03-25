@@ -10,7 +10,7 @@
         <div class="text-center fancyTitle">
             <span width="32" height="32"
                   style="background-color: #FFF; display: inline-block; border-radius: 10px; margin-right: -5px;"> <img src="favicon.png" width="32" height="32" style="opacity: .8"></span>
-            ennify - your garden of coding
+            ennish - your garden of coding
         </div>
         <span>
             <span class="challengeInfo">Challenge: <span class="challengeValue">{{theGame.currentChallenge.name}}</span></span>
@@ -38,8 +38,8 @@
                 <div class="collapsible floatLeft" style="left: 0;">&nbsp;</div>
 
                 <div>Your tests</div>
-                <input type="button" value="+New" ng-click="theGame.addTest([])">
-                <input type="button" value="Run All" ng-click="theGame.runAllTests()">
+                <input type="button" id="addNewTest" value="+New" ng-click="theGame.addTest([])">
+                <input type="button" id="runAllTests" value="Run All" ng-click="theGame.runAllTests()">
                 <input type="button" value="Debug Tests" ng-click="theGame.debugTests()">
 
                 <span ng-repeat="test in theGame.userTests" class="test">

@@ -9,6 +9,7 @@ body {
 #fullContainer {
     height: 100%;
     width: 100%;
+    min-width: 900px;
 }
 
 #challengeExitRequest {
@@ -119,6 +120,7 @@ html, body {
 }
 
 #rightPanel {
+    overflow-y: overlay;
     width: 400px;
     float: right;
     height: 100%;
@@ -160,7 +162,7 @@ input[type=button] {
 }
 
 .testParams {
-    width: 130px;
+    width: 140px;
     margin: 4px;
     text-overflow: ellipsis;
 }
@@ -233,7 +235,7 @@ input[type=button] {
 }
 
 .testFuncName {
-    width: 100px;
+    width: 80px;
     margin: 1px;
     text-overflow: ellipsis;
     text-align: right;

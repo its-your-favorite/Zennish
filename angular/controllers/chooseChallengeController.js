@@ -17,4 +17,7 @@ function chooseChallengeController($scope, $location){
     $scope.goToChallenge = function(id){
         $location.path("/challenge/id/" + id);
     };
+
+    guiders.hideAll();
+    globalCopy && (globalCopy.theGame = null);
 }

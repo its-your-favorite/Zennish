@@ -17,7 +17,13 @@
 </head>
 
 <body ng-app="overviewApp">
-
+<script type="text/javascript" src="include/vendor/sweetalert-master/lib/sweet-alert.min.js"></script>
+<script type="text/javascript">
+    if (!window.chrome) {
+        document.getElementsByTagName("HTML")[0].innerHTML = "Sorry, this is experience is presently only for google chrome.";
+        //swal({title: "Sorry", text:"This webpage uses features not supported by your browser"});
+    }
+</script>
 <script type="text/javascript" src="include/functional.js"></script>
 <script type="text/javascript" src="include/vendor/underscore.js"></script>
 <script type="text/javascript" src="include/vendor/jquery-2.0.0.js"></script>
@@ -59,8 +65,8 @@
 <script type="text/javascript" src="include/vendor/jquery.autosize.input.js"></script>
 <script type="text/javascript" src="angular/module/challengeStep.js"></script>
 <script type="text/javascript" src="angular/module/overviewApp.js"> </script>
+<script type="text/javascript" src="challengeData/guidersScript.js"></script>
 
-<script type="text/javascript" src="include/vendor/sweetalert-master/lib/sweet-alert.min.js"></script>
 
 <div style="top:0; bottom: 0; left: 0; right:0; z-index: 9; position: fixed; height: 100%; background-color: rgb(0, 0, 0);  opacity: 0.8; " id="mySmokescreen" class="smokescreen"></div>
 <div style="display: none; top:0; bottom: 0; left: 0; right:0; text-align: center; vertical-align: middle; z-index: 9; position: fixed; height: 80%; width: 80%; background-color: rgb(0, 0, 0);  opacity: 1; font-size: 48px; margin-top: auto; margin-bottom: auto; margin-left: auto; margin-right: auto; border-radius: 30px; vertical-align: middle; opacity: 0;" id="myPauseScreen" class="smokescreen">
@@ -121,6 +127,7 @@
 <div id="noteBox"></div>
 
 <ng-view></ng-view>
+
 
 <script type="text/javascript" src="general.js"></script>
 </body>

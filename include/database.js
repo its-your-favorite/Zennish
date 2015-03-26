@@ -74,7 +74,7 @@ var log = delayedLog.log.bind(delayedLog);
         try
         {
             if (!window.openDatabase) {
-                alert('Not Supported -> Please try with a WebKit Browser');
+                alert('Database Not Supported -> Please try with a WebKit Browser');
             } else {
 
                 var version = '1.0';

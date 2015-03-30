@@ -47,7 +47,7 @@ EXPORT.challengeSet = [
         id: '0-matching',
         description: "Finding patterns in cards",
         difficulty: "Medium",
-        recommended: 1,
+        recommended: 0,
         bestScore: {val: 0},
         difficultyColor: avgColor("BB0", "B00",0),
         defaultComparer: tripleEquals, /* function used to judge if answer is correct */

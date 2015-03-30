@@ -15,6 +15,7 @@ var NoteSystem = {};
         var scrollingTime = 2000;
 
         container.append(note);
+
         var colorCyclePeriod = 10;
         var currentSeconds = (new Date() / 1000) % colorCyclePeriod; //seconds into current minute
         waitPeriod = waitPeriod || 3000;

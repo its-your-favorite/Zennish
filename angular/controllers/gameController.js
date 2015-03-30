@@ -37,7 +37,7 @@ function gameController($scope, $routeParams, $location) {
     $scope.showScoringData = function(ref){
         swal({
             title: "Scoring",
-            text: $("#invisibleScore").html(),
+            text: "<div style='margin-left: 80px'>" + $("#invisibleScore").html() + "</div><br>",
             html:true
         });
     }

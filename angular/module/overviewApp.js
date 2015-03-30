@@ -6,10 +6,11 @@ var overviewApp = angular.module('overviewApp',
 
 var appSettings = null;
 PersistentStorage.loadSettings().then(function(rs){
-   appSettings = rs[0];
-    if (appSettings.showed_splash_screen) {
-        if (GeneralCrap)
+   appSettings = rs[0]; //this may be null if the DB doesn't exist at all (e.g. first load)
+    if (appSettings && appSettings.showed_splash_screen) {
+        if (GeneralCrap) {
             GeneralCrap.closeOverlay();
+        }
     }
 });
 

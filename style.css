@@ -659,5 +659,6 @@ Credit to http://css-tricks.com/examples/PopFromTopMessage/
 }
 
 .test {
-    float: left;
+    display: block;
+    margin-bottom: 4px;
 }

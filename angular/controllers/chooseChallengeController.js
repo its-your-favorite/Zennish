@@ -6,6 +6,12 @@
 function chooseChallengeController($scope, $location){
     $scope.challengeSet =  EXPORT.challengeSet;
 
+    EXPORT.loadBestScores().then(function(){
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
+    });
+
     $scope.showOverlay = function(){
         GeneralCrap.showOverlay();
     };

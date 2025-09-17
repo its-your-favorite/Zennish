@@ -4,158 +4,319 @@
  */
 
 var DATABASE;
-var q;
-
-// delayedLog is a workaround for weird issue on callbacks on sql calls
-var delayedLog = {};
-delayedLog.log = function(x){
-    this.data.push(x);
-};
-
-delayedLog.data = [];
-(function foreverLoop() {
-    if(delayedLog.data.length) {
-        console.log(delayedLog.data.splice(0,1)[0]);
-    }
-    setTimeout(foreverLoop, 100);
-})();
-var log = delayedLog.log.bind(delayedLog);
-
-
- // SELECT * FROM sqlite_master
-
 (function(){
     "use strict";
-    var shortName = 'WorkWorkDB';
-    var db;
 
-    var defaultHandleError = function(args) {
-        var sqlError = args[1];//promises here only pass 1 param
-        log(sqlError.message);
-    }
-
-    //used for select queries
-    var testDump = function(args) {
-        var resultSet = args[1];
-        var len = resultSet.rows.length;
-        var str = "Query Returned " + len + " rows";
-        //Log(str);
-        for (var x=0; x < len; x++) {
-
-            //log(resultSet.rows.item(x));
-        }
-        return resultSet.rows;
-    }
-
-    var argumentsToArray = function(cb) {
-        return function() {
-            var args = FA(arguments);
-           return cb.call(null,args.toTrueArray());
+    if (!window.indexedDB) {
+        alert('IndexedDB Not Supported -> Please try with a modern browser');
+        DATABASE = {
+            ready: Promise.reject(new Error('IndexedDB not supported')),
+            insert: function(){ return Promise.reject(new Error('IndexedDB not supported')); },
+            update: function(){ return Promise.reject(new Error('IndexedDB not supported')); },
+            select: function(){ return Promise.reject(new Error('IndexedDB not supported')); },
+            selectRowList: function(){ return Promise.reject(new Error('IndexedDB not supported')); },
+            selectScoresGrouped: function(){ return Promise.reject(new Error('IndexedDB not supported')); },
+            clearStore: function(){ return Promise.reject(new Error('IndexedDB not supported')); },
+            eradicate: function(){ return Promise.reject(new Error('IndexedDB not supported')); },
+            ensureDefaultSetting: function(){ return Promise.reject(new Error('IndexedDB not supported')); },
+            createRowList: function(){ return { length: 0, item: function(){ return undefined; } }; }
         };
-    };
-
-    function execute(sql, substitutions) {
-        var summarizeResults = testDump; //for select
-        if (sql.substring(0,6).toLowerCase() == "insert" ) {
-            summarizeResults = function(res){
-                return res[1];//insert Id and such info
-            }
-        }
-        //could do an update case too, and/or delete
-
-        return (new Promise(function(resolve,reject) {
-            db.transaction(function(transaction){
-                transaction.executeSql(sql, substitutions, argumentsToArray(resolve), argumentsToArray(reject));
-            });
-        })).then( summarizeResults, defaultHandleError) /* can remove this later */;
+        return;
     }
 
-    function initDb() {
-        try
-        {
-            if (!window.openDatabase) {
-                alert('Database Not Supported -> Please try with a WebKit Browser');
-            } else {
+    var DB_NAME = 'WorkWorkDB';
+    var DB_VERSION = 1;
+    var STORE_SAVED_CODE = 'savedCode';
+    var STORE_APP_SETTINGS = 'appSettings';
+    var STORE_SCORES = 'scores';
 
-                var version = '1.0';
-                var displayName = 'User Settings Database';
-                var maxSize = 3072*1024; //  = 3MB            in bytes 65536
-                db = openDatabase(shortName, version, displayName, maxSize);
-            }
-        }
-        catch(e)
-        {
-            if (e == 2) {
-
-                alert("Invalid database version.");
-            } else {
-                alert("Unknown error "+e+".");
-            }
-            return;
-        }
+    function promisifyRequest(request) {
+        return new Promise(function(resolve, reject) {
+            request.onsuccess = function() {
+                resolve(request.result);
+            };
+            request.onerror = function(event) {
+                reject(event.target.error || request.error);
+            };
+        });
     }
 
+    function openDatabase() {
+        return new Promise(function(resolve, reject) {
+            var request = window.indexedDB.open(DB_NAME, DB_VERSION);
 
-    function createTablesIfNecessary() {
-        // app-specific @todo move
-      var code= 'CREATE  TABLE IF NOT EXISTS "savedCode" (' +
-      '"id" INTEGER PRIMARY KEY AUTOINCREMENT  ,' +
-      '"name" varchar(100) ,' +
-      '"snippet" BLOB NULL ,' +
-      '"isSuccessful" TINYINT NULL ,' +
-      '"created_session_id" INT NULL , ' +
-      '"when" DATETIME NULL , ' +
-      '"isAutosave" TINYINT NULL ,' +
-      '"deleted" TINYINT default 0 ,' +
-      '"challenge_id" INT NULL ,' +
-      '"step_id" INT NULL , ' +
-      '"last_utilized_session_id" INT NULL ' +
-       '); ';
+            request.onupgradeneeded = function(event) {
+                var db = event.target.result;
 
-       var code2 = 'CREATE TABLE IF NOT EXISTS "appSettings" (' +
-            '"id" INTEGER PRIMARY KEY AUTOINCREMENT, ' +
-            '"showed_splash_screen" TINYINT NULL' +
-            ');' ;
+                if (!db.objectStoreNames.contains(STORE_SAVED_CODE)) {
+                    db.createObjectStore(STORE_SAVED_CODE, { keyPath: 'id', autoIncrement: true });
+                }
 
-       var code3 = 'CREATE TABLE IF NOT EXISTS "scores" (' +
-           '"id" INTEGER PRIMARY KEY AUTOINCREMENT, ' +
-           '"score" INT default 0, ' +
-           '"WHEN" DATETIME NULL,' +
-           '"challenge_id" VARCHAR(30) NULL ' +
-           ' )';
+                if (!db.objectStoreNames.contains(STORE_APP_SETTINGS)) {
+                    db.createObjectStore(STORE_APP_SETTINGS, { keyPath: 'id' });
+                }
 
+                if (!db.objectStoreNames.contains(STORE_SCORES)) {
+                    db.createObjectStore(STORE_SCORES, { keyPath: 'id', autoIncrement: true });
+                }
+            };
 
-        execute(code);
-        execute(code2);
-        return execute(code3);
+            request.onsuccess = function(event) {
+                var db = event.target.result;
+                db.onversionchange = function() {
+                    db.close();
+                };
+                resolve(db);
+            };
+
+            request.onerror = function(event) {
+                reject(event.target.error || request.error);
+            };
+        });
     }
 
-    function setupAppSettingsIfNecessary() {
-        var query = "SELECT count(id) from 'appSettings'; ";
-        var addQuery = "INSERT INTO appSettings (id, showed_splash_screen) VALUES (0, 0);";
-        return new Promise(function(succ, fail) {
-            execute(query).then(function(x){
-                if (_.values(x.item(0))[0])
-                    return succ(); //already has row
-                return execute(addQuery).then(succ);
+    var dbPromise = openDatabase();
+
+    function withStore(storeName, mode, handler) {
+        return dbPromise.then(function(db) {
+            return new Promise(function(resolve, reject) {
+                var tx = db.transaction(storeName, mode);
+                var store = tx.objectStore(storeName);
+                var handlerResult;
+                var handlerPromise;
+
+                try {
+                    handlerResult = handler(store, tx);
+                    if (handlerResult && typeof handlerResult.then === 'function') {
+                        handlerPromise = handlerResult;
+                    }
+                } catch (err) {
+                    reject(err);
+                    return;
+                }
+
+                tx.oncomplete = function() {
+                    if (handlerPromise) {
+                        handlerPromise.then(resolve).catch(reject);
+                    } else {
+                        resolve(handlerResult);
+                    }
+                };
+
+                tx.onabort = tx.onerror = function(event) {
+                    reject(event.target.error || tx.error);
+                };
+
+                if (handlerPromise) {
+                    handlerPromise.catch(reject);
+                }
             });
         });
+    }
 
+    function getAll(storeName) {
+        return withStore(storeName, 'readonly', function(store) {
+            if (typeof store.getAll === 'function') {
+                return promisifyRequest(store.getAll());
+            }
+
+            return new Promise(function(resolve, reject) {
+                var items = [];
+                var request = store.openCursor();
+                request.onsuccess = function(event) {
+                    var cursor = event.target.result;
+                    if (!cursor) {
+                        resolve(items);
+                        return;
+                    }
+                    items.push(cursor.value);
+                    cursor.continue();
+                };
+                request.onerror = function(event) {
+                    reject(event.target.error || request.error);
+                };
+            });
+        });
+    }
+
+    function matchesWhere(item, where) {
+        if (!where) {
+            return true;
+        }
+        var keys = Object.keys(where);
+        if (!keys.length) {
+            return true;
+        }
+        return keys.every(function(key) {
+            // loose equality keeps compatibility with legacy string/number mixes
+            return item[key] == where[key];
+        });
+    }
+
+    function applyOrdering(items, orderBy) {
+        if (!orderBy) {
+            return items;
+        }
+        var keys = Object.keys(orderBy);
+        if (!keys.length) {
+            return items;
+        }
+        return items.sort(function(a, b) {
+            for (var i = 0; i < keys.length; i++) {
+                var key = keys[i];
+                var dir = String(orderBy[key]).toUpperCase() === 'DESC' ? -1 : 1;
+                var aVal = a[key];
+                var bVal = b[key];
+                if (aVal < bVal) {
+                    return -1 * dir;
+                }
+                if (aVal > bVal) {
+                    return 1 * dir;
+                }
+            }
+            return 0;
+        });
+    }
+
+    function select(storeName, options) {
+        options = options || {};
+        var where = options.where || {};
+        var orderBy = options.orderBy;
+        var limit = options.limit;
+
+        return getAll(storeName).then(function(items) {
+            var filtered = items.filter(function(item) {
+                return matchesWhere(item, where);
+            });
+
+            filtered = applyOrdering(filtered, orderBy);
+
+            if (typeof limit === 'number') {
+                filtered = filtered.slice(0, limit);
+            }
+
+            return FA(filtered);
+        });
+    }
+
+    function insert(storeName, data) {
+        return withStore(storeName, 'readwrite', function(store) {
+            return promisifyRequest(store.add(data)).then(function(key) {
+                return { insertId: key };
+            });
+        });
+    }
+
+    function update(storeName, changes, where) {
+        where = where || {};
+        return withStore(storeName, 'readwrite', function(store) {
+            return new Promise(function(resolve, reject) {
+                var updated = [];
+                var request = store.openCursor();
+                request.onsuccess = function(event) {
+                    var cursor = event.target.result;
+                    if (!cursor) {
+                        resolve(updated);
+                        return;
+                    }
+                    var value = cursor.value;
+                    if (matchesWhere(value, where)) {
+                        Object.keys(changes).forEach(function(key) {
+                            value[key] = changes[key];
+                        });
+                        var updateRequest = cursor.update(value);
+                        updateRequest.onerror = function(evt) {
+                            reject(evt.target.error || updateRequest.error);
+                        };
+                        updated.push(value);
+                    }
+                    cursor.continue();
+                };
+                request.onerror = function(event) {
+                    reject(event.target.error || request.error);
+                };
+            });
+        });
+    }
+
+    function clearStore(storeName) {
+        return withStore(storeName, 'readwrite', function(store) {
+            return promisifyRequest(store.clear()).then(function() {
+                return true;
+            });
+        });
+    }
+
+    function createRowList(rows) {
+        var list = FA(rows || []);
+        list.item = function(index) {
+            return list[index];
+        };
+        list.toArray = function() {
+            return list.slice();
+        };
+        return list;
+    }
+
+    function selectRowList(storeName, options) {
+        return select(storeName, options).then(function(rows) {
+            return createRowList(rows);
+        });
+    }
+
+    function selectScoresGrouped() {
+        return getAll(STORE_SCORES).then(function(items) {
+            var grouped = {};
+            items.forEach(function(item) {
+                var challengeId = item.challenge_id;
+                if (grouped[challengeId] == null || item.score > grouped[challengeId]) {
+                    grouped[challengeId] = item.score;
+                }
+            });
+            var rows = Object.keys(grouped).map(function(challengeId) {
+                return {
+                    top_score: grouped[challengeId],
+                    challenge_id: challengeId
+                };
+            });
+            return createRowList(rows);
+        });
+    }
+
+    function ensureDefaultSetting() {
+        return withStore(STORE_APP_SETTINGS, 'readwrite', function(store) {
+            return promisifyRequest(store.get(0)).then(function(existing) {
+                if (existing == null) {
+                    return promisifyRequest(store.put({ id: 0, showed_splash_screen: 0 }));
+                }
+            });
+        });
     }
 
     function eradicate() {
-        execute("DELETE from savedCode");
-        execute("DELETE from appSettings");
-        execute("DROP TABLE savedCode");
-        execute("DROP TABLE appSettings");
-        execute("DROP TABLE scores");
+        return Promise.all([
+            clearStore(STORE_SAVED_CODE),
+            clearStore(STORE_APP_SETTINGS),
+            clearStore(STORE_SCORES)
+        ]);
     }
 
-    initDb();
-    createTablesIfNecessary().then(function(){
-        setupAppSettingsIfNecessary();
+    dbPromise.then(function() {
+        return ensureDefaultSetting();
+    }).catch(function(err) {
+        console.error('Failed to initialize database', err);
     });
 
-    DATABASE={db: db, execute: execute, eradicate: eradicate};
-    q = execute; //console use only
-}());
+    DATABASE = {
+        ready: dbPromise,
+        insert: insert,
+        update: update,
+        select: select,
+        selectRowList: selectRowList,
+        selectScoresGrouped: selectScoresGrouped,
+        clearStore: clearStore,
+        eradicate: eradicate,
+        ensureDefaultSetting: ensureDefaultSetting,
+        createRowList: createRowList
+    };
+})();
